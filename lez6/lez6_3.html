@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 6 – Albero narrativo esteso</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez6_4.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez6_2.html";
+    }
+  </script>
+</head>
+<body>
+  <div class="slide">
+    <h1>🌌 Bandersnatch – Albero Narrativo Esteso</h1>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+
+    <div class="content-box">
+      <div class="inner-box">
+
+        <h2>📖 Introduzione narrativa</h2>
+        <p>
+          Il protagonista, giovane sviluppatore solitario del 1984, si sveglia nel giorno in cui deve presentare la demo del suo gioco “Bandersnatch”, ispirato a un libro interattivo maledetto. Ma la realtà comincia a distorcersi: le scelte sembrano controllate da qualcun altro.
+        </p>
+
+        <h2>🧠 Ramificazione della storia</h2>
+
+<pre><code class="language-text">[Risveglio]
+ ├─ Vai in ufficio
+ │   ├─ Accetta il contratto
+ │   │   └─ Finale 1: Fallimento commerciale (recensione 1/5, perdita di controllo)
+ │   └─ Rifiuta l'offerta
+ │       └─ Torna a casa per lavorare in autonomia
+ └─ Rimani a casa
+     ├─ Parla con il padre
+     │   ├─ Ricordi distorti sulla madre
+     │   └─ Appare la voce: "Distruggi il computer"
+     └─ Taci
+         └─ Sogni ricorrenti, incubi, inizio della discesa mentale
+
+[Ritorno a casa]
+ ├─ Codice che si modifica da solo
+ └─ Il libro Bandersnatch cambia ogni volta che lo leggi
+
+[Colin ti chiama]
+ ├─ Segui Colin sul tetto
+ │   ├─ “Salta tu” → Finale 2: Risveglio in loop
+ │   └─ “Salto io” → Colin sparisce, realtà alterata
+ └─ Non lo segui
+     └─ Il gioco prende il controllo della tua tastiera
+
+[Controllo esterno]
+ ├─ Il giocatore scopre di essere osservato da Netflix/Futura
+ └─ Si sblocca la consapevolezza di essere in un gioco
+
+[Finali multipli]
+ ├─ Finale 1: Commerciale (fallimento)
+ ├─ Finale 2: Loop mentale
+ ├─ Finale 3: Omicidio del padre
+ ├─ Finale 4: Libertà (bandersnatch completato)
+ └─ Finale segreto: consapevolezza metanarrativa
+</code></pre>
+
+        <h2>🎯 Obiettivi progettuali</h2>
+        <ul>
+          <li>Rendere l’albero esplorabile, non lineare</li>
+          <li>Supportare loop, reset, glitch</li>
+          <li>Consentire finali alternativi e stati di confusione narrativa</li>
+        </ul>
+
+        <p>✅ Nella prossima slide definiremo in Python le classi per rappresentare le <code>Scene</code> e le <code>Scelte</code>.</p>
+
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>

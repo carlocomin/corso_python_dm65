@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 9 – Soluzioni Esercizi Queue</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez9_8.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez9_6.html";
+    }
+  </script>
+</head>
+<body>
+<div class="slide">
+  <h1>🧠 Lezione 9: Soluzioni Esercizi Queue</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+
+<h2>Soluzioni Commentate</h2>
+
+<pre><code class="language-python"># 1) Classe Queue
+from collections import deque
+
+class Queue:
+    def __init__(self):
+        self.dati = deque()
+
+    def enqueue(self, x):
+        self.dati.append(x)
+
+    def dequeue(self):
+        return self.dati.popleft()
+
+    def front(self):
+        return self.dati[0]
+
+    def empty(self):
+        return len(self.dati) == 0
+
+# 2) Coda Clienti in Banca
+def banca(clienti):
+    queue = deque(clienti)
+    while queue:
+        cliente = queue.popleft()
+        print("Servito cliente:", cliente)
+
+# 3) Coda di Stampe
+def stampa_documenti(documenti):
+    queue = deque(documenti)
+    while queue:
+        doc = queue.popleft()
+        print(f"Stampo documento: {doc['nome']} (priorità: {doc['priorita']})")
+
+# 4) Token Circolare
+def token_ring(processi, passi):
+    queue = deque(processi)
+    for _ in range(passi):
+        processo = queue.popleft()
+        print("Token a:", processo)
+        queue.append(processo)
+
+# 5) Coda Eventi Gioco
+def gestisci_eventi(eventi):
+    queue = deque(eventi)
+    while queue:
+        evento = queue.popleft()
+        print("Gestisco evento:", evento)
+</code></pre>
+
+<p>✅ Ora possiamo procedere con la teoria sull'Heap e le Priority Queue.</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+</body>
+</html>

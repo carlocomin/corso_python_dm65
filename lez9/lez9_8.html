@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 9 – Heap e Priority Queue</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez9_9.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez9_7.html";
+    }
+  </script>
+</head>
+<body>
+<div class="slide">
+  <h1>🏔️ Lezione 9: Heap e Priority Queue</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+
+<h2>🔎 Cos'è un Heap?</h2>
+
+<p>
+Un <strong>Heap</strong> è un albero binario completo rappresentato come array, con proprietà d'ordine:
+</p>
+
+<ul>
+  <li><strong>Min-Heap</strong>: ogni nodo ha valore minore o uguale ai figli</li>
+  <li><strong>Max-Heap</strong>: ogni nodo ha valore maggiore o uguale ai figli</li>
+</ul>
+
+<h2>🎯 Priority Queue</h2>
+
+<p>
+Una <strong>Priority Queue</strong> è una coda in cui ogni elemento ha una priorità.<br>
+L'elemento con priorità più alta viene servito per primo.
+</p>
+
+<h2>💻 Modulo heapq in Python</h2>
+
+<p>In Python, <code>heapq</code> implementa Min-Heap:</p>
+
+<pre><code class="language-python">import heapq
+
+heap = []
+heapq.heappush(heap, 10)
+heapq.heappush(heap, 2)
+heapq.heappush(heap, 7)
+
+print(heapq.heappop(heap))  # 2
+</code></pre>
+
+<h2>💡 Max-Heap in Python</h2>
+
+<p>
+Trucco: invertire i segni dei numeri per simulare un Max-Heap.
+</p>
+
+<h2>📈 Complessità Heap</h2>
+
+<ul>
+  <li>Inserimento: O(log N)</li>
+  <li>Estrazione minimo/massimo: O(log N)</li>
+</ul>
+
+<p>✅ Prossima slide: esercizi pratici sugli Heap.</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+</body>
+</html>

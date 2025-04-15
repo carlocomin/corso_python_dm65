@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lezione3: Liste in Python - Soluzioni</title>
+  <link rel="stylesheet" href="../style.css" />
+  <script>
+    function nextSlide() {
+      window.location.href = "lez3_5.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez3_3.html";
+    }
+  </script>
+  		<link rel="stylesheet" href="../default.css">
+	<script src="../highlight.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+<body>
+  <div class="slide">
+    <h1>Lezione 3: Liste in Python – Soluzioni degli Esercizi</h1>
+<div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+</div>
+
+    <div class="content-box">
+      <div class="inner-box" style="text-align: left;">
+        <ol>
+          <li>
+            <pre><code>
+lista = []
+lista.append("A")
+lista.append("B")
+lista.append("C")
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+lista.insert(2, "X")
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+lista.remove("B")
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+ultimo = lista.pop()
+print("Elemento rimosso:", ultimo)
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+val = input("Inserisci un valore: ")
+pos = lista.index(val)
+print("Indice:", pos)
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+numeri = [5, 2, 9, 1]
+numeri.sort()
+print(numeri)
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+numeri.reverse()
+print(numeri)
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+parole = []
+for _ in range(5):
+    parola = input("Inserisci una parola: ")
+    parole.append(parola)
+parole.reverse()
+print(parole)
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+nomi = ["Anna", "Luca", "Marco", "Sara", "Giulia"]
+print("Secondo:", nomi[1])
+print("Penultimo:", nomi[-2])
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+lista1 = [1, 2, 3]
+lista2 = [4, 5]
+unita = lista1 + lista2
+print(unita)
+            </code></pre>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>

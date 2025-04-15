@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezione 1 - Esempi di Codice</title>
+    <link rel="stylesheet" href="../style.css">
+    <script>
+        function nextSlide() {
+            window.location.href = "lez1_7.html"
+        }
+        function prevSlide() {
+            window.location.href = "lez1_5.html";
+        }
+    </script>
+	<link rel="stylesheet" href="../default.css">
+	<script src="../highlight.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+    <h2>Menu Lezioni</h2>
+    <ul>
+        <li><a href='lez1_1.html'>Lezione 1: Introduzione</a></li>
+        <li><a href='../lez2/lez2_1.html'>Lezione 2: Strutture di Controllo</a></li>
+        <li><a href='../lez3/lez3_1.html'>Lezione 3: Liste, Tuple, Dizionari, Iteratori</a></li>
+        <li><a href='../lez4/lez4_1.html'>Lezione 4: Funzioni</a></li>
+        <li><a href='../lez5/lez5_1.html'>Lezione 5: OOP</a></li>
+		<li><a href='../lez6/lez6_1.html'>Lezione 6: Progettino Videogioco Testuale</a></li>
+		<li><a href='../lez7/lez7_1.html'>Lezione 7: Interfacciamento LLM API</a></li>
+		<li><a href='../lez8/lez8_1.html'>Lezione 8: Ricorsione e divide et impera</a></li>
+		<li><a href='../lez9/lez9_1.html'>Lezione 9: Strutture dati avanzate</a></li>
+		<li><a href='../lez10/lez10_1.html'>Lezione 10: Grafi e shortest-paths</a></li>
+		<li><a href='../lez11/lez11_1.html'>Lezione 11: Programmazione Competitiva</a></li>
+		<li><a href='../lez12/lez12_1.html'>Lezione 12: Pygame e grafica 2D</a></li>
+		<li><a href='../lez13/lez13_1.html'>Lezione 13: Mini-gioco 2D</a></li>
+		<li><a href='../lez14/lez14_1.html'>Lezione 14: Pathfinding nei videogiochi con A*</a></li>
+		<li><a href='../lez15/lez15_1.html'>Lezione 15: AI nei giochi</a></li>
+		<li><a href='../lez16/lez16_1.html'>Lezione 16: Progetto finale</a></li>
+    </ul>
+</div>
+<!-- END MENU -->
+
+
+
+
+
+
+
+    <div class="slide">
+        <h1>Lezione 1: Esempi di Codice - Variabili, Operatori, Tipi di Dati</h1>
+<div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+</div>
+        
+        <div class="content-box">
+            <div class="inner-box">
+                <h2>🔹 Dichiarazione e Assegnazione di Variabili</h2>
+                <pre><code>
+# Assegnazione di variabili
+numero = 42
+pi_greco = 3.14
+saluto = "Ciao, mondo!"
+e_vero = True
+
+# Stampa delle variabili
+print(numero)  # Output: 42
+print(pi_greco)  # Output: 3.14
+print(saluto)  # Output: Ciao, mondo!
+print(e_vero)  # Output: True
+                </code></pre>
+                
+                <h2>🔹 Operatori Aritmetici in Azione</h2>
+                <pre><code>
+# Operazioni matematiche
+x = 10
+y = 3
+
+somma = x + y
+sottrazione = x - y
+moltiplicazione = x * y
+divisione = x / y  # Risultato float
+modulo = x % y  # Resto della divisione
+esponenziale = x ** y  # x elevato alla y
+
+print("Somma:", somma)
+print("Sottrazione:", sottrazione)
+print("Moltiplicazione:", moltiplicazione)
+print("Divisione:", divisione)
+print("Modulo:", modulo)
+print("Esponenziale:", esponenziale)
+                </code></pre>
+                
+                <h2>🔹 Tipi di Dati in Python</h2>
+                <pre><code>
+# Liste (mutable)
+lista = [1, 2, 3, "Python", 4.5]
+print(lista[0])  # Output: 1
+
+# Tuple (immutabili)
+tupla = (10, 20, 30)
+print(tupla[1])  # Output: 20
+
+# Dizionari (chiave-valore)
+persone = {"nome": "Alice", "età": 25}
+print(persone["nome"])  # Output: Alice
+
+# Set (insiemi di elementi unici)
+numeri_unici = {1, 2, 3, 3, 2, 1}
+print(numeri_unici)  # Output: {1, 2, 3}
+                </code></pre>
+                
+                <h2>🔹 Conversione tra Tipi di Dati</h2>
+                <pre><code>
+# Conversione di tipi di dati
+numero_str = str(100)  # Da int a stringa
+numero_int = int("42")  # Da stringa a int
+numero_float = float("3.14")  # Da stringa a float
+
+print(numero_str, type(numero_str))  # Output: '100' <class 'str'>
+print(numero_int, type(numero_int))  # Output: 42 <class 'int'>
+print(numero_float, type(numero_float))  # Output: 3.14 <class 'float'>
+                </code></pre>
+            </div>
+        </div>
+        
+        <div class="nav-buttons">
+            <button onclick="prevSlide()">&#8592; Indietro</button>
+            <button onclick="nextSlide()">Avanti &#8594;</button>
+        </div>
+    </div>
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+}
+</script>
+</body>
+</html>

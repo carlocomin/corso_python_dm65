@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Integrazione con LLM – Ollama</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez7_2.html";
+    }
+    function prevSlide() {
+      window.location.href = "../lez6/lez6_7.html";
+    }
+  </script>
+</head>
+<body>
+  <div class="slide">
+    <h1>🧠 Integrazione con LLM Locale (Ollama)</h1>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+
+    <div class="content-box">
+      <div class="inner-box">
+
+        <h2>🎯 Obiettivo</h2>
+        <p>
+          Gestire i <strong>dialoghi tra giocatore e personaggi</strong> attraverso un modello LLM locale (es. Mistral, LLaMA3) tramite <strong>Ollama</strong>, per ottenere risposte dinamiche e coerenti con la narrazione.
+        </p>
+
+        <h2>🧩 Componente di dialogo</h2>
+<pre><code class="language-python">import requests
+
+def dialoga_con_llm(nome_pg, contesto, messaggio, modello="mistral"):
+    prompt = f"""
+    Sei il personaggio {nome_pg} in un gioco testuale.
+    Contesto: {contesto}
+    Il giocatore dice: "{messaggio}"
+    Rispondi in tono coerente con il tuo ruolo.
+    """
+    res = requests.post(
+        "http://localhost:11434/api/generate",
+        json={"model": modello, "prompt": prompt, "stream": False}
+    )
+    return res.json()["response"].strip()
+</code></pre>
+
+        <h2>💬 Esempio di uso</h2>
+<pre><code class="language-python">colin_risposta = dialoga_con_llm(
+    nome_pg="Colin",
+    contesto="Colin è sul tetto con te, parla di realtà alternative.",
+    messaggio="Siamo davvero liberi di scegliere?"
+)
+print("COLIN:", colin_risposta)</code></pre>
+
+        <h2>📝 Prompt ben strutturato</h2>
+        <ul>
+          <li>✔ Nome del personaggio</li>
+          <li>✔ Contesto narrativo chiaro</li>
+          <li>✔ Stato del giocatore (facoltativo)</li>
+          <li>✔ Tono e coerenza con l’universo narrativo</li>
+        </ul>
+
+        <p>
+          ✅ LLM come Ollama ti consente di mantenere l'interazione offline, privata e reattiva.
+        </p>
+
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programma del Corso</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function prevSlide() {
+            window.location.href = "index.html";
+        }
+        function nextSlide() {
+            window.location.href = "lez1/lez1_1.html";
+        }
+    </script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+    <h2>Menu Lezioni</h2>
+    <ul>
+        <li><a href='lez1/lez1_1.html'>Lezione 1: Introduzione</a></li>
+        <li><a href='lez2/lez2_1.html'>Lezione 2: Strutture di Controllo</a></li>
+        <li><a href='lez3/lez3_1.html'>Lezione 3: Liste, Tuple, Dizionari, Iteratori</a></li>
+        <li><a href='lez4/lez4_1.html'>Lezione 4: Funzioni</a></li>
+        <li><a href='lez5/lez5_1.html'>Lezione 5: OOP</a></li>
+		<li><a href='lez6/lez6_1.html'>Lezione 6: Progettino Videogioco Testuale</a></li>
+		<li><a href='lez7/lez7_1.html'>Lezione 7: Interfacciamento LLM API</a></li>
+		<li><a href='lez8/lez8_1.html'>Lezione 8: Ricorsione e divide et impera</a></li>
+		<li><a href='lez9/lez9_1.html'>Lezione 9: Strutture dati avanzate</a></li>
+		<li><a href='lez10/lez10_1.html'>Lezione 10: Grafi e shortest-paths</a></li>
+		<li><a href='lez11/lez11_1.html'>Lezione 11: Programmazione Competitiva</a></li>
+		<li><a href='lez12/lez12_1.html'>Lezione 12: Pygame e grafica 2D</a></li>
+		<li><a href='lez13/lez13_1.html'>Lezione 13: Mini-gioco 2D</a></li>
+		<li><a href='lez14/lez14_1.html'>Lezione 14: Pathfinding nei videogiochi con A*</a></li>
+		<li><a href='lez15/lez15_1.html'>Lezione 15: AI nei giochi</a></li>
+		<li><a href='lez16/lez16_1.html'>Lezione 16: Progetto finale</a></li>
+    </ul>
+</div>
+<!-- END MENU -->
+
+
+
+
+    <div class="slide">
+        <h1>Programma del Corso</h1>
+        
+		<div class="nav-buttons">
+		<button onclick="prevSlide()">&#8592; Indietro</button>
+		<button onclick="nextSlide()">Avanti &#8594;</button>
+		</div>
+		
+        <h2>Modulo 1: Fondamenti di Python (7 lezioni, 12 ore)</h2>
+        <p><strong>📌 Obiettivo:</strong> Portare i principianti a un livello sufficiente per affrontare gli algoritmi e introdurre un primo progetto pratico con LLM.</p>
+        <ul class="inner-box">
+            <li>Lezione 1: Introduzione a Python (sintassi, input/output, variabili)</li>
+            <li>Lezione 2: Strutture di controllo (if, loop for/while, logica booleana)</li>
+            <li>Lezione 3: Liste, tuple, dizionari e iterazione su collezioni</li>
+            <li>Lezione 4: Funzioni e modularità del codice</li>
+            <li>Lezione 5: Introduzione alla Programmazione a Oggetti (OOP)</li>
+            <li>Lezione 6: Mini-progetto: Un semplice gioco testuale</li>
+            <li>Lezione 7: Interfacciarsi alle API di un LLM per il videogioco testuale <br/>
+			<p><em>(Il gioco testuale utilizzerà un LLM per rendere il gameplay più dinamico e interattivo.)</em></p>
+			</li>
+        </ul>
+        
+        <h2>Modulo 2: Algoritmi e Strutture Dati (4 lezioni, 8 ore)</h2>
+        <p><strong>📌 Obiettivo:</strong> Apprendere le basi della programmazione algoritmica e della competizione.</p>
+        <ul class="inner-box">
+            <li>Lezione 8: Ricorsione e divide et impera (quicksort, mergesort, Fibonacci, fattoriale)</li>
+            <li>Lezione 9: Strutture dati avanzate (stack, queue, heap, alberi binari)</li>
+            <li>Lezione 10: Grafi e shortest path (BFS, DFS, Dijkstra, A*)</li>
+            <li>Lezione 11: Esercitazione su problemi di programmazione competitiva</li>
+        </ul>
+        
+        <h2>Modulo 3: Applicazioni AI, Grafica e Videogiochi (5 lezioni, 10 ore)</h2>
+        <p><strong>📌 Obiettivo:</strong> Motivare gli studenti con progetti pratici basati su AI, grafica e giochi.</p>
+        <ul class="inner-box">
+            <li>Lezione 12: Introduzione a Pygame e grafica 2D (creazione di finestre, sprite, eventi)</li>
+            <li>Lezione 13: Mini-gioco 2D: Pong o Snake con Pygame</li>
+            <li>Lezione 14: Pathfinding nei videogiochi con A*</li>
+            <li>Lezione 15: Introduzione all'AI nei giochi: Algoritmi di decisione e Reti Neurali</li>
+            <ul>
+                <li><strong>📖 Teoria:</strong> Concetti base delle reti neurali, forward propagation, backpropagation.</li>
+                <li><strong>💻 Esercizi:</strong> Creare un semplice modello di rete neurale per un bot AI in un gioco.</li>
+            </ul>
+            <li>Lezione 16: Progetto finale: Creazione di un gioco con AI</li>
+        </ul>
+        
+        <div class="nav-buttons">
+            <button onclick="prevSlide()">&#8592; Indietro</button>
+            <button onclick="nextSlide()">Avanti &#8594;</button>
+        </div>
+    </div>
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+}
+</script>
+</body>
+</html>

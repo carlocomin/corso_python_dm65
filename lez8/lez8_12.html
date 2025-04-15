@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Divide et Impera – Merge Sort</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez8_13.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez8_11.html";
+    }
+  </script>
+</head>
+<body>
+<div class="slide">
+  <h1>🔀 Divide et Impera – Esempio: Merge Sort</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+
+<h2>🎯 Problema</h2>
+<p>
+Ordinare una lista di numeri interi utilizzando il paradigma Divide et Impera.
+</p>
+
+<h2>🔧 Codice Python</h2>
+
+<pre><code class="language-python">def merge_sort(lista):
+    if len(lista) <= 1:
+        return lista
+
+    centro = len(lista) // 2
+    sx = merge_sort(lista[:centro])
+    dx = merge_sort(lista[centro:])
+
+    return merge(sx, dx)
+
+def merge(sx, dx):
+    risultato = []
+    i, j = 0, 0
+    while i < len(sx) and j < len(dx):
+        if sx[i] < dx[j]:
+            risultato.append(sx[i])
+            i += 1
+        else:
+            risultato.append(dx[j])
+            j += 1
+    risultato += sx[i:]
+    risultato += dx[j:]
+    return risultato
+</code></pre>
+
+<h2>📝 Analisi Divide et Impera</h2>
+<ul>
+  <li><strong>Divide:</strong> Divido la lista in 2 metà uguali</li>
+  <li><strong>Conquer:</strong> Ordino ricorsivamente le due metà</li>
+  <li><strong>Combine:</strong> Uso la funzione <code>merge()</code> per fondere le due liste ordinate</li>
+</ul>
+
+<h2>📈 Complessità Temporale</h2>
+<p>
+Ad ogni livello eseguo O(N) operazioni di merge e ho log<sub>2</sub>N livelli ricorsivi.<br>
+Complessità: <strong>O(N log N)</strong>
+</p>
+
+<p>✅ Nella prossima slide vedremo Quick Sort: un altro esempio Divide et Impera con approccio diverso.</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+</body>
+</html>

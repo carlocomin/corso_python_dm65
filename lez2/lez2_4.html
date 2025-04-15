@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezione 2 - Blocchi Condizionali If-Else</title>
+    <link rel="stylesheet" href="../style.css">
+    <script>
+        function nextSlide() {
+            window.location.href = "lez2_5.html";
+        }
+        function prevSlide() {
+            window.location.href = "lez2_3.html";
+        }
+    </script>
+			<link rel="stylesheet" href="../default.css">
+	<script src="../highlight.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+    <h2>Menu Lezioni</h2>
+    <ul>
+        <li><a href='../lez1/lez1_1.html'>Lezione 1: Introduzione</a></li>
+        <li><a href='lez2_1.html'>Lezione 2: Strutture di Controllo</a></li>
+        <li><a href='../lez3/lez3_1.html'>Lezione 3: Liste, Tuple, Dizionari, Iteratori</a></li>
+        <li><a href='../lez4/lez4_1.html'>Lezione 4: Funzioni</a></li>
+        <li><a href='../lez5/lez5_1.html'>Lezione 5: OOP</a></li>
+		<li><a href='../lez6/lez6_1.html'>Lezione 6: Progettino Videogioco Testuale</a></li>
+		<li><a href='../lez7/lez7_1.html'>Lezione 7: Interfacciamento LLM API</a></li>
+		<li><a href='../lez8/lez8_1.html'>Lezione 8: Ricorsione e divide et impera</a></li>
+		<li><a href='../lez9/lez9_1.html'>Lezione 9: Strutture dati avanzate</a></li>
+		<li><a href='../lez10/lez10_1.html'>Lezione 10: Grafi e shortest-paths</a></li>
+		<li><a href='../lez11/lez11_1.html'>Lezione 11: Programmazione Competitiva</a></li>
+		<li><a href='../lez12/lez12_1.html'>Lezione 12: Pygame e grafica 2D</a></li>
+		<li><a href='../lez13/lez13_1.html'>Lezione 13: Mini-gioco 2D</a></li>
+		<li><a href='../lez14/lez14_1.html'>Lezione 14: Pathfinding nei videogiochi con A*</a></li>
+		<li><a href='../lez15/lez15_1.html'>Lezione 15: AI nei giochi</a></li>
+		<li><a href='../lez16/lez16_1.html'>Lezione 16: Progetto finale</a></li>
+    </ul>
+</div>
+<!-- END MENU -->
+    <div class="slide">
+        <h1>Lezione 2: Blocchi Condizionali con <code>if-else</code></h1>
+<div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+</div>
+        
+        <div class="content-box">
+            <div class="inner-box">
+                <h2>🔹 Il Concetto di Blocco Condizionale</h2>
+                <p>Un blocco <code>if-else</code> permette di eseguire diverse istruzioni in base a una condizione.</p>
+                
+                <pre><code>
+if condizione:
+    # Codice eseguito se la condizione è vera
+else:
+    # Codice eseguito se la condizione è falsa
+                </code></pre>
+                
+                <h2>🔹 Esempi Pratici</h2>
+                
+                <h3>1. Verificare se un numero è positivo o negativo</h3>
+                <pre><code>
+num = int(input("Inserisci un numero: "))
+if num > 0:
+    print("Il numero è positivo.")
+else:
+    print("Il numero è negativo o zero.")
+                </code></pre>
+                
+                <h3>2. Controllare se un utente è maggiorenne</h3>
+                <pre><code>
+eta = int(input("Inserisci la tua età: "))
+if eta >= 18:
+    print("Puoi accedere.")
+else:
+    print("Accesso negato.")
+                </code></pre>
+                
+                <h2>🔹 Uso di <code>elif</code> per Più Condizioni</h2>
+                <p>Se ci sono più di due possibilità, si può usare <code>elif</code>:</p>
+                <pre><code>
+num = int(input("Inserisci un numero: "))
+if num > 0:
+    print("Positivo")
+elif num == 0:
+    print("Zero")
+else:
+    print("Negativo")
+                </code></pre>
+                
+                <h2>🔹 Blocchi Annidati</h2>
+                <p>Si possono annidare più blocchi condizionali:</p>
+                <pre><code>
+eta = int(input("Inserisci la tua età: "))
+if eta >= 18:
+    print("Puoi accedere.")
+    if eta >= 65:
+        print("Hai diritto a uno sconto senior.")
+else:
+    print("Accesso negato.")
+                </code></pre>
+                
+                <h2>🔹 Best Practices</h2>
+                <ul>
+                    <li>✅ Usare <code>elif</code> per evitare condizioni ridondanti</li>
+                    <li>✅ Mantenere il codice leggibile con indentazione chiara</li>
+                    <li>✅ Usare blocchi annidati solo se necessario</li>
+                    <li>❌ Evitare troppe condizioni in un unico <code>if</code></li>
+                </ul>
+                
+                <p>I blocchi <code>if-else</code> sono fondamentali per la logica nei programmi Python.</p>
+            </div>
+        </div>
+        
+        <div class="nav-buttons">
+            <button onclick="prevSlide()">&#8592; Indietro</button>
+            <button onclick="nextSlide()">Avanti &#8594;</button>
+        </div>
+    </div>
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Divide et Impera – Quick Sort</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez8_14.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez8_12.html";
+    }
+  </script>
+</head>
+<body>
+<div class="slide">
+  <h1>⚡ Divide et Impera – Esempio: Quick Sort</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+
+<h2>🎯 Problema</h2>
+<p>
+Ordinare una lista di numeri interi utilizzando Divide et Impera, con partizionamento attorno a un pivot.
+</p>
+
+<h2>🔧 Codice Python</h2>
+
+<pre><code class="language-python">def quick_sort(lista):
+    if len(lista) <= 1:
+        return lista
+
+    pivot = lista[0]
+    minori = [x for x in lista[1:] if x < pivot]
+    maggiori = [x for x in lista[1:] if x >= pivot]
+
+    return quick_sort(minori) + [pivot] + quick_sort(maggiori)
+</code></pre>
+
+<h2>📝 Analisi Divide et Impera</h2>
+<ul>
+  <li><strong>Divide:</strong> Scelgo un pivot e partiziono in minori e maggiori</li>
+  <li><strong>Conquer:</strong> Ordino ricorsivamente i due sottoproblemi</li>
+  <li><strong>Combine:</strong> Concateno risultato finale</li>
+</ul>
+
+<h2>📈 Complessità Temporale</h2>
+<ul>
+  <li>Migliore Caso (pivot centrale): O(N log N)</li>
+  <li>Medio Caso (pivot casuale): O(N log N)</li>
+  <li>Peggiore Caso (pivot minimo o massimo): O(N²)</li>
+</ul>
+
+<h2>⚔️ Confronto con Merge Sort</h2>
+
+<table>
+<tr><th>Merge Sort</th><th>Quick Sort</th></tr>
+<tr><td>O(N log N) sempre</td><td>O(N²) worst case</td></tr>
+<tr><td>Serve memoria extra</td><td>In-place possibile</td></tr>
+<tr><td>Stabile</td><td>Non stabile</td></tr>
+<tr><td>Prestazioni costanti</td><td>Molto veloce in pratica</td></tr>
+</table>
+
+<p>✅ Nella prossima slide approfondiremo l’analisi asintotica con il Teorema di Master.</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+</body>
+</html>

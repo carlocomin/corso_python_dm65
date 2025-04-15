@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Soluzioni – Tuple</title>
+  <link rel="stylesheet" href="../style.css" />
+  <script>
+    function nextSlide() {
+      window.location.href = "lez3_15.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez3_13.html";
+    }
+  </script>
+  		<link rel="stylesheet" href="../default.css">
+	<script src="../highlight.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+<body>
+  <div class="slide">
+    <h1>✅ Soluzioni – Le Tuple in Python</h1>
+<div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+</div>
+
+    <div class="content-box">
+      <div class="inner-box" style="text-align: left;">
+        <ol>
+          <li>
+            <pre><code>
+t = (1, 2, 3)
+for x in t:
+    print(x)
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+t = (1, 2, 3)
+# t[0] = 100  # ❌ Errore: TypeError: 'tuple' object does not support item assignment
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+persona = ("Anna", "Rossi", 30)
+nome, cognome, età = persona
+print(nome, cognome, età)
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+studenti = (("Luca", 25), ("Elena", 23), ("Marco", 24))
+for nome, età in studenti:
+    print(f"{nome}: {età} anni")
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+mappa = {}
+mappa[(0, 1)] = "albero"
+mappa[(1, 0)] = "roccia"
+print(mappa[(0, 1)])
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+t = (10, 20, 30)
+l = list(t)
+l[1] = 99
+t_modificata = tuple(l)
+print(t_modificata)
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+def votazione():
+    return ("Giulia", 28)
+
+nome, voto = votazione()
+print(nome, voto)
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+t = (5, 10, 15)
+if 10 in t:
+    print("10 è presente")
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+t = (1, 2, 2, 3, 2)
+print(t.count(2))   # ➜ 3
+print(t.index(3))   # ➜ 3
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+matrice = ((1, 2), (3, 4), (5, 6))
+print(matrice[2][1])  # ➜ 6
+            </code></pre>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>

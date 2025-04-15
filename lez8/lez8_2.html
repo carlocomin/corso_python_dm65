@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 8 – Esempi Classici Ricorsione</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez8_3.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez8_1.html";
+    }
+  </script>
+</head>
+<body>
+  <div class="slide">
+    <h1>📚 Lezione 8: Esempi Classici di Ricorsione</h1>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+
+    <div class="content-box">
+      <div class="inner-box">
+
+        <h2>🔢 Fibonacci Ricorsivo</h2>
+<pre><code class="language-python">def fibonacci(n):
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
+    return fibonacci(n-1) + fibonacci(n-2)
+</code></pre>
+
+        <p>⚠️ Molto inefficiente senza ottimizzazioni → tante chiamate ripetute.</p>
+
+        <h2>🔋 Potenza Ricorsiva</h2>
+<pre><code class="language-python">def potenza(base, esponente):
+    if esponente == 0:
+        return 1
+    return base * potenza(base, esponente-1)
+</code></pre>
+
+        <h2>🔍 Ricerca Binaria Ricorsiva</h2>
+<pre><code class="language-python">def ricerca_binaria(lista, x, sinistra, destra):
+    if sinistra > destra:
+        return -1  # Elemento non trovato
+    centro = (sinistra + destra) // 2
+    if lista[centro] == x:
+        return centro
+    if x < lista[centro]:
+        return ricerca_binaria(lista, x, sinistra, centro-1)
+    return ricerca_binaria(lista, x, centro+1, destra)
+</code></pre>
+
+        <h2>✅ Considerazioni</h2>
+        <ul>
+          <li>Fibonacci mostra un limite della ricorsione "naive"</li>
+          <li>Potenza e Ricerca Binaria sono esempi eccellenti di ricorsione efficiente</li>
+          <li>Ricerca Binaria funziona solo su liste ordinate!</li>
+        </ul>
+
+        <p>Nella prossima slide vedremo come ottimizzare la ricorsione con tecniche come <strong>memoizzazione</strong>.</p>
+
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>

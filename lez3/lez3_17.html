@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Set in Python</title>
+  <link rel="stylesheet" href="../style.css" />
+  <script>
+    function nextSlide() {
+      window.location.href = "lez3_18.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez3_16.html";
+    }
+  </script>
+  		<link rel="stylesheet" href="../default.css">
+	<script src="../highlight.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+<body>
+  <div class="slide">
+    <h1>🔷 I Set in Python</h1>
+<div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+</div>
+
+    <div class="content-box">
+      <div class="inner-box" style="text-align: left;">
+
+        <h2>📌 Cos'è un <code>set</code>?</h2>
+        <p>
+          Un <strong>set</strong> è una collezione <strong>non ordinata</strong> e <strong>non indicizzata</strong> di elementi unici.<br>
+          È mutabile ma non può contenere elementi modificabili (es. liste, dizionari).
+        </p>
+
+        <h2>🔹 Creazione e caratteristiche</h2>
+        <pre><code>
+s = {1, 2, 3, 2}
+print(s)  # ➜ {1, 2, 3}
+
+vuoto = set()  # Non usare {} per creare un set vuoto (crea un dizionario!)
+        </code></pre>
+
+        <h2>🔹 Aggiungere e rimuovere elementi</h2>
+        <pre><code>
+s.add(4)
+s.remove(2)
+s.discard(5)  # Non solleva errore se 5 non è presente
+        </code></pre>
+
+        <h2>🔹 Iterazione</h2>
+        <pre><code>
+for elemento in s:
+    print(elemento)
+        </code></pre>
+
+        <h2>🔹 Operazioni insiemistiche</h2>
+        <ul>
+          <li><code>s1 | s2</code> → unione</li>
+          <li><code>s1 & s2</code> → intersezione</li>
+          <li><code>s1 - s2</code> → differenza</li>
+          <li><code>s1 ^ s2</code> → differenza simmetrica</li>
+        </ul>
+
+        <h2>🔹 Altre funzioni utili</h2>
+        <ul>
+          <li><code>len(s)</code> – numero di elementi</li>
+          <li><code>in</code> – per verificare la presenza di un elemento</li>
+          <li><code>set(lista)</code> – per rimuovere i duplicati da una lista</li>
+        </ul>
+
+        <p>✅ I set sono utilissimi per verificare appartenenze, rimuovere duplicati e fare operazioni tra insiemi.</p>
+
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classe Giocatore</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez6_7.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez6_5.html";
+    }
+  </script>
+</head>
+<body>
+  <div class="slide">
+    <h1>🧍 Progetto Bandersnatch – Classe <code>Giocatore</code></h1>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+
+    <div class="content-box">
+      <div class="inner-box">
+
+        <h2>🎯 Obiettivo</h2>
+        <p>
+          Memorizzare lo stato del protagonista: nome, inventario, lucidità mentale e storico delle scelte effettuate.
+        </p>
+
+        <h2>🔧 Codice Python</h2>
+<pre><code class="language-python">class Giocatore:
+    def __init__(self, nome):
+        self.nome = nome
+        self.lucidita = 100         # Punteggio mentale (100 = stabile, 0 = psicosi)
+        self.inventario = []        # Lista di oggetti raccolti
+        self.storia_scelte = []     # Elenco delle scene attraversate
+
+    def aggiorna_lucidita(self, delta):
+        self.lucidita += delta
+        self.lucidita = max(0, min(self.lucidita, 100))  # Clamp tra 0 e 100
+
+    def aggiungi_oggetto(self, oggetto):
+        if oggetto not in self.inventario:
+            self.inventario.append(oggetto)
+
+    def registra_scelta(self, scena):
+        self.storia_scelte.append(scena)
+</code></pre>
+
+        <h2>📦 Funzionalità</h2>
+        <ul>
+          <li><strong>lucidita</strong>: può diminuire per eventi traumatici o scelte particolari</li>
+          <li><strong>inventario</strong>: oggetti raccolti durante il gioco (es. chiavi, pillole, floppy)</li>
+          <li><strong>storia_scelte</strong>: utile per finali ramificati o per loop narrativi</li>
+        </ul>
+
+        <p>🔜 Prossimo passo: creare un ciclo di gioco che usi <code>Scena</code>, <code>Scelta</code> e <code>Giocatore</code>.</p>
+
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>
+	

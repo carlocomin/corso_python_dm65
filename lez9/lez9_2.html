@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 9 – Stack</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez9_3.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez9_1.html";
+    }
+  </script>
+</head>
+<body>
+<div class="slide">
+  <h1>📚 Lezione 9: Stack (Pila)</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+
+<h2>🔎 Cos'è uno Stack?</h2>
+
+<p>
+Lo <strong>Stack</strong> è una struttura dati LIFO (Last In, First Out).<br>
+L'ultimo elemento inserito è il primo ad essere rimosso.
+</p>
+
+<h2>⚙️ Operazioni Fondamentali</h2>
+
+<ul>
+  <li><code>push(x)</code>: inserisce un elemento in cima</li>
+  <li><code>pop()</code>: rimuove e restituisce l'elemento in cima</li>
+  <li><code>peek()</code>: restituisce l'elemento in cima senza rimuoverlo</li>
+  <li><code>empty()</code>: verifica se lo stack è vuoto</li>
+</ul>
+
+<h2>💻 Implementazione in Python</h2>
+
+<p>Usiamo una lista Python per implementare uno Stack:</p>
+
+<pre><code class="language-python">stack = []
+stack.append(10)  # push
+stack.append(20)
+print(stack.pop())  # 20
+print(stack[-1])   # peek: 10
+print(len(stack) == 0)  # empty check
+</code></pre>
+
+<h2>💡 Alternativa Migliore:</h2>
+<p>Usare <code>collections.deque</code> (double-ended queue) è più efficiente:</p>
+
+<pre><code class="language-python">from collections import deque
+
+stack = deque()
+stack.append(10)
+stack.pop()
+</code></pre>
+
+<p>✅ Prossima slide: esercizi pratici sugli Stack.</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+</body>
+</html>

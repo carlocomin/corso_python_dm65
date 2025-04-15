@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scene ibride statico + LLM</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "../lez8/lez8_1.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez7_1.html";
+    }
+  </script>
+</head>
+<body>
+  <div class="slide">
+    <h1>🧬 Scene Ibride: Narrazione fissa + Dialogo LLM</h1>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+
+    <div class="content-box">
+      <div class="inner-box">
+
+        <h2>🎯 Obiettivo</h2>
+        <p>
+          Creare scene con <strong>descrizioni fisse</strong> e <strong>dialoghi interattivi dinamici</strong> generati da un modello LLM (es. <code>mistral</code>) tramite Ollama.
+        </p>
+
+        <h2>📜 Struttura della scena</h2>
+<pre><code class="language-python"># Descrizione narrativa fissa
+print("Ti trovi sul tetto con Colin. Il vento è forte. Ti guarda fisso negli occhi.")
+print("Colin sorride enigmatico. Sta per dire qualcosa...")
+
+# Chiedi qualcosa a Colin → risposta generata
+domanda = input("\nCosa vuoi chiedere a Colin? > ")
+risposta = dialoga_con_llm(
+    nome_pg="Colin",
+    contesto="Sei sul tetto. Colin ti parla del libero arbitrio e del multiverso.",
+    messaggio=domanda
+)
+print(f"\nCOLIN: {risposta}")
+</code></pre>
+
+        <h2>⚙️ Vantaggi del modello ibrido</h2>
+        <ul>
+          <li>✔ Narrazione strutturata e coerente</li>
+          <li>✔ Interazione realistica nei dialoghi</li>
+          <li>✔ Controllo sul flusso narrativo (le scelte restano progettate)</li>
+        </ul>
+
+        <p>✅ Ideale per scene narrative con personaggi ricorrenti, NPC o eventi chiave interattivi.</p>
+
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>

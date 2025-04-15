@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dizionari in Python</title>
+  <link rel="stylesheet" href="../style.css" />
+  <script>
+    function nextSlide() {
+      window.location.href = "lez3_16.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez3_14.html";
+    }
+  </script>
+  		<link rel="stylesheet" href="../default.css">
+	<script src="../highlight.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+<body>
+  <div class="slide">
+    <h1>🗂️ I Dizionari in Python</h1>
+<div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+</div>
+
+    <div class="content-box">
+      <div class="inner-box" style="text-align: left;">
+        <h2>📌 Cos'è un dizionario?</h2>
+        <p>Un <strong>dizionario</strong> (dict) è una collezione di <strong>coppie chiave-valore</strong>, mutabile, non ordinata (fino a Python 3.6), e indicizzata tramite chiavi.</p>
+
+        <h2>🔹 Creazione e accesso</h2>
+        <pre><code>
+persona = {
+    "nome": "Alice",
+    "età": 30,
+    "città": "Roma"
+}
+
+print(persona["nome"])  # ➜ Alice
+print(persona.get("età"))  # ➜ 30
+        </code></pre>
+
+        <h2>🔹 Aggiunta e modifica</h2>
+        <pre><code>
+persona["professione"] = "Ingegnere"
+persona["età"] = 31
+        </code></pre>
+
+        <h2>🔹 Rimozione</h2>
+        <pre><code>
+del persona["città"]
+val = persona.pop("età")
+        </code></pre>
+
+        <h2>🔹 Iterazione</h2>
+        <pre><code>
+for chiave in persona:
+    print(chiave, ":", persona[chiave])
+
+for chiave, valore in persona.items():
+    print(f"{chiave} ➜ {valore}")
+        </code></pre>
+
+        <h2>🔹 Funzioni utili</h2>
+        <ul>
+          <li><code>len(diz)</code> – numero di elementi</li>
+          <li><code>list(diz.keys())</code> – tutte le chiavi</li>
+          <li><code>list(diz.values())</code> – tutti i valori</li>
+          <li><code>list(diz.items())</code> – tutte le coppie (chiave, valore)</li>
+        </ul>
+
+        <p>✅ Le chiavi devono essere <strong>immutabili</strong> (es. stringhe, numeri, tuple), mentre i valori possono essere di qualsiasi tipo.</p>
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>

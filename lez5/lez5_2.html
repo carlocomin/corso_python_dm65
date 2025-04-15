@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classi Personalizzate in Python</title>
+    <link rel="stylesheet" href="../default.css">
+	<link rel="stylesheet" href="../style.css" />
+    <script src="../highlight.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script>
+        function nextSlide() {
+            window.location.href = "lez5_3.html";
+        }
+        function prevSlide() {
+            window.location.href = "lez5_1.html";
+        }
+    </script>
+</head>
+<body>
+    <div class="slide">
+        <h1>🔧 Classi Personalizzate in Python</h1>
+
+        <div class="nav-buttons">
+            <button onclick="prevSlide()">&#8592; Indietro</button>
+            <button onclick="nextSlide()">Avanti &#8594;</button>
+        </div>
+
+        <div class="content-box">
+            <div class="inner-box">
+
+                <p>In Python puoi creare <strong>classi personalizzate</strong> per modellare oggetti specifici, definendo sia i dati (attributi) che i comportamenti (metodi).</p>
+
+                <h2>🔹 Struttura base di una classe</h2>
+<pre><code class="language-python">class Prodotto:
+    def __init__(self, nome, prezzo):
+        self.nome = nome
+        self.prezzo = prezzo
+
+    def descrizione(self):
+        return f"{self.nome} costa {self.prezzo:.2f} €"
+</code></pre>
+
+                <h2>🔹 Creazione di oggetti (istanze)</h2>
+<pre><code class="language-python">p1 = Prodotto("Mouse", 19.99)
+p2 = Prodotto("Tastiera", 49.90)
+
+print(p1.descrizione())  # ➜ Mouse costa 19.99 €
+print(p2.descrizione())  # ➜ Tastiera costa 49.90 €</code></pre>
+
+                <h2>🔹 self e __init__</h2>
+                <ul>
+                    <li><code>self</code> fa riferimento all'istanza corrente</li>
+                    <li><code>__init__</code> è il costruttore: viene chiamato automaticamente alla creazione</li>
+                </ul>
+
+                <p>Ogni oggetto può avere valori differenti per gli attributi. I metodi accedono a questi valori tramite <code>self</code>.</p>
+
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <button onclick="prevSlide()">&#8592; Indietro</button>
+            <button onclick="nextSlide()">Avanti &#8594;</button>
+        </div>
+    </div>
+</body>
+</html>

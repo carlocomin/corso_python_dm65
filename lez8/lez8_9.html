@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Divide et Impera – Introduzione</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez8_10.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez8_8.html";
+    }
+  </script>
+</head>
+<body>
+<div class="slide">
+  <h1>⚔️ Divide et Impera – Introduzione Teorica</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+
+<h2>🎯 Cosa significa Divide et Impera?</h2>
+
+<p>
+Il paradigma Divide et Impera (Divide and Conquer) è una tecnica di progettazione algoritmica basata su 3 passaggi fondamentali:
+</p>
+
+<h2>🔧 Schema Generale</h2>
+
+<ul>
+  <li><strong>Divide:</strong> Suddividi il problema in sottoproblemi più piccoli, spesso di dimensione circa n/2.</li>
+  <li><strong>Conquer:</strong> Risolvi ricorsivamente i sottoproblemi.</li>
+  <li><strong>Combine:</strong> Combina le soluzioni dei sottoproblemi per ottenere la soluzione finale.</li>
+</ul>
+
+<h2>🔍 Quando è utile?</h2>
+
+<ul>
+  <li>Problemi che possono essere naturalmente suddivisi</li>
+  <li>Problemi con strutture simmetriche</li>
+  <li>Problemi ricorsivi ottimizzabili</li>
+</ul>
+
+<h2>📈 Esempi Classici</h2>
+
+<ul>
+  <li>Ricerca Binaria</li>
+  <li>Merge Sort</li>
+  <li>Quick Sort</li>
+  <li>Algoritmi su alberi o strutture ricorsive</li>
+</ul>
+
+<p>✅ Nella prossima slide vedremo lo schema generale di un algoritmo Divide et Impera in Python.</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+</body>
+</html>

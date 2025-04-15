@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezione 1 - Uso Avanzato di print()</title>
+    <link rel="stylesheet" href="../style.css">
+    <script>
+        function nextSlide() {
+            window.location.href = "lez1_10bis.html";
+        }
+        function prevSlide() {
+            window.location.href = "lez1_9.html";
+        }
+    </script>
+		<link rel="stylesheet" href="../default.css">
+	<script src="../highlight.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+    <h2>Menu Lezioni</h2>
+    <ul>
+        <li><a href='lez1_1.html'>Lezione 1: Introduzione</a></li>
+        <li><a href='../lez2/lez2_1.html'>Lezione 2: Strutture di Controllo</a></li>
+        <li><a href='../lez3/lez3_1.html'>Lezione 3: Liste, Tuple, Dizionari, Iteratori</a></li>
+        <li><a href='../lez4/lez4_1.html'>Lezione 4: Funzioni</a></li>
+        <li><a href='../lez5/lez5_1.html'>Lezione 5: OOP</a></li>
+		<li><a href='../lez6/lez6_1.html'>Lezione 6: Progettino Videogioco Testuale</a></li>
+		<li><a href='../lez7/lez7_1.html'>Lezione 7: Interfacciamento LLM API</a></li>
+		<li><a href='../lez8/lez8_1.html'>Lezione 8: Ricorsione e divide et impera</a></li>
+		<li><a href='../lez9/lez9_1.html'>Lezione 9: Strutture dati avanzate</a></li>
+		<li><a href='../lez10/lez10_1.html'>Lezione 10: Grafi e shortest-paths</a></li>
+		<li><a href='../lez11/lez11_1.html'>Lezione 11: Programmazione Competitiva</a></li>
+		<li><a href='../lez12/lez12_1.html'>Lezione 12: Pygame e grafica 2D</a></li>
+		<li><a href='../lez13/lez13_1.html'>Lezione 13: Mini-gioco 2D</a></li>
+		<li><a href='../lez14/lez14_1.html'>Lezione 14: Pathfinding nei videogiochi con A*</a></li>
+		<li><a href='../lez15/lez15_1.html'>Lezione 15: AI nei giochi</a></li>
+		<li><a href='../lez16/lez16_1.html'>Lezione 16: Progetto finale</a></li>
+    </ul>
+</div>
+<!-- END MENU -->
+
+
+
+
+
+
+
+    <div class="slide">
+        <h1>Lezione 1: Uso Avanzato della funzione print() in Python</h1>
+<div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+</div>
+        
+        <div class="content-box">
+            <div class="inner-box">
+                <h2>🔹 Utilizzo del parametro <code>sep</code> e <code>end</code></h2>
+                <pre><code>
+# Il parametro sep permette di specificare un separatore personalizzato tra gli elementi
+print("Python", "è", "potente", sep=" - ")  # Output: Python - è - potente
+
+# Il parametro end controlla cosa viene stampato alla fine della riga (default: "\n")
+print("Questa riga non va a capo", end=" ")
+print("ma continua sulla stessa linea.")  # Output: Questa riga non va a capo ma continua sulla stessa linea.
+                </code></pre>
+                
+                <h2>🔹 Stampa su file</h2>
+                <pre><code>
+# Scrivere l'output su un file invece che sulla console
+with open("output.txt", "w") as file:
+    print("Questo testo sarà scritto nel file", file=file)
+                </code></pre>
+                
+                <h2>🔹 Stampa con formattazione avanzata</h2>
+                <p>La funzione <code>print()</code> permette di formattare il testo in diversi modi:</p>
+                <pre><code>
+# Utilizzo delle f-string (Python 3.6+)
+nome = "Alice"
+età = 25
+print(f"Ciao, mi chiamo {nome} e ho {età} anni.")
+
+# Utilizzo del metodo format()
+print("Ciao, mi chiamo {} e ho {} anni.".format(nome, età))
+
+# Specificare la larghezza dei campi
+print("Nome: {:10} | Età: {:3}".format("Bob", 30))  # Output: Nome: Bob       | Età:  30
+                </code></pre>
+                
+                <h2>🔹 Stampa con colori e formattazione terminale</h2>
+                <p>Si possono usare codici ANSI per colorare il testo in console:</p>
+                <pre><code>
+print("\033[91mQuesto testo è rosso\033[0m")  # Codice ANSI per il rosso
+print("\033[1;34mTesto in grassetto blu\033[0m")  # Testo blu in grassetto
+                </code></pre>
+                
+                <h2>🔹 Stampa di strutture dati complesse</h2>
+                <pre><code>
+import pprint  # Pretty print per visualizzare strutture dati complesse
+
+# Dizionario con dati annidati
+dati = {
+    "nome": "Mario",
+    "età": 32,
+    "hobby": ["lettura", "programmazione", "chess"]
+}
+
+pprint.pprint(dati)  # Stampa formattata del dizionario
+                </code></pre>
+				<h2>🔹 Per ogni datatype, stampa la dimensione in bytes</h2>
+				<pre><code>
+import sys
+
+# Creiamo un dizionario con esempi di tutti i principali tipi di dato
+data_types = {
+    "int": 42,
+    "float": 3.14,
+    "bool": True,
+    "str": "Python",
+    "list": [1, 2, 3],
+    "tuple": (1, 2, 3),
+    "dict": {"a": 1, "b": 2},
+    "set": {1, 2, 3},
+    "bytes": b"Python",
+    "bytearray": bytearray(5),
+    "complex": 1 + 2j,
+    "NoneType": None
+}
+
+# Stampiamo le dimensioni in byte di ciascun tipo di dato
+for dtype, value in data_types.items():
+    print(f"{dtype:<10}: {sys.getsizeof(value)} bytes")
+				</code></pre>
+                <p>Questi strumenti rendono la funzione <code>print()</code> più potente e versatile.</p>
+            </div>
+        </div>
+        
+        <div class="nav-buttons">
+            <button onclick="prevSlide()">&#8592; Indietro</button>
+            <button onclick="nextSlide()">Avanti &#8594;</button>
+        </div>
+    </div>
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+}
+</script>
+</body>
+</html>

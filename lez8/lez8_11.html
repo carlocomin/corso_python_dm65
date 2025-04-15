@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Divide et Impera – Ricerca Binaria</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez8_12.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez8_10.html";
+    }
+  </script>
+</head>
+<body>
+<div class="slide">
+  <h1>🔎 Divide et Impera – Esempio: Ricerca Binaria</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+
+<h2>🎯 Problema</h2>
+<p>
+Data una lista ordinata, determinare se un elemento <code>x</code> è presente, usando Ricerca Binaria.
+</p>
+
+<h2>🔧 Codice Python</h2>
+
+<pre><code class="language-python">def ricerca_binaria(lista, x, sin, des):
+    if sin > des:
+        return -1  # Elemento non trovato
+
+    centro = (sin + des) // 2
+
+    if lista[centro] == x:
+        return centro
+    elif x < lista[centro]:
+        return ricerca_binaria(lista, x, sin, centro-1)
+    else:
+        return ricerca_binaria(lista, x, centro+1, des)
+</code></pre>
+
+<h2>📝 Analisi Divide et Impera</h2>
+<ul>
+  <li><strong>Divide:</strong> Divido la lista in metà ad ogni passo</li>
+  <li><strong>Conquer:</strong> Chiamata ricorsiva sulla metà rilevante</li>
+  <li><strong>Combine:</strong> Nulla da combinare (è un problema di decisione)</li>
+</ul>
+
+<h2>📈 Complessità Temporale</h2>
+<p>
+Ad ogni passo il problema si riduce di metà → Complessità: <strong>O(log N)</strong>
+</p>
+
+<p>✅ Nella prossima slide vedremo Merge Sort come esempio Divide et Impera più avanzato.</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+</body>
+</html>

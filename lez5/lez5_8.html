@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Esercizio OOP – Biblioteca</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez5_9.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez5_7.html";
+    }
+  </script>
+</head>
+<body>
+  <div class="slide">
+    <h1>📚 Esercizio OOP – Modellare una Biblioteca</h1>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+
+    <div class="content-box">
+      <div class="inner-box">
+
+        <h2>🔸 Situazione reale</h2>
+        <p>
+          Una biblioteca gestisce un insieme di libri. Ogni libro ha un titolo, un autore e uno stato (disponibile o in prestito). 
+          La biblioteca deve poter:
+        </p>
+        <ul>
+          <li>Aggiungere libri</li>
+          <li>Stampare l’elenco dei libri</li>
+          <li>Prestare un libro (cambiando lo stato)</li>
+          <li>Restituire un libro</li>
+        </ul>
+
+        <h2>🔧 Obiettivo</h2>
+        <p>
+          Modellare il problema in Python utilizzando almeno due classi: <code>Libro</code> e <code>Biblioteca</code>.
+        </p>
+
+        <h2>✅ Soluzione</h2>
+
+<pre><code class="language-python">class Libro:
+    def __init__(self, titolo, autore):
+        self.titolo = titolo
+        self.autore = autore
+        self.in_prestito = False
+
+    def __str__(self):
+        stato = "In prestito" if self.in_prestito else "Disponibile"
+        return f"{self.titolo} di {self.autore} – {stato}"
+
+class Biblioteca:
+    def __init__(self):
+        self.catalogo = []
+
+    def aggiungi_libro(self, libro):
+        self.catalogo.append(libro)
+
+    def stampa_libri(self):
+        for libro in self.catalogo:
+            print(libro)
+
+    def presta_libro(self, titolo):
+        for libro in self.catalogo:
+            if libro.titolo == titolo and not libro.in_prestito:
+                libro.in_prestito = True
+                print(f"Hai preso in prestito: {titolo}")
+                return
+        print("Libro non disponibile.")
+
+    def restituisci_libro(self, titolo):
+        for libro in self.catalogo:
+            if libro.titolo == titolo and libro.in_prestito:
+                libro.in_prestito = False
+                print(f"Hai restituito: {titolo}")
+                return
+        print("Restituzione non valida.")
+</code></pre>
+
+<pre><code class="language-python"># Esempio d’uso
+lib1 = Libro("1984", "George Orwell")
+lib2 = Libro("Il Gattopardo", "Tomasi di Lampedusa")
+
+b = Biblioteca()
+b.aggiungi_libro(lib1)
+b.aggiungi_libro(lib2)
+b.stampa_libri()
+
+b.presta_libro("1984")
+b.stampa_libri()
+b.restituisci_libro("1984")</code></pre>
+
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>

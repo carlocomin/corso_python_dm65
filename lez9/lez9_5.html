@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 9 – Queue (Coda)</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez9_6.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez9_4.html";
+    }
+  </script>
+</head>
+<body>
+<div class="slide">
+  <h1>📚 Lezione 9: Queue (Coda)</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+
+<h2>🔎 Cos'è una Queue?</h2>
+
+<p>
+La <strong>Queue</strong> (Coda) è una struttura dati FIFO (First In, First Out).<br>
+Il primo elemento inserito è il primo ad essere rimosso.
+</p>
+
+<h2>⚙️ Operazioni Fondamentali</h2>
+
+<ul>
+  <li><code>enqueue(x)</code>: inserisce un elemento in coda</li>
+  <li><code>dequeue()</code>: rimuove e restituisce l'elemento in testa</li>
+  <li><code>front()</code>: restituisce l'elemento in testa senza rimuoverlo</li>
+  <li><code>empty()</code>: verifica se la coda è vuota</li>
+</ul>
+
+<h2>💻 Implementazione in Python</h2>
+
+<p>Usiamo una lista o, meglio ancora, una <code>deque</code>:</p>
+
+<pre><code class="language-python">from collections import deque
+
+queue = deque()
+queue.append(10)   # enqueue
+queue.append(20)
+print(queue.popleft())  # dequeue
+print(queue[0])        # front
+print(len(queue) == 0) # empty check
+</code></pre>
+
+<h2>💡 Varianti delle Code</h2>
+
+<ul>
+  <li><strong>Double Ended Queue (Deque)</strong>: inserimenti/rimozioni da entrambe le estremità</li>
+  <li><strong>Coda Circolare</strong>: coda con gestione di spazio fisso (in ambienti embedded)</li>
+</ul>
+
+<p>✅ Prossima slide: esercizi pratici sulle Queue.</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+</body>
+</html>

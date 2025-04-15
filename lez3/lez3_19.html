@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lezione 3: Soluzioni – Dizionari e Set</title>
+  <link rel="stylesheet" href="../style.css" />
+  <script>
+    function nextSlide() {
+      window.location.href = "../lez4/lez4_1.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez3_18.html";
+    }
+  </script>
+  		<link rel="stylesheet" href="../default.css">
+	<script src="../highlight.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+<body>
+  <div class="slide">
+    <h1>✅ Soluzioni – Dizionari e Set</h1>
+<div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+</div>
+
+    <div class="content-box">
+      <div class="inner-box" style="text-align: left;">
+
+        <h2>📘 Dizionari</h2>
+        <ol>
+          <li>
+            <pre><code>
+voti = {"Anna": 28, "Luca": 25, "Marco": 30}
+print(voti["Luca"])
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+voti["Elena"] = 27
+voti["Anna"] = 29
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+for studente, voto in voti.items():
+    print(f"{studente}: {voto}")
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+persone = {
+    "Mario": {"età": 35, "città": "Roma"},
+    "Laura": {"età": 29, "città": "Milano"}
+}
+print(persone["Laura"]["età"])
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+def conta_lettere(frase):
+    d = {}
+    for c in frase:
+        if c.isalpha():
+            d[c] = d.get(c, 0) + 1
+    return d
+print(conta_lettere("ciao mondo"))
+            </code></pre>
+          </li>
+        </ol>
+
+        <h2>🔷 Set</h2>
+        <ol start="6">
+          <li>
+            <pre><code>
+s = {1, 2, 3}
+s.add(4)
+s.remove(2)
+print(s)
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+a = {1, 2, 3}
+b = {3, 4, 5}
+print("Unione:", a | b)
+print("Intersezione:", a & b)
+print("Differenza:", a - b)
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+s1 = {"sole", "luna", "terra"}
+s2 = {"luna", "stelle"}
+print(s1 ^ s2)
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+piccolo = {1, 2}
+grande = {1, 2, 3, 4}
+print(piccolo.issubset(grande))  # ➜ True
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+parole = ["ciao", "ciao", "mondo", "python", "mondo"]
+uniche = sorted(set(parole))
+print(uniche)
+            </code></pre>
+          </li>
+        </ol>
+
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>

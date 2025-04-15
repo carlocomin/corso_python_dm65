@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Divide et Impera – Schema Generale</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez8_11.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez8_9.html";
+    }
+  </script>
+</head>
+<body>
+<div class="slide">
+  <h1>🔧 Divide et Impera – Schema Generale in Python</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+
+<h2>⚙️ Struttura Tipica di un Algoritmo Divide et Impera</h2>
+
+<pre><code class="language-python">def solve(problema):
+    if condizione_base(problema):
+        return soluzione_triviale(problema)
+
+    sottoproblemi = divide(problema)
+
+    soluzioni = []
+    for sub in sottoproblemi:
+        soluzioni.append(solve(sub))
+
+    return combina(soluzioni)
+</code></pre>
+
+<h2>🔍 Passaggi Fondamentali</h2>
+
+<ul>
+  <li><strong>Condizione Base:</strong> Caso banale (es. lista vuota o di 1 elemento)</li>
+  <li><strong>Divide:</strong> Suddividi il problema in sottoproblemi più semplici</li>
+  <li><strong>Conquer:</strong> Risolvi i sottoproblemi ricorsivamente</li>
+  <li><strong>Combine:</strong> Unisci le soluzioni per ottenere la soluzione finale</li>
+</ul>
+
+<h2>💡 Nota Bene</h2>
+
+<p>Spesso la suddivisione dei sottoproblemi è costante (2 parti uguali), ma non sempre! QuickSort divide su pivot.</p>
+
+<p>✅ Nella prossima slide vedremo il primo esempio pratico: Ricerca Binaria.</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+</body>
+</html>

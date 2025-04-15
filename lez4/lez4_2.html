@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Funzioni – Approfondimento</title>
+  <link rel="stylesheet" href="../style.css" />
+  <script>
+    function nextSlide() {
+      window.location.href = "lez4_3.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez4_1.html";
+    }
+  </script>
+  		<link rel="stylesheet" href="../default.css">
+	<script src="../highlight.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+<body>
+  <div class="slide">
+    <h1>🧠 Funzioni in Python – Approfondimento</h1>
+<div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+</div>
+
+    <div class="content-box">
+      <div class="inner-box" style="text-align: left;">
+
+        <h2>🔹 Parametri con valore di default</h2>
+        <pre><code>
+def saluta(nome="Utente"):
+    print(f"Ciao, {nome}!")
+
+saluta("Anna")  # ➜ Ciao, Anna!
+saluta()        # ➜ Ciao, Utente!
+        </code></pre>
+
+        <h2>🔹 Argomenti con nome (keyword arguments)</h2>
+        <pre><code>
+def descrivi(nome, età):
+    print(f"{nome} ha {età} anni")
+
+descrivi(età=25, nome="Luca")
+        </code></pre>
+
+        <h2>🔹 Scope: variabili locali e globali</h2>
+        <pre><code>
+x = 10  # variabile globale
+
+def esempio():
+    x = 5  # variabile locale
+    print("Dentro la funzione:", x)
+
+esempio()
+print("Fuori dalla funzione:", x)
+        </code></pre>
+
+        <h2>🔹 Restituire più valori</h2>
+        <pre><code>
+def dati_persona():
+    return "Luca", 30
+
+nome, età = dati_persona()
+        </code></pre>
+
+        <h2>🔹 Documentazione interna (docstring)</h2>
+        <pre><code>
+def saluta():
+    """Stampa un saluto amichevole."""
+    print("Ciao!")
+        </code></pre>
+
+        <h2>✅ Buone pratiche</h2>
+        <ul>
+          <li>Dai nomi significativi a funzioni e parametri</li>
+          <li>Usa i <code>return</code> invece di <code>print()</code> se serve un risultato</li>
+          <li>Non modificare variabili globali all'interno delle funzioni</li>
+          <li>Scrivi la <code>docstring</code> per ogni funzione</li>
+        </ul>
+
+        <p>Le funzioni sono il cuore della programmazione strutturata: modularizza il tuo codice e semplifica la manutenzione!</p>
+
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 9 – Alberi Binari</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez9_15.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez9_13.html";
+    }
+  </script>
+</head>
+<body>
+<div class="slide">
+  <h1>🌳 Lezione 9: Alberi Binari</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+
+<h2>📌 Cos'è un Albero Binario?</h2>
+
+<p>
+Un <strong>Albero Binario</strong> è una struttura dati gerarchica in cui ogni nodo ha al massimo due figli: <code>sinistro</code> e <code>destro</code>.
+</p>
+
+<h2>👨‍💻 Definizione in Python</h2>
+
+<pre><code class="language-python">class Nodo:
+    def __init__(self, valore):
+        self.valore = valore
+        self.sinistro = None
+        self.destro = None
+</code></pre>
+
+<h2>🌿 Tipi di Visite Ricorsive</h2>
+
+<ul>
+  <li><strong>Preorder</strong>: radice → sinistro → destro</li>
+  <li><strong>Inorder</strong>: sinistro → radice → destro</li>
+  <li><strong>Postorder</strong>: sinistro → destro → radice</li>
+</ul>
+
+<pre><code class="language-python">def inorder(nodo):
+    if nodo:
+        inorder(nodo.sinistro)
+        print(nodo.valore)
+        inorder(nodo.destro)
+</code></pre>
+
+<h2>🛠️ Costruzione Manuale</h2>
+
+<pre><code class="language-python">root = Nodo(10)
+root.sinistro = Nodo(5)
+root.destro = Nodo(15)
+</code></pre>
+
+<p>✅ Prossima slide: esercizi pratici sugli alberi binari.</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+</body>
+</html>

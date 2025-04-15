@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 9 – Soluzioni HashMap e Set</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez9_14.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez9_12.html";
+    }
+  </script>
+</head>
+<body>
+<div class="slide">
+  <h1>🧠 Lezione 9: Soluzioni Esercizi HashMap e Set</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+
+<h2>Soluzioni Commentate</h2>
+
+<pre><code class="language-python"># 1) Conta frequenza parole
+def conta_parole(testo):
+    parole = testo.split()
+    frequenze = {}
+    for parola in parole:
+        frequenze[parola] = frequenze.get(parola, 0) + 1
+    return frequenze
+
+# 2) Numeri distinti
+def numeri_distinti(lista):
+    visti = set()
+    risultato = []
+    for num in lista:
+        if num not in visti:
+            visti.add(num)
+            risultato.append(num)
+    return risultato
+
+# 3) Anagrammi
+def anagrammi(s1, s2):
+    return sorted(s1) == sorted(s2)
+
+# Variante con dict
+def anagrammi_dict(s1, s2):
+    from collections import Counter
+    return Counter(s1) == Counter(s2)
+
+# 4) Elimina duplicati e ordina
+def elimina_duplicati(nomi):
+    return sorted(set(nomi))
+
+# 5) Intersezione e Unione di due liste
+def operazioni_insiemi(lista1, lista2):
+    a = set(lista1)
+    b = set(lista2)
+    return a & b, a | b
+</code></pre>
+
+<p>✅ Ora possiamo passare agli Alberi.</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+</body>
+</html>

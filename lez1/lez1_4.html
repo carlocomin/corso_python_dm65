@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezione 1 - Storia di Python</title>
+    <link rel="stylesheet" href="../style.css">
+    <script>
+        function nextSlide() {
+            window.location.href = "lez1_5.html";
+        }
+        function prevSlide() {
+            window.location.href = "lez1_3.html";
+        }
+    </script>
+		<link rel="stylesheet" href="../default.css">
+	<script src="../highlight.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+    <h2>Menu Lezioni</h2>
+    <ul>
+        <li><a href='lez1_1.html'>Lezione 1: Introduzione</a></li>
+        <li><a href='../lez2/lez2_1.html'>Lezione 2: Strutture di Controllo</a></li>
+        <li><a href='../lez3/lez3_1.html'>Lezione 3: Liste, Tuple, Dizionari, Iteratori</a></li>
+        <li><a href='../lez4/lez4_1.html'>Lezione 4: Funzioni</a></li>
+        <li><a href='../lez5/lez5_1.html'>Lezione 5: OOP</a></li>
+		<li><a href='../lez6/lez6_1.html'>Lezione 6: Progettino Videogioco Testuale</a></li>
+		<li><a href='../lez7/lez7_1.html'>Lezione 7: Interfacciamento LLM API</a></li>
+		<li><a href='../lez8/lez8_1.html'>Lezione 8: Ricorsione e divide et impera</a></li>
+		<li><a href='../lez9/lez9_1.html'>Lezione 9: Strutture dati avanzate</a></li>
+		<li><a href='../lez10/lez10_1.html'>Lezione 10: Grafi e shortest-paths</a></li>
+		<li><a href='../lez11/lez11_1.html'>Lezione 11: Programmazione Competitiva</a></li>
+		<li><a href='../lez12/lez12_1.html'>Lezione 12: Pygame e grafica 2D</a></li>
+		<li><a href='../lez13/lez13_1.html'>Lezione 13: Mini-gioco 2D</a></li>
+		<li><a href='../lez14/lez14_1.html'>Lezione 14: Pathfinding nei videogiochi con A*</a></li>
+		<li><a href='../lez15/lez15_1.html'>Lezione 15: AI nei giochi</a></li>
+		<li><a href='../lez16/lez16_1.html'>Lezione 16: Progetto finale</a></li>
+    </ul>
+</div>
+<!-- END MENU -->
+
+
+
+
+
+
+
+    <div class="slide">
+        <h1>Lezione 1: La Storia di Python</h1>
+<div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+</div>
+        
+        <div class="content-box">
+            <div class="inner-box">
+                <h2>🔹 Le Origini di Python</h2>
+                <p>Python è stato creato da <strong>Guido van Rossum</strong> nei tardi anni '80 nei laboratori del CWI (Centrum Wiskunde & Informatica) nei Paesi Bassi. 
+                Il linguaggio è stato concepito come successore del linguaggio ABC, con un'attenzione particolare alla leggibilità del codice e alla semplicità sintattica.</p>
+                <p>Van Rossum voleva un linguaggio che fosse facile da leggere, flessibile e adatto sia alla programmazione di sistema che allo sviluppo di applicazioni.</p>
+                
+                <h2>🔹 Il Nome Python</h2>
+                <p>Il nome "Python" non deriva dal serpente, ma dallo show comico britannico <strong>"Monty Python's Flying Circus"</strong>, di cui Guido van Rossum era un grande fan. 
+                Questo riflette l'approccio giocoso e accessibile alla programmazione che il linguaggio vuole promuovere.</p>
+                <p>Lo stesso Van Rossum ha spesso affermato di voler un linguaggio che fosse "divertente da usare", un aspetto che ha contribuito alla sua popolarità.</p>
+                
+                <h2>🔹 Le Prime Versioni</h2>
+                <ul>
+                    <li><strong>1991 - Python 1.0</strong>: 
+                        <ul>
+                            <li>Prima versione pubblica.</li>
+                            <li>Includeva gestione delle eccezioni, funzioni, moduli e tipi di dati come liste e stringhe.</li>
+                            <li>Era fortemente influenzato da ABC, ma con maggiore flessibilità.</li>
+                        </ul>
+                    </li>
+                    <li><strong>2000 - Python 2.0</strong>: 
+                        <ul>
+                            <li>Introdusse la garbage collection con conteggio dei riferimenti e il supporto per Unicode.</li>
+                            <li>Le list comprehensions furono aggiunte, migliorando la leggibilità del codice.</li>
+                            <li>Sebbene popolare, la sua gestione delle stringhe Unicode portò a problemi di compatibilità con Python 3.</li>
+                        </ul>
+                    </li>
+                    <li><strong>2008 - Python 3.0</strong>: 
+                        <ul>
+                            <li>Versione con significative modifiche, non retrocompatibile con Python 2.</li>
+                            <li>Gestione unificata delle stringhe come Unicode per evitare i problemi della versione precedente.</li>
+                            <li>Miglioramenti alla sintassi, come l'obbligo delle parentesi in <code>print()</code> e una migliore gestione della divisione tra interi.</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h2>🔹 L'Ascesa di Python</h2>
+                <p>Negli anni, Python è cresciuto enormemente, diventando il linguaggio di riferimento in molti settori:</p>
+                <ul>
+                    <li><strong>Data Science & AI</strong>: Con librerie come NumPy, Pandas, TensorFlow e PyTorch.</li>
+                    <li><strong>Cybersecurity</strong>: Utilizzato per automazione, penetration testing e analisi di malware.</li>
+                    <li><strong>Web Development</strong>: Framework come Django e Flask lo rendono potente per lo sviluppo web.</li>
+                    <li><strong>Automazione e DevOps</strong>: Strumento chiave per scripting e gestione di infrastrutture.</li>
+					<li><strong>MicroPython</strong>: Una versione leggera di Python progettata per dispositivi embedded e microcontrollori. 
+                        Supporta la programmazione su hardware a basso consumo come ESP8266 e ESP32, rendendo Python accessibile per l'IoT e i sistemi embedded.</li>
+                </ul>
+                
+                <h2>🔹 Python Oggi</h2>
+                <p>Python è oggi uno dei linguaggi più usati e amati al mondo. Grazie alla sua semplicità, alla vastissima comunità e alla potenza delle sue librerie, continua a essere un punto di riferimento nell'informatica moderna.</p>
+            </div>
+        </div>
+        
+        <div class="nav-buttons">
+            <button onclick="prevSlide()">&#8592; Indietro</button>
+            <button onclick="nextSlide()">Avanti &#8594;</button>
+        </div>
+    </div>
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+}
+</script>
+</body>
+</html>

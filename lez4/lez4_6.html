@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Soluzioni – Funzioni</title>
+  <link rel="stylesheet" href="../style.css" />
+  <script>
+    function nextSlide() {
+      window.location.href = "lez4_7.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez4_5.html";
+    }
+  </script>
+  		<link rel="stylesheet" href="../default.css">
+	<script src="../highlight.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+<body>
+  <div class="slide">
+    <h1>✅ Soluzioni – Funzioni in Python</h1>
+<div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+</div>
+
+    <div class="content-box">
+      <div class="inner-box" style="text-align: left;">
+
+        <ol>
+          <li>
+            <pre><code>
+def saluta():
+    print("Benvenuto!")
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+def quadrato(n):
+    return n * n
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+def media(a, b, c):
+    return (a + b + c) / 3
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+def descrizione(nome, età=18):
+    print(f"{nome} ha {età} anni.")
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+def pari_o_dispari(n):
+    return "pari" if n % 2 == 0 else "dispari"
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+def somma_lista(lista: list[int]) -> int:
+    return sum(lista)
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+def dati():
+    return "Luca", "Bianchi"
+
+nome, cognome = dati()
+print(nome, cognome)
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+def factorial(n):
+    risultato = 1
+    for i in range(2, n + 1):
+        risultato *= i
+    return risultato
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+def conta_lettere(s):
+    d = {}
+    for c in s:
+        if c.isalpha():
+            d[c] = d.get(c, 0) + 1
+    return d
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+def filtra_pari(lista):
+    return list(filter(lambda x: x % 2 == 0, lista))
+            </code></pre>
+          </li>
+        </ol>
+
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>

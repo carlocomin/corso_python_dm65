@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Funzioni – Type Hints</title>
+  <link rel="stylesheet" href="../style.css" />
+  <script>
+    function nextSlide() {
+      window.location.href = "lez4_4.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez4_2.html";
+    }
+  </script>
+  		<link rel="stylesheet" href="../default.css">
+	<script src="../highlight.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+<body>
+  <div class="slide">
+    <h1>🔤 Funzioni – Annotazioni di tipo (Type Hints)</h1>
+<div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+</div>
+
+    <div class="content-box">
+      <div class="inner-box" style="text-align: left;">
+
+        <h2>📌 Cosa sono?</h2>
+        <p>
+          Le <strong>annotazioni di tipo</strong> permettono di specificare il tipo previsto per i parametri e il tipo restituito da una funzione.  
+          Non sono obbligatorie e non generano errori a runtime, ma migliorano:
+        </p>
+        <ul>
+          <li>✅ la leggibilità del codice</li>
+          <li>✅ l'autocompletamento in IDE</li>
+          <li>✅ la validazione tramite strumenti esterni (es. <code>mypy</code>)</li>
+        </ul>
+
+        <h2>🔹 Sintassi base</h2>
+        <pre><code>
+def somma(a: int, b: int) -> int:
+    return a + b
+        </code></pre>
+
+        <h2>🔹 Esempi con altri tipi</h2>
+        <pre><code>
+def saluta(nome: str) -> None:
+    print(f"Ciao, {nome}!")
+
+def radice(x: float) -> float:
+    return x ** 0.5
+        </code></pre>
+
+        <h2>🔹 Più tipi complessi</h2>
+        <pre><code>
+from typing import List, Tuple, Dict
+
+def media(voti: List[int]) -> float:
+    return sum(voti) / len(voti)
+
+def coord() -> Tuple[int, int]:
+    return (10, 20)
+
+def conta_lettere(frase: str) -> Dict[str, int]:
+    ...
+        </code></pre>
+
+        <p>❗ Le annotazioni <strong>non limitano</strong> i tipi accettati: per farlo occorre scrivere controlli espliciti o usare strumenti esterni.</p>
+
+        <p>✅ Usa le type hints per rendere il codice più chiaro e affidabile!</p>
+
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>

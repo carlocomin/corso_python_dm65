@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 6 – Gioco Testuale Bandersnatch</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez6_2.html";
+    }
+    function prevSlide() {
+      window.location.href = "../lez5/lez5_15.html";
+    }
+  </script>
+</head>
+<body>
+  <div class="slide">
+    <h1>🧠 Lezione 6: Progettazione di un gioco testuale – <em>Bandersnatch Edition</em></h1>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+
+    <div class="content-box">
+		
+		<img src="bs.png"/>
+	
+      <div class="inner-box">
+
+        <h2>📜 Scenario</h2>
+        <p>
+          Il giocatore interpreta un giovane sviluppatore di videogiochi nel 1984, intento a programmare un gioco ispirato a un misterioso libro interattivo chiamato "Bandersnatch".<br>
+          Durante il gioco, il protagonista vivrà una progressiva perdita di controllo sulle proprie scelte, mettendo in discussione la realtà stessa.
+        </p>
+
+        <h2>🎯 Caso d’uso</h2>
+        <ul>
+          <li>Il giocatore effettua scelte testuali (es. "vai in ufficio", "rimani a casa") che modificano la storia.</li>
+          <li>Il gioco presenta <strong>ramificazioni narrative</strong>, loop, finali multipli e dialoghi disturbanti.</li>
+          <li>L’utente può raccogliere indizi, “rompere la quarta parete” e tentare di ottenere un finale “vero”.</li>
+        </ul>
+
+        <h2>🧱 Architettura del progetto</h2>
+        <ul>
+          <li><strong>Classe Giocatore</strong>: nome, stato mentale, scelte passate</li>
+          <li><strong>Classe Scena</strong>: descrizione, opzioni, conseguenze</li>
+          <li><strong>Classe Evento</strong>: effetti narrativi (loop, reset, glitch)</li>
+          <li><strong>Gestore della storia</strong>: coordina il flusso delle scene e tiene traccia della progressione</li>
+        </ul>
+
+        <h2>⚙️ Obiettivi didattici</h2>
+        <ul>
+          <li>Progettare classi complesse con relazioni tra oggetti</li>
+          <li>Gestire input utente, condizioni e variabili di stato</li>
+          <li>Strutturare una storia interattiva con meccaniche narrative</li>
+        </ul>
+
+        <p>👉 Nella prossima slide inizieremo a definire la struttura dati per le scene e i personaggi.</p>
+
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>

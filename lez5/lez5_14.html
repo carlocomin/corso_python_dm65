@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Esercizi OOP Avanzata</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez5_15.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez5_13.html";
+    }
+  </script>
+</head>
+<body>
+  <div class="slide">
+    <h1>🧠 Esercizi – Programmazione OOP Avanzata</h1>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+
+    <div class="content-box">
+      <div class="inner-box">
+
+        <ol>
+          <li>Definisci una classe <code>Veicolo</code> con attributi <code>marca</code> e <code>velocità</code>, e una classe <code>Auto</code> che eredita da <code>Veicolo</code> e aggiunge l'attributo <code>porte</code>.</li>
+          <li>Implementa in una classe <code>Libro</code> i metodi <code>__str__</code>, <code>__eq__</code> e <code>__len__</code>, dove <code>len</code> restituisce il numero di pagine.</li>
+          <li>Scrivi una gerarchia di classi <code>Animale</code>, <code>Cane</code> e <code>Gatto</code>, ciascuna con il metodo <code>parla()</code>, per dimostrare il polimorfismo.</li>
+          <li>Crea una classe <code>ContoBancario</code> con saldo privato e accesso controllato tramite property. Impedisci che il saldo vada sotto zero.</li>
+          <li>Progetta una classe <code>Vettore2D</code> che supporta l’operatore <code>+</code>, <code>==</code> e la stampa formattata tramite <code>__str__</code>.</li>
+          <li>Implementa una classe <code>Timer</code> che calcola il tempo trascorso tra due chiamate usando un context manager personalizzato.</li>
+          <li>Scrivi una classe base <code>Persona</code> con metodo <code>presenta()</code>, e una sottoclasse <code>Studente</code> che lo estende usando <code>super()</code>.</li>
+          <li>Definisci una classe <code>Registro</code> che mantiene un elenco di oggetti <code>Studente</code> e supporta l’accesso tramite indice (<code>__getitem__</code>).</li>
+          <li>Implementa una classe <code>Frazione</code> che sovraccarica <code>__add__</code> e <code>__str__</code>, con riduzione automatica al minimo comune divisore.</li>
+          <li>Crea una classe <code>Magazzino</code> che gestisce l’inventario tramite dizionario e permette l’uso dell’operatore <code>in</code> tramite <code>__contains__</code>.</li>
+        </ol>
+
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ricorsione e Stack di Processo</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez8_5.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez8_3.html";
+    }
+  </script>
+</head>
+<body>
+  <div class="slide">
+    <h1>📚 Ricorsione e Stack di Processo</h1>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+
+    <div class="content-box">
+      <div class="inner-box">
+
+        <h2>🧠 Cosa succede quando chiamiamo una funzione?</h2>
+        <p>
+          Ogni chiamata a funzione in Python crea un <strong>nuovo frame</strong> nello <strong>stack di processo</strong> (Call Stack).<br>
+          Lo stack tiene traccia di:
+        </p>
+        <ul>
+          <li>Valori dei parametri</li>
+          <li>Variabili locali</li>
+          <li>Indirizzo di ritorno</li>
+        </ul>
+
+        <h2>🔁 Cosa accade con la Ricorsione?</h2>
+        <p>
+          Ogni chiamata ricorsiva <strong>accumula un nuovo frame</strong> nello stack.<br>
+          Quando il caso base viene raggiunto, lo stack inizia a "scaricarsi" (return) all'indietro.
+        </p>
+
+        <h2>🎨 Schema dello Stack</h2>
+
+<pre><code class="language-text">
+Chiamata fibonacci(4)
+Stack:
+
+[fibonacci(4)]
+[fibonacci(3)]
+[fibonacci(2)]
+[fibonacci(1)] → return 1
+[fibonacci(0)] → return 0
+
+Poi:
+- fibonacci(2) ritorna 1+0=1
+- fibonacci(3) ritorna 1+1=2
+- fibonacci(4) ritorna 2+1=3
+</code></pre>
+
+        <h2>⚠️ Limite dello Stack</h2>
+        <ul>
+          <li>Python ha un limite massimo di profondità ricorsiva (default ~1000)</li>
+          <li>Si può controllare o modificare con:
+<pre><code class="language-python">import sys
+print(sys.getrecursionlimit())
+sys.setrecursionlimit(2000)
+</code></pre>
+          </li>
+        </ul>
+
+        <h2>💡 Conclusione</h2>
+        <ul>
+          <li>Ricorsione = potente, elegante ma rischiosa</li>
+          <li>Serve sempre un caso base ben progettato</li>
+          <li>Bisogna conoscere i limiti pratici dello stack</li>
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>

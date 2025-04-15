@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Costruttore, self e distruttore</title>
+    <link rel="stylesheet" href="../default.css">
+    <link rel="stylesheet" href="../style.css">
+    <script src="../highlight.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script>
+        function nextSlide() {
+            window.location.href = "lez5_4.html";
+        }
+        function prevSlide() {
+            window.location.href = "lez5_2.html";
+        }
+    </script>
+</head>
+<body>
+    <div class="slide">
+        <h1>🧠 Il Costruttore <code>__init__</code>, il parametro <code>self</code> e il Distruttore</h1>
+
+        <div class="nav-buttons">
+            <button onclick="prevSlide()">&#8592; Indietro</button>
+            <button onclick="nextSlide()">Avanti &#8594;</button>
+        </div>
+
+        <div class="content-box">
+            <div class="inner-box">
+
+                <h2>🔹 Cos'è <code>self</code>?</h2>
+                <p>
+                    <code>self</code> è un riferimento all'istanza corrente della classe.<br>
+                    Serve per accedere agli attributi e ai metodi dell'oggetto.
+                </p>
+
+<pre><code class="language-python">class Persona:
+    def __init__(self, nome):
+        self.nome = nome  # attributo dell'istanza
+
+    def saluta(self):
+        print("Ciao, sono", self.nome)
+</code></pre>
+
+                <h2>🔹 Il metodo <code>__init__</code> (costruttore)</h2>
+                <p>
+                    Il <strong>costruttore</strong> è un metodo speciale che viene chiamato automaticamente alla creazione dell'oggetto.
+                </p>
+
+<pre><code class="language-python">p = Persona("Elisa")  # __init__ viene invocato automaticamente</code></pre>
+
+                <h2>🔹 Il metodo <code>__del__</code> (distruttore)</h2>
+                <p>
+                    Il <code>__del__</code> è chiamato quando l'oggetto viene distrutto (normalmente dal garbage collector).
+                    Può essere utile per rilasciare risorse, ma il suo uso è raro.
+                </p>
+
+<pre><code class="language-python">class Risorsa:
+    def __init__(self):
+        print("Risorsa creata")
+
+    def __del__(self):
+        print("Risorsa distrutta")
+</code></pre>
+
+                <p>
+                    ⚠️ In generale, per gestire risorse in modo sicuro, si preferisce usare <code>with</code> e i context manager.
+                </p>
+
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <button onclick="prevSlide()">&#8592; Indietro</button>
+            <button onclick="nextSlide()">Avanti &#8594;</button>
+        </div>
+    </div>
+</body>
+</html>

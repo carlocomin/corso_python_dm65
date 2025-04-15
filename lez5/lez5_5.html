@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAII e gestione risorse in Python</title>
+    <link rel="stylesheet" href="../default.css">
+    <link rel="stylesheet" href="../style.css">
+    <script src="../highlight.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script>
+        function nextSlide() {
+            window.location.href = "lez5_6.html";
+        }
+        function prevSlide() {
+            window.location.href = "lez5_4.html";
+        }
+    </script>
+</head>
+<body>
+    <div class="slide">
+        <h1>🧩 RAII in C++ vs Gestione delle risorse in Python con <code>with</code></h1>
+
+        <div class="nav-buttons">
+            <button onclick="prevSlide()">&#8592; Indietro</button>
+            <button onclick="nextSlide()">Avanti &#8594;</button>
+        </div>
+
+        <div class="content-box">
+            <div class="inner-box">
+
+                <h2>🔹 C++: RAII – Resource Acquisition Is Initialization</h2>
+                <p>
+                    In C++, un oggetto può acquisire risorse (memoria, file, socket...) nel costruttore e rilasciarle nel distruttore.
+                    Quando l’oggetto esce dallo scope, il distruttore viene chiamato automaticamente.
+                </p>
+
+<pre><code class="language-cpp">void scrivi() {
+    std::ofstream file("dati.txt");
+    file << "ciao";
+} // distruttore chiamato automaticamente → file chiuso
+</code></pre>
+
+                <p>
+                    ✔ RAII garantisce la liberazione delle risorse anche in caso di eccezioni o ritorni anticipati.
+                </p>
+
+                <h2>🔹 Python: il costrutto <code>with</code></h2>
+                <p>
+                    Python non ha RAII nel senso classico, ma implementa un comportamento simile con <strong>context manager</strong> e <code>with</code>.
+                    L’oggetto deve implementare i metodi speciali <code>__enter__()</code> e <code>__exit__()</code>.
+                </p>
+
+<pre><code class="language-python">with open("dati.txt", "w") as f:
+    f.write("ciao mondo")  # il file viene automaticamente chiuso a fine blocco
+</code></pre>
+
+                <p>
+                    ✔ È la forma consigliata per aprire file, gestire socket, bloccare risorse, aprire connessioni, ecc.
+                </p>
+
+                <h2>🔹 Context manager personalizzati</h2>
+<pre><code class="language-python">class Risorsa:
+    def __enter__(self):
+        print("🟢 Risorsa acquisita")
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        print("🔴 Risorsa rilasciata")
+
+with Risorsa() as r:
+    print("...uso della risorsa...")
+</code></pre>
+
+                <h2>✅ Conclusione</h2>
+                <ul>
+                    <li>RAII è automatico in C++, tramite distruttori</li>
+                    <li>In Python il comportamento simile è ottenuto esplicitamente con <code>with</code></li>
+                    <li>La gestione delle risorse è <strong>esplicita ma sicura</strong>, anche in caso di eccezioni</li>
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <button onclick="prevSlide()">&#8592; Indietro</button>
+            <button onclick="nextSlide()">Avanti &#8594;</button>
+        </div>
+    </div>
+</body>
+</html>

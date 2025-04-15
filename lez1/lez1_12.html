@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezione 1 - Funzioni map() e split()</title>
+    <link rel="stylesheet" href="../style.css">
+    <script>
+        function nextSlide() {
+            window.location.href = "lez1_13.html";
+        }
+        function prevSlide() {
+            window.location.href = "lez1_11.html";
+        }
+    </script>
+		<link rel="stylesheet" href="../default.css">
+	<script src="../highlight.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+    <h2>Menu Lezioni</h2>
+    <ul>
+        <li><a href='lez1_1.html'>Lezione 1: Introduzione</a></li>
+        <li><a href='../lez2/lez2_1.html'>Lezione 2: Strutture di Controllo</a></li>
+        <li><a href='../lez3/lez3_1.html'>Lezione 3: Liste, Tuple, Dizionari, Iteratori</a></li>
+        <li><a href='../lez4/lez4_1.html'>Lezione 4: Funzioni</a></li>
+        <li><a href='../lez5/lez5_1.html'>Lezione 5: OOP</a></li>
+		<li><a href='../lez6/lez6_1.html'>Lezione 6: Progettino Videogioco Testuale</a></li>
+		<li><a href='../lez7/lez7_1.html'>Lezione 7: Interfacciamento LLM API</a></li>
+		<li><a href='../lez8/lez8_1.html'>Lezione 8: Ricorsione e divide et impera</a></li>
+		<li><a href='../lez9/lez9_1.html'>Lezione 9: Strutture dati avanzate</a></li>
+		<li><a href='../lez10/lez10_1.html'>Lezione 10: Grafi e shortest-paths</a></li>
+		<li><a href='../lez11/lez11_1.html'>Lezione 11: Programmazione Competitiva</a></li>
+		<li><a href='../lez12/lez12_1.html'>Lezione 12: Pygame e grafica 2D</a></li>
+		<li><a href='../lez13/lez13_1.html'>Lezione 13: Mini-gioco 2D</a></li>
+		<li><a href='../lez14/lez14_1.html'>Lezione 14: Pathfinding nei videogiochi con A*</a></li>
+		<li><a href='../lez15/lez15_1.html'>Lezione 15: AI nei giochi</a></li>
+		<li><a href='../lez16/lez16_1.html'>Lezione 16: Progetto finale</a></li>
+    </ul>
+</div>
+<!-- END MENU -->
+
+
+
+
+
+
+
+    <div class="slide">
+        <h1>Lezione 1: Funzioni <code>map()</code> e <code>split()</code> in Python</h1>
+<div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+</div>
+        
+        <div class="content-box">
+            <div class="inner-box">
+                <h2>🔹 La funzione <code>split()</code></h2>
+                <p>La funzione <code>split()</code> è usata per dividere una stringa in una lista di sottostringhe basate su un delimitatore specificato.</p>
+                <pre><code>
+# Esempio base di split()
+testo = "Python è potente e flessibile"
+parole = testo.split()
+print(parole)  # Output: ['Python', 'è', 'potente', 'e', 'flessibile']
+                </code></pre>
+                <p>Per dividere una stringa su un delimitatore specifico:</p>
+                <pre><code>
+dati = "10,20,30,40"
+numeri = dati.split(",")
+print(numeri)  # Output: ['10', '20', '30', '40']
+                </code></pre>
+                <p>Si può anche specificare il numero massimo di divisioni con <code>maxsplit</code>:</p>
+                <pre><code>
+testo = "Python è potente e flessibile"
+parole = testo.split(" ", 2)
+print(parole)  # Output: ['Python', 'è', 'potente e flessibile']
+                </code></pre>
+                
+                <h2>🔹 La funzione <code>map()</code></h2>
+                <p>La funzione <code>map()</code> applica una funzione a tutti gli elementi di un iterabile (come una lista) restituendo un iteratore.</p>
+                <pre><code>
+# Esempio di base di map()
+def quadrato(x):
+    return x ** 2
+
+numeri = [1, 2, 3, 4]
+risultati = map(quadrato, numeri)
+print(list(risultati))  # Output: [1, 4, 9, 16]
+                </code></pre>
+                <p>Un caso comune è la conversione di stringhe in numeri:</p>
+                <pre><code>
+dati = "10 20 30 40"
+numeri = list(map(int, dati.split()))
+print(numeri)  # Output: [10, 20, 30, 40]
+                </code></pre>
+                <p>Un altro esempio utile è la trasformazione di una lista di numeri in stringhe:</p>
+                <pre><code>
+numeri = [1, 2, 3, 4]
+stringhe = list(map(str, numeri))
+print(stringhe)  # Output: ['1', '2', '3', '4']
+                </code></pre>
+                <p><code>map()</code> è particolarmente utile quando combinato con <code>split()</code> per processare input utente.</p>
+            </div>
+        </div>
+        
+        <div class="nav-buttons">
+            <button onclick="prevSlide()">&#8592; Indietro</button>
+            <button onclick="nextSlide()">Avanti &#8594;</button>
+        </div>
+    </div>
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+}
+</script>
+</body>
+</html>

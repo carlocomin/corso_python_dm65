@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 8 – Soluzioni Ricorsione Avanzata</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez8_8.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez8_6.html";
+    }
+  </script>
+</head>
+<body>
+<div class="slide">
+  <h1>🧠 Lezione 8: Soluzioni Ricorsione Avanzata</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+
+<h2>Altre Soluzioni Avanzate</h2>
+
+<pre><code class="language-python"># 6) Cammini con Ostacoli
+@lru_cache(maxsize=None)
+def cammini_ostacoli(n, m, ostacoli):
+    if (n, m) in ostacoli:
+        return 0
+    if n == 0 and m == 0:
+        return 1
+    res = 0
+    if n > 0:
+        res += cammini_ostacoli(n-1, m, ostacoli)
+    if m > 0:
+        res += cammini_ostacoli(n, m-1, ostacoli)
+    return res
+
+# 7) Somma Massima in una Griglia
+def somma_max(griglia):
+    N, M = len(griglia), len(griglia[0])
+    memo = {}
+    def dp(n, m):
+        if n == 0 and m == 0:
+            return griglia[0][0]
+        if (n, m) in memo:
+            return memo[(n, m)]
+        res = float('-inf')
+        if n > 0:
+            res = max(res, dp(n-1, m))
+        if m > 0:
+            res = max(res, dp(n, m-1))
+        memo[(n, m)] = res + griglia[n][m]
+        return memo[(n, m)]
+    return dp(N-1, M-1)
+
+# 8) Knapsack (Zaino)
+def knapsack(pesi, valori, peso_max):
+    N = len(pesi)
+    memo = {}
+    def dp(i, w):
+        if i == N:
+            return 0
+        if (i, w) in memo:
+            return memo[(i, w)]
+        res = dp(i+1, w)
+        if w >= pesi[i]:
+            res = max(res, valori[i] + dp(i+1, w-pesi[i]))
+        memo[(i, w)] = res
+        return res
+    return dp(0, peso_max)
+
+# 9) Anagrammi con Restrizioni
+@lru_cache(maxsize=None)
+def conta_anagrammi(n, k):
+    if n == 0:
+        return 1
+    if n == 1:
+        return k
+    return (k-1) * (conta_anagrammi(n-1, k) + conta_anagrammi(n-2, k))
+
+# 10) Parentesi Bilanciate
+def genera_parentesi(n):
+    res = []
+    def backtrack(s, aperte, chiuse):
+        if len(s) == 2 * n:
+            res.append(s)
+            return
+        if aperte < n:
+            backtrack(s + "(", aperte+1, chiuse)
+        if chiuse < aperte:
+            backtrack(s + ")", aperte, chiuse+1)
+    backtrack("", 0, 0)
+    return res
+</code></pre>
+
+<p>✅ Tutti questi problemi ricorsivi sono classici nelle competizioni e nelle olimpiadi di informatica. Sono perfetti per esercitarsi con Python ad alto livello.</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+</body>
+</html>

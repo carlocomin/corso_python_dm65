@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezione 1 - La funzione print()</title>
+    <link rel="stylesheet" href="../style.css">
+    <script>
+        function nextSlide() {
+            window.location.href = "lez1_10.html";
+        }
+        function prevSlide() {
+            window.location.href = "lez1_8.html";
+        }
+    </script>
+		<link rel="stylesheet" href="../default.css">
+	<script src="../highlight.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+    <h2>Menu Lezioni</h2>
+    <ul>
+        <li><a href='lez1_1.html'>Lezione 1: Introduzione</a></li>
+        <li><a href='../lez2/lez2_1.html'>Lezione 2: Strutture di Controllo</a></li>
+        <li><a href='../lez3/lez3_1.html'>Lezione 3: Liste, Tuple, Dizionari, Iteratori</a></li>
+        <li><a href='../lez4/lez4_1.html'>Lezione 4: Funzioni</a></li>
+        <li><a href='../lez5/lez5_1.html'>Lezione 5: OOP</a></li>
+		<li><a href='../lez6/lez6_1.html'>Lezione 6: Progettino Videogioco Testuale</a></li>
+		<li><a href='../lez7/lez7_1.html'>Lezione 7: Interfacciamento LLM API</a></li>
+		<li><a href='../lez8/lez8_1.html'>Lezione 8: Ricorsione e divide et impera</a></li>
+		<li><a href='../lez9/lez9_1.html'>Lezione 9: Strutture dati avanzate</a></li>
+		<li><a href='../lez10/lez10_1.html'>Lezione 10: Grafi e shortest-paths</a></li>
+		<li><a href='../lez11/lez11_1.html'>Lezione 11: Programmazione Competitiva</a></li>
+		<li><a href='../lez12/lez12_1.html'>Lezione 12: Pygame e grafica 2D</a></li>
+		<li><a href='../lez13/lez13_1.html'>Lezione 13: Mini-gioco 2D</a></li>
+		<li><a href='../lez14/lez14_1.html'>Lezione 14: Pathfinding nei videogiochi con A*</a></li>
+		<li><a href='../lez15/lez15_1.html'>Lezione 15: AI nei giochi</a></li>
+		<li><a href='../lez16/lez16_1.html'>Lezione 16: Progetto finale</a></li>
+    </ul>
+</div>
+<!-- END MENU -->
+
+
+
+
+
+
+
+    <div class="slide">
+        <h1>Lezione 1: La funzione print() in Python</h1>
+<div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+</div>
+        
+        <div class="content-box">
+            <div class="inner-box">
+                <h2>🔹 Introduzione a print()</h2>
+                <p>La funzione <code>print()</code> in Python viene utilizzata per stampare output sulla console. Può gestire diversi tipi di dati e offre molte opzioni per la formattazione.</p>
+                
+                <h2>🔹 Stampa di Valori Semplici</h2>
+                <pre><code>
+print("Ciao, mondo!")  # Output: Ciao, mondo!
+print(42)  # Output: 42
+print(3.14)  # Output: 3.14
+print(True)  # Output: True
+                </code></pre>
+                
+                <h2>🔹 Stampa di più valori separati</h2>
+                <p>Puoi stampare più valori separandoli con una virgola:</p>
+                <pre><code>
+print("Il risultato è:", 10 + 5)  # Output: Il risultato è: 15
+                </code></pre>
+                
+                <h2>🔹 Parametri di print()</h2>
+                <p>La funzione <code>print()</code> accetta diversi parametri opzionali:</p>
+                <ul>
+                    <li><code>sep</code>: Definisce il separatore tra più elementi.</li>
+                    <li><code>end</code>: Definisce il terminatore della riga (di default è <code>\n</code>).</li>
+                    <li><code>file</code>: Permette di scrivere su un file invece che sulla console.</li>
+                </ul>
+                
+                <pre><code>
+print("Python", "è", "potente", sep=" - ")  # Output: Python - è - potente
+print("Stampa senza andare a capo", end=" ")
+print("Questa riga continua sulla stessa linea.")
+                </code></pre>
+                
+                <h2>🔹 Stampa Formattata</h2>
+                <p>Puoi formattare le stringhe usando <code>f-strings</code> o il metodo <code>format()</code>:</p>
+                <pre><code>
+nome = "Alice"
+età = 25
+print(f"Ciao, mi chiamo {nome} e ho {età} anni.")
+print("Ciao, mi chiamo {} e ho {} anni.".format(nome, età))
+                </code></pre>
+                
+                <h2>🔹 Scrivere l'output su un file</h2>
+                <pre><code>
+with open("output.txt", "w") as file:
+    print("Questo è un test", file=file)  # Scrive il testo nel file output.txt
+                </code></pre>
+                <p>La funzione <code>print()</code> è molto versatile e permette di gestire output in vari formati e contesti.</p>
+            </div>
+        </div>
+        
+        <div class="nav-buttons">
+            <button onclick="prevSlide()">&#8592; Indietro</button>
+            <button onclick="nextSlide()">Avanti &#8594;</button>
+        </div>
+    </div>
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+}
+</script>
+</body>
+</html>

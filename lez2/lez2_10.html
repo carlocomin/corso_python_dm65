@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezione 2 - Esercizi su Condizionali e Cicli</title>
+    <link rel="stylesheet" href="../style.css">
+    <script>
+        function nextSlide() {
+            window.location.href = "lez2_11.html";
+        }
+        function prevSlide() {
+            window.location.href = "lez2_9.html";
+        }
+    </script>
+			<link rel="stylesheet" href="../default.css">
+	<script src="../highlight.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+    <h2>Menu Lezioni</h2>
+    <ul>
+        <li><a href='../lez1/lez1_1.html'>Lezione 1: Introduzione</a></li>
+        <li><a href='lez2_1.html'>Lezione 2: Strutture di Controllo</a></li>
+        <li><a href='../lez3/lez3_1.html'>Lezione 3: Liste, Tuple, Dizionari, Iteratori</a></li>
+        <li><a href='../lez4/lez4_1.html'>Lezione 4: Funzioni</a></li>
+        <li><a href='../lez5/lez5_1.html'>Lezione 5: OOP</a></li>
+		<li><a href='../lez6/lez6_1.html'>Lezione 6: Progettino Videogioco Testuale</a></li>
+		<li><a href='../lez7/lez7_1.html'>Lezione 7: Interfacciamento LLM API</a></li>
+		<li><a href='../lez8/lez8_1.html'>Lezione 8: Ricorsione e divide et impera</a></li>
+		<li><a href='../lez9/lez9_1.html'>Lezione 9: Strutture dati avanzate</a></li>
+		<li><a href='../lez10/lez10_1.html'>Lezione 10: Grafi e shortest-paths</a></li>
+		<li><a href='../lez11/lez11_1.html'>Lezione 11: Programmazione Competitiva</a></li>
+		<li><a href='../lez12/lez12_1.html'>Lezione 12: Pygame e grafica 2D</a></li>
+		<li><a href='../lez13/lez13_1.html'>Lezione 13: Mini-gioco 2D</a></li>
+		<li><a href='../lez14/lez14_1.html'>Lezione 14: Pathfinding nei videogiochi con A*</a></li>
+		<li><a href='../lez15/lez15_1.html'>Lezione 15: AI nei giochi</a></li>
+		<li><a href='../lez16/lez16_1.html'>Lezione 16: Progetto finale</a></li>
+    </ul>
+</div>
+<!-- END MENU -->
+    <div class="slide">
+        <h1>Lezione 2: Esercizi su Condizionali e Cicli</h1>
+<div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+</div>
+        
+        <div class="content-box">
+            <div class="inner-box">
+                <h2>🔹 Blocchi Condizionali (<code>if-else</code>)</h2>
+                <ol>
+                    <li>
+                        <strong>Determinare il Quadrante di un Punto</strong><br>
+                        Chiedi all’utente di inserire le coordinate (x, y) di un punto e determina in quale quadrante cartesiano si trova.
+                    </li>
+                    <li>
+                        <strong>Verifica di un Triangolo</strong><br>
+                        Chiedi all’utente di inserire tre lunghezze e determina se possono formare un triangolo. Un triangolo è valido se la somma di ogni coppia di lati è maggiore del terzo lato.
+                    </li>
+                </ol>
+                
+                <h2>🔹 Ciclo <code>while</code></h2>
+                <ol>
+                    <li>
+                        <strong>Somma di Numeri Positivi</strong><br>
+                        Chiedi all'utente numeri interi fino a quando inserisce un numero negativo. Stampa la somma di tutti i numeri positivi inseriti.
+                    </li>
+                    <li>
+                        <strong>Indovina il Numero</strong><br>
+                        Il programma sceglie un numero casuale tra 1 e 100. L'utente deve indovinare il numero inserendo tentativi. Il programma fornisce suggerimenti: "Troppo alto", "Troppo basso", "Indovinato!".
+                    </li>
+                </ol>
+                
+                <h2>🔹 Ciclo <code>for</code></h2>
+                <ol>
+                    <li>
+                        <strong>Fattoriale di un Numero</strong><br>
+                        Chiedi un numero intero positivo all’utente e calcola il fattoriale usando un ciclo <code>for</code>.
+                    </li>
+                    <li>
+                        <strong>Stampa un Rettangolo di Asterischi</strong><br>
+                        Chiedi all’utente larghezza e altezza e stampa un rettangolo di asterischi.
+                    </li>
+                </ol>
+                
+                <h2>🔹 Esercizi Misti</h2>
+                <ol>
+                    <li>
+                        <strong>Contare le Cifre di un Numero</strong><br>
+                        Chiedi un numero intero e conta quante cifre ha, usando <code>while</code>.
+                    </li>
+                    <li>
+                        <strong>Numeri Primi</strong><br>
+                        Chiedi un numero intero <code>n</code> e determina se è un numero primo.
+                    </li>
+                    <li>
+                        <strong>Serie di Fibonacci</strong><br>
+                        Chiedi all'utente un numero <code>n</code> e stampa i primi <code>n</code> numeri della serie di Fibonacci.
+                    </li>
+                    <li>
+                        <strong>Verifica di una Password Sicura</strong><br>
+                        Chiedi all’utente di inserire una password e verifica che:
+                        <ul>
+                            <li>Contenga almeno 8 caratteri</li>
+                            <li>Contenga almeno una lettera maiuscola</li>
+                            <li>Contenga almeno un numero</li>
+                            <li>Contenga almeno un carattere speciale (<code>!@#$%^&*</code>)</li>
+                        </ul>
+                        Continua a chiedere all’utente di inserire una password fino a quando non rispetta tutti i criteri.
+                    </li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="nav-buttons">
+            <button onclick="prevSlide()">&#8592; Indietro</button>
+            <button onclick="nextSlide()">Avanti &#8594;</button>
+        </div>
+    </div>
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 6 – Albero narrativo iniziale</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez6_3.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez6_1.html";
+    }
+  </script>
+</head>
+<body>
+  <div class="slide">
+    <h1>🌳 Struttura narrativa – Inizio della storia</h1>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+
+    <div class="content-box">
+      <div class="inner-box">
+
+        <h2>🕹️ Introduzione al gioco</h2>
+        <p>
+          L’anno è il 1984. Il protagonista, uno sviluppatore solitario, si sveglia nella sua stanza con l’intenzione di lavorare al suo primo videogioco ispirato a un libro interattivo chiamato “Bandersnatch”.
+        </p>
+
+        <h2>🔀 Albero delle scelte iniziali</h2>
+
+<pre><code class="language-text">Scena: Risveglio
+  ➜ Scelta: "Vai in ufficio"
+       → Scena: Ufficio Tuckersoft
+         ➜ Scelta: "Accetta l’offerta del capo"
+              → Finale prematuro: sei sotto contratto, ma perdi il controllo creativo.
+         ➜ Scelta: "Rifiuta"
+              → Torni a casa e continui a sviluppare da solo.
+  ➜ Scelta: "Rimani a casa"
+       → Scena: Colazione con il padre
+         ➜ Scelta: "Parla del libro Bandersnatch"
+              → Il padre si mostra infastidito.
+         ➜ Scelta: "Taci"
+              → Il silenzio fa crescere l’ansia.
+</code></pre>
+
+        <h2>🎯 Struttura dati consigliata</h2>
+        <ul>
+          <li><code>Scena</code>: nome, descrizione, lista di scelte</li>
+          <li><code>Scelta</code>: testo opzione, scena successiva, effetti (opzionali)</li>
+        </ul>
+
+        <p>✅ La storia può divergere, ma anche tornare su sé stessa (loop, glitch, reset).</p>
+
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Approfondimento Tuple</title>
+  <link rel="stylesheet" href="../style.css" />
+  <script>
+    function nextSlide() {
+      window.location.href = "lez3_13.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez3_11.html";
+    }
+  </script>
+  		<link rel="stylesheet" href="../default.css">
+	<script src="../highlight.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+<body>
+  <div class="slide">
+    <h1>Lezione 3: 📦 Tuple in Python – Approfondimento</h1>
+<div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+</div>
+
+    <div class="content-box">
+      <div class="inner-box" style="text-align: left;">
+
+        <h2>🔹 Immutabilità: una protezione utile</h2>
+        <pre><code>t = (1, 2, 3)
+# t[0] = 100  ❌ Errore: TypeError!
+        </code></pre>
+        <p>✅ Perfette per dati che non devono cambiare.</p>
+
+        <h2>🔹 Tuple annidate</h2>
+        <pre><code>studenti = (
+    ("Alice", 25),
+    ("Bob", 22),
+    ("Carla", 27)
+)
+for nome, età in studenti:
+    print(f"{nome} ha {età} anni")</code></pre>
+
+        <h2>🔹 Uso come chiavi di un dizionario</h2>
+        <pre><code>coordinate = {}
+coordinate[(2, 3)] = "albero"
+coordinate[(0, 0)] = "partenza"
+print(coordinate[(2, 3)])  # ➜ albero</code></pre>
+        <p>✅ Solo oggetti immutabili possono essere usati come chiavi.</p>
+
+        <h2>🔹 Conversione tra lista e tupla</h2>
+        <pre><code>lista = [1, 2, 3]
+tupla = tuple(lista)
+lista2 = list(tupla)</code></pre>
+
+        <h2>🔹 Tuple e funzioni</h2>
+        <pre><code>def coordinate():
+    return (45.0, 12.3)
+
+lat, lon = coordinate()
+print(f"Latitudine: {lat}, Longitudine: {lon}")</code></pre>
+        <p>✅ Le tuple sono ideali per <strong>restituire più valori</strong>.</p>
+
+        <h2>📌 Ricorda</h2>
+        <ul>
+          <li>Le tuple sono <strong>ordinate</strong> e <strong>immutabili</strong></li>
+          <li>Supportano slicing, unpacking, `in`, `len()`, `count()`, `index()`</li>
+          <li>Utili in strutture dati e performance-critical code</li>
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>

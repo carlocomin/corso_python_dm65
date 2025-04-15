@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 8 – Memoizzazione Ricorsione Python</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez8_4.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez8_2.html";
+    }
+  </script>
+</head>
+<body>
+  <div class="slide">
+    <h1>💡 Lezione 8: Memoizzazione e Ricorsione Ottimizzata</h1>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+
+    <div class="content-box">
+      <div class="inner-box">
+
+        <h2>🎯 Problema delle chiamate ridondanti</h2>
+        <p>
+          Le funzioni ricorsive classiche, come Fibonacci, spesso ripetono le stesse chiamate più volte, causando rallentamenti e consumo di memoria.
+        </p>
+
+        <h2>🔧 Soluzione: Memoizzazione</h2>
+        <p>
+          Tecnica che consiste nel <strong>memorizzare i risultati già calcolati</strong> per evitare di ricalcolarli.
+        </p>
+
+        <h2>📦 Memoizzazione Manuale</h2>
+<pre><code class="language-python">memo = {}
+
+def fibonacci(n):
+    if n in memo:
+        return memo[n]
+    if n == 0:
+        risultato = 0
+    elif n == 1:
+        risultato = 1
+    else:
+        risultato = fibonacci(n-1) + fibonacci(n-2)
+    memo[n] = risultato
+    return risultato
+</code></pre>
+
+        <h2>⚙️ Memoizzazione Automatica con lru_cache</h2>
+<pre><code class="language-python">from functools import lru_cache
+
+@lru_cache(maxsize=None)
+def fibonacci(n):
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
+    return fibonacci(n-1) + fibonacci(n-2)
+</code></pre>
+
+        <h2>🚀 Vantaggi</h2>
+        <ul>
+          <li>Velocità di esecuzione migliorata drasticamente</li>
+          <li>Scrittura del codice più pulita con <code>@lru_cache</code></li>
+          <li>Perfetta per problemi combinatori, ricorsione su alberi e grafi</li>
+        </ul>
+
+        <h2>⚠️ Attenzione</h2>
+        <ul>
+          <li>Valido solo per funzioni <strong>pure</strong> (senza effetti collaterali)</li>
+          <li>Evita di usarla per funzioni che dipendono da input variabili esterni o input mutabili</li>
+        </ul>
+
+        <p>✅ Nella prossima slide vedremo esempi avanzati di utilizzo della ricorsione ottimizzata su problemi di algoritmi e competizioni.</p>
+
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>

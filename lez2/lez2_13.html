@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezione 2 - Soluzioni Esercizi Avanzati</title>
+    <link rel="stylesheet" href="../style.css">
+    <script>
+        function nextSlide() {
+            window.location.href = "lez2_14.html";
+        }
+        function prevSlide() {
+            window.location.href = "lez2_12.html";
+        }
+    </script>		
+	<link rel="stylesheet" href="../default.css">
+	<script src="../highlight.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+    <h2>Menu Lezioni</h2>
+    <ul>
+        <li><a href='../lez1/lez1_1.html'>Lezione 1: Introduzione</a></li>
+        <li><a href='lez2_1.html'>Lezione 2: Strutture di Controllo</a></li>
+        <li><a href='../lez3/lez3_1.html'>Lezione 3: Liste, Tuple, Dizionari, Iteratori</a></li>
+        <li><a href='../lez4/lez4_1.html'>Lezione 4: Funzioni</a></li>
+        <li><a href='../lez5/lez5_1.html'>Lezione 5: OOP</a></li>
+		<li><a href='../lez6/lez6_1.html'>Lezione 6: Progettino Videogioco Testuale</a></li>
+		<li><a href='../lez7/lez7_1.html'>Lezione 7: Interfacciamento LLM API</a></li>
+		<li><a href='../lez8/lez8_1.html'>Lezione 8: Ricorsione e divide et impera</a></li>
+		<li><a href='../lez9/lez9_1.html'>Lezione 9: Strutture dati avanzate</a></li>
+		<li><a href='../lez10/lez10_1.html'>Lezione 10: Grafi e shortest-paths</a></li>
+		<li><a href='../lez11/lez11_1.html'>Lezione 11: Programmazione Competitiva</a></li>
+		<li><a href='../lez12/lez12_1.html'>Lezione 12: Pygame e grafica 2D</a></li>
+		<li><a href='../lez13/lez13_1.html'>Lezione 13: Mini-gioco 2D</a></li>
+		<li><a href='../lez14/lez14_1.html'>Lezione 14: Pathfinding nei videogiochi con A*</a></li>
+		<li><a href='../lez15/lez15_1.html'>Lezione 15: AI nei giochi</a></li>
+		<li><a href='../lez16/lez16_1.html'>Lezione 16: Progetto finale</a></li>
+    </ul>
+</div>
+<!-- END MENU -->
+    <div class="slide">
+        <h1>Lezione 2: Soluzioni degli Esercizi Avanzati</h1>
+<div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+</div>
+        
+        <div class="content-box">
+            <div class="inner-box">
+                <h2>🔹 Soluzioni</h2>
+                
+                <ol>
+                    <li>
+                        <strong>Classificazione di un Triangolo</strong>
+                        <pre><code>
+a, b, c = map(float, input("Inserisci i tre lati: ").split())
+if a == b == c:
+    print("Triangolo equilatero")
+elif a == b or b == c or a == c:
+    print("Triangolo isoscele")
+else:
+    print("Triangolo scaleno")
+                        </code></pre>
+                    </li>
+                    <li>
+                        <strong>Calcolatrice Avanzata</strong>
+                        <pre><code>
+a = float(input("Inserisci il primo numero: "))
+b = float(input("Inserisci il secondo numero: "))
+operatore = input("Inserisci l'operatore (+, -, *, /, **, %): ")
+if operatore == "/" and b == 0:
+    print("Errore: divisione per zero!")
+else:
+    print("Risultato:", eval(f"{a} {operatore} {b}"))
+                        </code></pre>
+                    </li>
+                    <li>
+                        <strong>Trova il Massimo Comune Divisore (MCD)</strong>
+                        <pre><code>
+def mcd(a, b):
+    while b:
+        a, b = b, a % b
+    return a
+
+x, y = map(int, input("Inserisci due numeri: ").split())
+print("MCD:", mcd(x, y))
+                        </code></pre>
+                    </li>
+                    <li>
+                        <strong>Numero Palindromo</strong>
+                        <pre><code>
+n = input("Inserisci un numero: ")
+if n == n[::-1]:
+    print("È un numero palindromo")
+else:
+    print("Non è un numero palindromo")
+                        </code></pre>
+                    </li>
+                    <li>
+                        <strong>Stampa una Piramide di Asterischi</strong>
+                        <pre><code>
+n = int(input("Inserisci il numero di livelli: "))
+for i in range(1, n + 1):
+    print(" " * (n - i) + "*" * (2 * i - 1))
+                        </code></pre>
+                    </li>
+                    <li>
+                        <strong>Conto alla Rovescia con Timer</strong>
+                        <pre><code>
+import time
+n = int(input("Inserisci un numero per il conto alla rovescia: "))
+for i in range(n, -1, -1):
+    print(i)
+    time.sleep(1)
+                        </code></pre>
+                    </li>
+                    <li>
+                        <strong>Numeri Amici</strong>
+                        <pre><code>
+def somma_divisori(n):
+    return sum([i for i in range(1, n) if n % i == 0])
+
+a, b = map(int, input("Inserisci due numeri: ").split())
+if somma_divisori(a) == b and somma_divisori(b) == a:
+    print("Sono numeri amici")
+else:
+    print("Non sono numeri amici")
+                        </code></pre>
+                    </li>
+                    <li>
+                        <strong>Crivello di Eratostene</strong>
+                        <pre><code>
+def crivello_eratostene(n):
+    primi = [True] * (n + 1)
+    p = 2
+    while p ** 2 <= n:
+        if primi[p]:
+            for i in range(p * p, n + 1, p):
+                primi[i] = False
+        p += 1
+    return [p for p in range(2, n + 1) if primi[p]]
+
+N = int(input("Trova i numeri primi fino a: "))
+print("Numeri primi:", crivello_eratostene(N))
+                        </code></pre>
+                    </li>
+                    <li>
+                        <strong>Somma delle Cifre Pari e Dispari</strong>
+                        <pre><code>
+n = input("Inserisci un numero: ")
+somma_pari = sum(int(c) for c in n if int(c) % 2 == 0)
+somma_dispari = sum(int(c) for c in n if int(c) % 2 != 0)
+print(f"Somma cifre pari: {somma_pari}, Somma cifre dispari: {somma_dispari}")
+                        </code></pre>
+                    </li>
+                    <li>
+                        <strong>Verifica di un Anagramma</strong>
+                        <pre><code>
+parola1 = input("Inserisci la prima parola: ").lower()
+parola2 = input("Inserisci la seconda parola: ").lower()
+if sorted(parola1) == sorted(parola2):
+    print("Le parole sono anagrammi")
+else:
+    print("Le parole non sono anagrammi")
+                        </code></pre>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="nav-buttons">
+            <button onclick="prevSlide()">&#8592; Indietro</button>
+            <button onclick="nextSlide()">Avanti &#8594;</button>
+        </div>
+    </div>
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+}
+</script>
+</body>
+</html>

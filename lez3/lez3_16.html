@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dizionari – Approfondimento</title>
+  <link rel="stylesheet" href="../style.css" />
+  <script>
+    function nextSlide() {
+      window.location.href = "lez3_17.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez3_15.html";
+    }
+  </script>
+  		<link rel="stylesheet" href="../default.css">
+	<script src="../highlight.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+<body>
+  <div class="slide">
+    <h1>📘 Dizionari in Python – Approfondimento</h1>
+<div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+</div>
+
+    <div class="content-box">
+      <div class="inner-box" style="text-align: left;">
+
+        <h2>🔹 Uso del metodo <code>.get()</code> con valore di default</h2>
+        <pre><code>
+dati = {"nome": "Luca"}
+print(dati.get("età", "non specificata"))  # ➜ "non specificata"
+        </code></pre>
+
+        <h2>🔹 Iterare su chiavi ordinate</h2>
+        <pre><code>
+d = {"b": 2, "a": 1, "c": 3}
+for chiave in sorted(d):
+    print(chiave, d[chiave])
+        </code></pre>
+
+        <h2>🔹 Liste come valori</h2>
+        <pre><code>
+voti = {
+    "Anna": [28, 30],
+    "Marco": [25, 26]
+}
+media_anna = sum(voti["Anna"]) / len(voti["Anna"])
+print(media_anna)
+        </code></pre>
+
+        <h2>🔹 Dizionari annidati</h2>
+        <pre><code>
+rubrica = {
+    "Luca": {"telefono": "123", "email": "luca@example.com"},
+    "Marta": {"telefono": "456", "email": "marta@example.com"}
+}
+print(rubrica["Marta"]["email"])
+        </code></pre>
+
+        <h2>🔹 Contare occorrenze con un dizionario</h2>
+        <pre><code>
+frase = "ciao ciao mondo"
+conteggio = {}
+for lettera in frase:
+    if lettera != " ":
+        conteggio[lettera] = conteggio.get(lettera, 0) + 1
+print(conteggio)
+        </code></pre>
+
+        <h2>🔹 Unire due dizionari (Python ≥ 3.9)</h2>
+        <pre><code>
+a = {"x": 1, "y": 2}
+b = {"y": 100, "z": 3}
+c = a | b
+# ➜ {'x': 1, 'y': 100, 'z': 3}
+        </code></pre>
+
+        <p>✅ I dizionari sono ideali per gestire strutture dati complesse, lookup rapidi, e rappresentazioni di oggetti reali.</p>
+
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>

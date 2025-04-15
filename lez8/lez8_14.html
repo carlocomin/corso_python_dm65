@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teorema di Master</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez8_15.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez8_13.html";
+    }
+  </script>
+</head>
+<body>
+<div class="slide">
+  <h1>📐 Divide et Impera – Teorema di Master</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+
+<h2>📖 Forma generale di ricorrenza</h2>
+
+<pre><code class="language-text">T(n) = a · T(n/b) + Θ(nᵈ)
+</code></pre>
+
+<p>
+Dove:
+<ul>
+  <li><strong>a</strong>: numero di sottoproblemi</li>
+  <li><strong>n/b</strong>: dimensione di ciascun sottoproblema</li>
+  <li><strong>nᵈ</strong>: costo del lavoro fuori dalla ricorsione (combinazione)</li>
+</ul>
+</p>
+
+<h2>📊 Teorema di Master – Tre Casi</h2>
+
+<ul>
+  <li><strong>1. Se d &lt; log<sub>b</sub>a</strong> ⇒ T(n) = Θ(n<sup>log<sub>b</sub>a</sup>)</li>
+  <li><strong>2. Se d = log<sub>b</sub>a</strong> ⇒ T(n) = Θ(n<sup>d</sup> · log n)</li>
+  <li><strong>3. Se d &gt; log<sub>b</sub>a</strong> ⇒ T(n) = Θ(n<sup>d</sup>)</li>
+</ul>
+
+<h2>🔍 Esempi Classici</h2>
+<ul>
+  <li><strong>Merge Sort:</strong> T(n) = 2·T(n/2) + Θ(n) → log<sub>2</sub>2 = 1 = d ⇒ Θ(n log n)</li>
+  <li><strong>Binary Search:</strong> T(n) = T(n/2) + Θ(1) → log<sub>2</sub>1 = 0 = d ⇒ Θ(log n)</li>
+  <li><strong>Alg. quadratico:</strong> T(n) = 4·T(n/2) + Θ(n) → log<sub>2</sub>4 = 2 &gt; d=1 ⇒ Θ(n²)</li>
+</ul>
+
+<h2>💡 Nota Bene</h2>
+<p>
+Il Teorema di Master è applicabile solo quando i sottoproblemi sono di <strong>dimensione regolare</strong> (n/b), e il costo fuori ricorsione è una funzione polinomiale.
+</p>
+
+<p>✅ Nella prossima slide vedremo alcuni esercizi per consolidare l’analisi asintotica con Divide et Impera.</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+</body>
+</html>

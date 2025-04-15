@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operatori speciali in Python</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez5_14.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez5_12.html";
+    }
+  </script>
+</head>
+<body>
+  <div class="slide">
+    <h1>⚙️ Operatori Speciali (Metodi Magici) in Python</h1>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+
+    <div class="content-box">
+      <div class="inner-box">
+
+        <h2>🔹 Cosa sono?</h2>
+        <p>
+          Gli operatori speciali sono metodi predefiniti con doppio underscore (es. <code>__str__</code>, <code>__add__</code>) che permettono di definire il comportamento di oggetti personalizzati in operazioni comuni (stampa, confronto, somma...).
+        </p>
+
+        <h2>🔸 Alcuni metodi magici comuni</h2>
+        <ul>
+          <li><code>__init__(self)</code>: costruttore</li>
+          <li><code>__str__(self)</code>: stringa leggibile per <code>print()</code></li>
+          <li><code>__repr__(self)</code>: rappresentazione tecnica</li>
+          <li><code>__add__(self, other)</code>: somma con <code>+</code></li>
+          <li><code>__eq__(self, other)</code>: confronto con <code>==</code></li>
+          <li><code>__len__(self)</code>: usato da <code>len(obj)</code></li>
+        </ul>
+
+        <h2>🔧 Esempio pratico</h2>
+<pre><code class="language-python">class Punto:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __str__(self):
+        return f"Punto({self.x}, {self.y})"
+
+    def __add__(self, other):
+        return Punto(self.x + other.x, self.y + other.y)
+
+    def __eq__(self, other):
+        return self.x == other.x and self.y == other.y
+
+p1 = Punto(1, 2)
+p2 = Punto(3, 4)
+p3 = p1 + p2  # chiama __add__
+print(p3)     # ➜ Punto(4, 6)
+print(p1 == p2)  # ➜ False
+</code></pre>
+
+        <p>
+          ✔ Questi metodi permettono di rendere gli oggetti personalizzati più integrati con il linguaggio.
+        </p>
+
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>

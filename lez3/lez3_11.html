@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tuple in Python</title>
+  <link rel="stylesheet" href="../style.css" />
+  <script>
+    function nextSlide() {
+      window.location.href = "lez3_12.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez3_10.html";
+    }
+  </script>
+  		<link rel="stylesheet" href="../default.css">
+	<script src="../highlight.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+<body>
+  <div class="slide">
+    <h1>Lezione 3: 📦 Le Tuple in Python</h1>
+<div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+</div>
+
+    <div class="content-box">
+      <div class="inner-box" style="text-align: left;">
+        
+        <h2>📌 Cos'è una tupla?</h2>
+        <p>Una <strong>tupla</strong> è una struttura dati immutabile e ordinata. È simile a una lista, ma una volta creata <strong>non può essere modificata</strong>.</p>
+
+        <h2>🔹 Creazione di una tupla</h2>
+        <pre><code>t = (1, 2, 3)
+vuota = ()
+singola = (42,)  # Importante la virgola!
+mista = ("ciao", 3.14, True)</code></pre>
+
+        <h2>🔹 Accesso agli elementi</h2>
+        <pre><code>print(t[0])  # ➜ 1
+print(t[-1])  # ➜ 3
+print(t[1:])  # ➜ (2, 3)</code></pre>
+
+        <h2>🔹 Iterazione su una tupla</h2>
+        <pre><code>for elemento in t:
+    print(elemento)</code></pre>
+
+        <h2>🔹 Tuple e unpacking</h2>
+        <pre><code>x, y, z = t
+print(x, y, z)  # ➜ 1 2 3</code></pre>
+
+        <h2>🔹 Usi comuni delle tuple</h2>
+        <ul>
+          <li>Restituire più valori da una funzione</li>
+          <li>Chiavi immutabili in un dizionario</li>
+          <li>Protezione da modifiche accidentali</li>
+        </ul>
+
+        <p>✅ Le tuple occupano meno memoria delle liste e sono più veloci da attraversare.</p>
+
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programmazione OOP in Python</title>
+    <link rel="stylesheet" href="../default.css">
+	<link rel="stylesheet" href="../style.css" />
+    <script src="../highlight.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script>
+        function nextSlide() {
+            window.location.href = "lez5_2.html";
+        }
+        function prevSlide() {
+            window.location.href = "../lez4/lez4_7.html";
+        }
+    </script>
+</head>
+<body>
+    <div class="slide">
+        <h1>Lezione 5: Programmazione a Oggetti (OOP) in Python</h1>
+
+        <div class="nav-buttons">
+            <button onclick="prevSlide()">&#8592; Indietro</button>
+            <button onclick="nextSlide()">Avanti &#8594;</button>
+        </div>
+
+        <div class="content-box">
+            <div class="inner-box">
+                <p>
+                    Python supporta lo stile di <strong>programmazione a oggetti</strong>, un paradigma che permette di modellare concetti del mondo reale usando <em>oggetti</em>, ognuno dei quali ha <strong>stato</strong> (dati) e <strong>comportamenti</strong> (metodi).
+                </p>
+
+                <h2>🔹 Concetti chiave della OOP</h2>
+                <ul>
+                    <li><strong>Classe</strong>: modello astratto che definisce attributi e metodi comuni</li>
+                    <li><strong>Oggetto</strong>: istanza concreta di una classe</li>
+                    <li><strong>Attributi</strong>: variabili associate all’oggetto</li>
+                    <li><strong>Metodi</strong>: funzioni definite nella classe</li>
+                    <li><strong>Costruttore</strong>: metodo speciale <code>__init__</code> per inizializzare l’oggetto</li>
+                    <li><strong>Encapsulation</strong>, <strong>Inheritance</strong>, <strong>Polymorphism</strong></li>
+                </ul>
+
+                <h2>🔹 Esempio minimale</h2>
+<pre><code class="language-python">class Persona:
+    def __init__(self, nome):
+        self.nome = nome
+
+    def saluta(self):
+        print(f"Ciao, sono {self.nome}!")
+
+p = Persona("Anna")
+p.saluta()  # ➜ Ciao, sono Anna!</code></pre>
+
+                <p>
+                    Nelle prossime slide vedremo nel dettaglio ciascuno di questi concetti, con esempi pratici ed esercizi.
+                </p>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <button onclick="prevSlide()">&#8592; Indietro</button>
+            <button onclick="nextSlide()">Avanti &#8594;</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezione 2 - Soluzioni Esercizi</title>
+    <link rel="stylesheet" href="../style.css">
+    <script>
+        function nextSlide() {
+            window.location.href = "lez2_12.html";
+        }
+        function prevSlide() {
+            window.location.href = "lez2_10.html";
+        }
+    </script>
+			<link rel="stylesheet" href="../default.css">
+	<script src="../highlight.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+    <h2>Menu Lezioni</h2>
+    <ul>
+        <li><a href='../lez1/lez1_1.html'>Lezione 1: Introduzione</a></li>
+        <li><a href='lez2_1.html'>Lezione 2: Strutture di Controllo</a></li>
+        <li><a href='../lez3/lez3_1.html'>Lezione 3: Liste, Tuple, Dizionari, Iteratori</a></li>
+        <li><a href='../lez4/lez4_1.html'>Lezione 4: Funzioni</a></li>
+        <li><a href='../lez5/lez5_1.html'>Lezione 5: OOP</a></li>
+		<li><a href='../lez6/lez6_1.html'>Lezione 6: Progettino Videogioco Testuale</a></li>
+		<li><a href='../lez7/lez7_1.html'>Lezione 7: Interfacciamento LLM API</a></li>
+		<li><a href='../lez8/lez8_1.html'>Lezione 8: Ricorsione e divide et impera</a></li>
+		<li><a href='../lez9/lez9_1.html'>Lezione 9: Strutture dati avanzate</a></li>
+		<li><a href='../lez10/lez10_1.html'>Lezione 10: Grafi e shortest-paths</a></li>
+		<li><a href='../lez11/lez11_1.html'>Lezione 11: Programmazione Competitiva</a></li>
+		<li><a href='../lez12/lez12_1.html'>Lezione 12: Pygame e grafica 2D</a></li>
+		<li><a href='../lez13/lez13_1.html'>Lezione 13: Mini-gioco 2D</a></li>
+		<li><a href='../lez14/lez14_1.html'>Lezione 14: Pathfinding nei videogiochi con A*</a></li>
+		<li><a href='../lez15/lez15_1.html'>Lezione 15: AI nei giochi</a></li>
+		<li><a href='../lez16/lez16_1.html'>Lezione 16: Progetto finale</a></li>
+    </ul>
+</div>
+<!-- END MENU -->
+    <div class="slide">
+        <h1>Lezione 2: Soluzioni degli Esercizi</h1>
+<div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+</div>
+        
+        <div class="content-box">
+            <div class="inner-box">
+                <h2>🔹 Soluzioni</h2>
+                
+                <ol>
+                    <li>
+                        <strong>Determinare il Quadrante di un Punto</strong>
+                        <pre><code>
+x = float(input("Inserisci la coordinata x: "))
+y = float(input("Inserisci la coordinata y: "))
+if x > 0 and y > 0:
+    print("Primo quadrante")
+elif x < 0 and y > 0:
+    print("Secondo quadrante")
+elif x < 0 and y < 0:
+    print("Terzo quadrante")
+elif x > 0 and y < 0:
+    print("Quarto quadrante")
+else:
+    print("Il punto è sull'asse o nell'origine")
+                        </code></pre>
+                    </li>
+                    <li>
+                        <strong>Verifica di un Triangolo</strong>
+                        <pre><code>
+a = float(input("Inserisci il primo lato: "))
+b = float(input("Inserisci il secondo lato: "))
+c = float(input("Inserisci il terzo lato: "))
+if a + b > c and a + c > b and b + c > a:
+    print("È un triangolo valido")
+else:
+    print("Non è un triangolo valido")
+                        </code></pre>
+                    </li>
+                    <li>
+                        <strong>Somma di Numeri Positivi</strong>
+                        <pre><code>
+somma = 0
+while True:
+    num = int(input("Inserisci un numero: "))
+    if num < 0:
+        break
+    somma += num
+print("Somma totale:", somma)
+                        </code></pre>
+                    </li>
+                    <li>
+                        <strong>Indovina il Numero</strong>
+                        <pre><code>
+import random
+numero_segreto = random.randint(1, 100)
+while True:
+    tentativo = int(input("Indovina il numero: "))
+    if tentativo > numero_segreto:
+        print("Troppo alto!")
+    elif tentativo < numero_segreto:
+        print("Troppo basso!")
+    else:
+        print("Indovinato!")
+        break
+                        </code></pre>
+                    </li>
+                    <li>
+                        <strong>Fattoriale di un Numero</strong>
+                        <pre><code>
+n = int(input("Inserisci un numero: "))
+fattoriale = 1
+for i in range(1, n+1):
+    fattoriale *= i
+print("Fattoriale:", fattoriale)
+                        </code></pre>
+                    </li>
+                    <li>
+                        <strong>Stampa un Rettangolo di Asterischi</strong>
+                        <pre><code>
+larghezza = int(input("Inserisci la larghezza: "))
+altezza = int(input("Inserisci l'altezza: "))
+for _ in range(altezza):
+    print("*" * larghezza)
+                        </code></pre>
+                    </li>
+                    <li>
+                        <strong>Contare le Cifre di un Numero</strong>
+                        <pre><code>
+n = int(input("Inserisci un numero: "))
+cifre = 0
+while n > 0:
+    n //= 10
+    cifre += 1
+print("Numero di cifre:", cifre)
+                        </code></pre>
+                    </li>
+                    <li>
+                        <strong>Numeri Primi</strong>
+                        <pre><code>
+n = int(input("Inserisci un numero: "))
+if n > 1:
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            print("Non è un numero primo")
+            break
+    else:
+        print("È un numero primo")
+else:
+    print("Non è un numero primo")
+                        </code></pre>
+                    </li>
+                    <li>
+                        <strong>Serie di Fibonacci</strong>
+                        <pre><code>
+n = int(input("Quanti numeri della serie di Fibonacci vuoi?: "))
+a, b = 0, 1
+for _ in range(n):
+    print(a, end=" ")
+    a, b = b, a + b
+                        </code></pre>
+                    </li>
+                    <li>
+                        <strong>Verifica di una Password Sicura</strong>
+                        <pre><code>
+import re
+while True:
+    password = input("Inserisci la password: ")
+    if (len(password) >= 8 and
+        any(c.isupper() for c in password) and
+        any(c.isdigit() for c in password) and
+        re.search(r"[!@#$%^&*]", password)):
+        print("Password accettata")
+        break
+    else:
+        print("Password non sicura, riprova.")
+                        </code></pre>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="nav-buttons">
+            <button onclick="prevSlide()">&#8592; Indietro</button>
+            <button onclick="nextSlide()">Avanti &#8594;</button>
+        </div>
+    </div>
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+}
+</script>
+</body>
+</html>

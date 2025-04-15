@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classe Scelta</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez6_6.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez6_4.html";
+    }
+  </script>
+</head>
+<body>
+  <div class="slide">
+    <h1>🔗 Progetto Bandersnatch – Classe <code>Scelta</code></h1>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+
+    <div class="content-box">
+      <div class="inner-box">
+
+        <h2>🎯 Obiettivo</h2>
+        <p>
+          Rappresentare una singola scelta effettuabile dal giocatore in una scena.<br>
+          Ogni scelta può condurre a una scena successiva e avere un eventuale effetto (finale, loop...).
+        </p>
+
+        <h2>🔧 Codice Python</h2>
+<pre><code class="language-python">class Scelta:
+    def __init__(self, testo, scena_destinazione=None, effetto=None):
+        self.testo = testo                          # Testo visibile al giocatore
+        self.scena_destinazione = scena_destinazione  # Nome della prossima scena (str)
+        self.effetto = effetto                      # Opzionale: 'finale', 'loop', 'glitch', ecc.
+</code></pre>
+
+        <h2>🧩 Integrazione</h2>
+        <p>Ogni <code>Scena</code> contiene una lista di oggetti <code>Scelta</code> come opzioni disponibili.</p>
+
+        <h2>📦 Esempio</h2>
+<pre><code class="language-python">s1 = Scena("inizio", "Ti svegli. Cosa vuoi fare?")
+s1.aggiungi_scelta(Scelta("Vai in ufficio", "ufficio"))
+s1.aggiungi_scelta(Scelta("Rimani a casa", "casa"))</code></pre>
+
+        <p>🔜 Ora possiamo iniziare a costruire l'albero narrativo usando oggetti <code>Scena</code> e <code>Scelta</code>.</p>
+
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>

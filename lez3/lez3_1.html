@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezione 3 - Le Liste in Python</title>
+    <link rel="stylesheet" href="../style.css">
+    <script>
+        function nextSlide() {
+            window.location.href = "lez3_2.html";
+        }
+        function prevSlide() {
+            window.location.href = "../lez2/lez2_14.html";
+        }
+    </script>
+			<link rel="stylesheet" href="../default.css">
+	<script src="../highlight.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+<body>
+    <div class="slide">
+        <h1>Lezione 3: Le Liste in Python</h1>
+<div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+</div>
+
+        <div class="content-box">
+            <div class="inner-box">
+                <h2>🔹 Cosa sono le Liste?</h2>
+                <p>Una <strong>lista</strong> in Python è una collezione ordinata e mutabile di elementi, delimitata da parentesi quadre <code>[]</code>.</p>
+                <pre><code>
+frutti = ["mela", "banana", "ciliegia"]
+print(frutti[0])  # Output: mela
+                </code></pre>
+
+                <h2>🔹 Operazioni Fondamentali</h2>
+                <ul>
+                    <li>✅ Creazione: <code>lista = []</code> o <code>lista = list()</code></li>
+                    <li>✅ Accesso: <code>lista[indice]</code></li>
+                    <li>✅ Modifica: <code>lista[indice] = nuovo_valore</code></li>
+                    <li>✅ Lunghezza: <code>len(lista)</code></li>
+                </ul>
+
+                <h2>🔹 Metodi Utili delle Liste</h2>
+                <pre><code>
+lista.append("nuovo")    # Aggiunge alla fine
+lista.insert(1, "x")     # Inserisce in posizione 1
+lista.remove("x")        # Rimuove la prima occorrenza
+val = lista.pop()         # Rimuove e restituisce l'ultimo elemento
+indice = lista.index("x")# Trova la posizione di "x"
+lista.sort()              # Ordina la lista
+lista.reverse()           # Inverte l'ordine
+                </code></pre>
+
+                <h2>🔹 Iterare su una Lista</h2>
+                <pre><code>
+for elemento in lista:
+    print(elemento)
+                </code></pre>
+
+                <h2>🔹 Slice e Copie</h2>
+                <pre><code>
+sublista = lista[1:4]      # Dal secondo al quarto elemento
+copia = lista[:]          # Copia completa
+lista[:3] = ["a", "b", "c"] # Sostituzione via slice
+                </code></pre>
+
+                <h2>🔹 Liste Annidate</h2>
+                <pre><code>
+matrice = [[1, 2], [3, 4], [5, 6]]
+print(matrice[1][0])  # Output: 3
+                </code></pre>
+
+                <h2>🔹 Tipi Misti e Liste Vuote</h2>
+                <pre><code>
+mista = [1, "ciao", True, 3.14]
+v = []  # Lista vuota
+                </code></pre>
+
+                <h2>🔹 Best Practices</h2>
+                <ul>
+                    <li>✅ Usa <code>append()</code> per costruire una lista dinamicamente.</li>
+                    <li>✅ Evita modifiche durante l'iterazione.</li>
+                    <li>✅ Preferisci <code>in</code> per verificare la presenza di un elemento.</li>
+                </ul>
+
+                <p>Le liste sono uno strumento fondamentale per la gestione di collezioni di dati in Python!</p>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <button onclick="prevSlide()">&#8592; Indietro</button>
+            <button onclick="nextSlide()">Avanti &#8594;</button>
+        </div>
+    </div>
+</body>
+</html>

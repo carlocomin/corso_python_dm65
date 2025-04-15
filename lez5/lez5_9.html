@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ereditarietà in Python</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez5_10.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez5_8.html";
+    }
+  </script>
+</head>
+<body>
+  <div class="slide">
+    <h1>🧬 Ereditarietà in Python</h1>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+
+    <div class="content-box">
+      <div class="inner-box">
+
+        <h2>🔹 Cos'è l'ereditarietà?</h2>
+        <p>
+          L’<strong>ereditarietà</strong> è un meccanismo della programmazione a oggetti che permette di creare una nuova classe (detta <em>classe derivata</em> o <em>sottoclasse</em>) a partire da una classe esistente (detta <em>superclasse</em> o <em>base</em>), riutilizzandone attributi e metodi.
+        </p>
+
+        <h2>🔸 In Python</h2>
+        <ul>
+          <li>La sintassi è semplice: <code>class Figlia(Base):</code></li>
+          <li>Le sottoclassi possono <strong>aggiungere</strong> o <strong>sovrascrivere</strong> metodi</li>
+          <li>È possibile richiamare il costruttore della superclasse con <code>super()</code></li>
+        </ul>
+
+        <h2>🔧 Esempio base</h2>
+<pre><code class="language-python">class Animale:
+    def __init__(self, nome):
+        self.nome = nome
+
+    def parla(self):
+        print("Questo animale fa un verso generico.")
+
+class Cane(Animale):
+    def parla(self):
+        print(f"{self.nome} dice: Bau!")
+
+class Gatto(Animale):
+    def parla(self):
+        print(f"{self.nome} dice: Miao!")
+
+fido = Cane("Fido")
+fido.parla()  # ➜ Fido dice: Bau!
+
+micio = Gatto("Micio")
+micio.parla()  # ➜ Micio dice: Miao!
+</code></pre>
+
+        <h2>🔹 Uso di <code>super()</code></h2>
+<pre><code class="language-python">class Persona:
+    def __init__(self, nome):
+        self.nome = nome
+
+class Studente(Persona):
+    def __init__(self, nome, matricola):
+        super().__init__(nome)
+        self.matricola = matricola
+</code></pre>
+
+        <p>✔ Python supporta anche l’<strong>ereditarietà multipla</strong>, ma va usata con attenzione (risoluzione MRO).</p>
+
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>

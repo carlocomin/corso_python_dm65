@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Incapsulamento e visibilità</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez5_7.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez5_5.html";
+    }
+  </script>
+</head>
+<body>
+  <div class="slide">
+    <h1>🔒 Incapsulamento e visibilità in Python</h1>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+
+    <div class="content-box">
+      <div class="inner-box">
+
+        <h2>🔹 Cos'è l'incapsulamento?</h2>
+        <p>
+          È il principio OOP secondo cui lo stato interno di un oggetto dovrebbe essere nascosto
+          e accessibile solo tramite metodi pubblici (interfaccia controllata).
+        </p>
+
+        <h2>🔸 In C++</h2>
+        <p>La visibilità è esplicita: ogni membro può essere <code>public</code>, <code>protected</code> o <code>private</code>.</p>
+
+<pre><code class="language-cpp">class Conto {
+private:
+    double saldo;
+public:
+    void deposita(double x) { saldo += x; }
+};</code></pre>
+
+        <h2>🔸 In Python</h2>
+        <p>
+          Python non ha veri modificatori di accesso. La visibilità è <strong>convenzionale</strong>:
+        </p>
+        <ul>
+          <li><code>variabile</code> → pubblica</li>
+          <li><code>_variabile</code> → protetta (convenzione)</li>
+          <li><code>__variabile</code> → "privata" (name mangling)</li>
+        </ul>
+
+<pre><code class="language-python">class Conto:
+    def __init__(self):
+        self.saldo = 0           # pubblico
+        self._log = []           # protetto (convenzione)
+        self.__pin = "1234"      # "privato" (name mangling)
+
+    def deposita(self, x):
+        self.saldo += x</code></pre>
+
+        <h2>🔹 Note importanti</h2>
+        <ul>
+          <li>Python non impedisce l'accesso diretto: <code>obj._log</code> e <code>obj._Classe__pin</code> sono comunque accessibili.</li>
+          <li>Il controllo dell’accesso è basato sulla fiducia e sulla leggibilità, non sull’enforcement.</li>
+        </ul>
+
+        <p>✔ In Python si privilegia la trasparenza e la responsabilità del programmatore rispetto alla rigidità sintattica.</p>
+
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>

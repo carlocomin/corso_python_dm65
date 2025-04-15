@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 8 – Ricorsione in Python</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez8_2.html";
+    }
+    function prevSlide() {
+      window.location.href = "../lez7/lez7_2.html";
+    }
+  </script>
+</head>
+<body>
+  <div class="slide">
+    <h1>🔄 Lezione 8: Ricorsione in Python</h1>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+
+    <div class="content-box">
+      <div class="inner-box">
+
+        <h2>🎯 Cos'è la Ricorsione?</h2>
+        <p>
+          Una funzione è <strong>ricorsiva</strong> quando si richiama da sola durante la propria esecuzione.<br>
+          È un concetto fondamentale nella programmazione, soprattutto nella risoluzione di problemi complessi in modo elegante e naturale.
+        </p>
+
+        <h2>🧩 Struttura tipica di una funzione ricorsiva</h2>
+        <ul>
+          <li><strong>Caso base</strong>: condizione di arresto (senza di essa la funzione diventerebbe infinita)</li>
+          <li><strong>Passo ricorsivo</strong>: la funzione richiama se stessa con un parametro più "semplice"</li>
+        </ul>
+
+        <h2>🔧 Esempio classico</h2>
+<pre><code class="language-python">def fattoriale(n):
+    if n == 0:
+        return 1               # Caso base
+    return n * fattoriale(n-1) # Passo ricorsivo
+</code></pre>
+
+        <h2>⚠️ Considerazioni importanti</h2>
+        <ul>
+          <li>La ricorsione usa lo <strong>stack delle chiamate</strong>: ogni funzione chiamata aspetta il ritorno di quella successiva</li>
+          <li>In Python esiste un limite massimo di ricorsione (di default circa 1000)</li>
+          <li>Non sempre la ricorsione è efficiente → quando possibile, è meglio usarla in modo controllato o affiancarla a tecniche iterative/memorizzazione</li>
+        </ul>
+
+        <p>✅ Nella prossima slide vedremo esempi più complessi e ricorrenti: Fibonacci, Potenza, Ricerca Binaria.</p>
+
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>

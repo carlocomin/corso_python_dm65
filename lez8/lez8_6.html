@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 8 – Soluzioni Ricorsione</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez8_7.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez8_5.html";
+    }
+  </script>
+</head>
+<body>
+<div class="slide">
+  <h1>🔍 Lezione 8: Soluzioni Esercizi Ricorsione e Memoizzazione</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+
+      <h2>Soluzioni selezionate</h2>
+
+<pre><code class="language-python"># 1) Conteggio Partizioni
+from functools import lru_cache
+
+@lru_cache(maxsize=None)
+def partizioni(n, max_somma):
+    if n == 0:
+        return 1
+    if n < 0 or max_somma == 0:
+        return 0
+    return partizioni(n - max_somma, max_somma) + partizioni(n, max_somma - 1)
+
+# 2) Cammini in Griglia NxM
+@lru_cache(maxsize=None)
+def cammini(n, m):
+    if n == 0 or m == 0:
+        return 1
+    return cammini(n-1, m) + cammini(n, m-1)
+
+# 3) Minimo Numero di Monete
+def min_monete(valore, monete):
+    memo = {}
+    def dp(v):
+        if v == 0:
+            return 0
+        if v in memo:
+            return memo[v]
+        res = float('inf')
+        for coin in monete:
+            if v >= coin:
+                res = min(res, 1 + dp(v - coin))
+        memo[v] = res
+        return res
+    return dp(valore)
+
+# 4) Longest Common Subsequence (LCS)
+@lru_cache(maxsize=None)
+def lcs(s1, s2):
+    if not s1 or not s2:
+        return 0
+    if s1[0] == s2[0]:
+        return 1 + lcs(s1[1:], s2[1:])
+    return max(lcs(s1[1:], s2), lcs(s1, s2[1:]))
+
+# 5) Palindrome Partitioning
+@lru_cache(maxsize=None)
+def min_cut(s):
+    if s == s[::-1]:
+        return 0
+    res = len(s)-1
+    for i in range(1, len(s)):
+        if s[:i] == s[:i][::-1]:
+            res = min(res, 1 + min_cut(s[i:]))
+    return res
+</code></pre>
+
+<p>✅ Prossima slide: Altri esercizi avanzati (Knapsack, Cammini con ostacoli, Parenthesi Bilanciate).</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ricorsione: Best Practices</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez8_9.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez8_7.html";
+    }
+  </script>
+</head>
+<body>
+<div class="slide">
+  <h1>🚀 Best Practices – Ricorsione & Programmazione Dinamica</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+
+      <h2>⚠️ Quando usare la Ricorsione</h2>
+      <ul>
+        <li>Quando il problema è naturalmente divisibile in sottoproblemi</li>
+        <li>Quando ogni sottoproblema è simile all'originale (stessa struttura)</li>
+        <li>Quando la profondità dello stack rimane ragionevole (&lt; 1000 in Python)</li>
+      </ul>
+
+      <h2>💾 Quando usare Memoizzazione</h2>
+      <ul>
+        <li>Quando i sottoproblemi sono molti ma ripetuti</li>
+        <li>Problemi con sovrapposizione di sottoproblemi</li>
+        <li>Uso di <code>@lru_cache</code> per funzioni pure e semplici</li>
+        <li>Oppure dizionario/matrice per problemi più complessi</li>
+      </ul>
+
+      <h2>📊 Quando preferire Tabulazione (DP Bottom-Up)</h2>
+      <ul>
+        <li>Problemi che possono essere risolti iterativamente</li>
+        <li>Quando si vuole evitare problemi di stack overflow</li>
+        <li>Quando lo stato del problema è facilmente indicizzabile</li>
+      </ul>
+
+      <h2>🔁 Schema di Riferimento</h2>
+<pre><code class="language-text">
+Se il problema è ricorsivo:
+    ├─ Casi semplici → Ricorsione pura
+    ├─ Molte ripetizioni → Ricorsione + Memoizzazione
+    └─ Stato compatto e indicizzabile → Tabulazione Iterativa
+</code></pre>
+
+      <h2>✅ Conclusioni Finali</h2>
+      <ul>
+        <li>Conoscere la ricorsione è fondamentale per le competizioni e l’algoritmica avanzata</li>
+        <li>Memoizzazione = ottimo per prototipare velocemente</li>
+        <li>Tabulazione = soluzione definitiva per prestazioni ottimali</li>
+      </ul>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+</body>
+</html>

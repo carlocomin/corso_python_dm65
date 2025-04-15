@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Getter, Setter e Property</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez5_8.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez5_6.html";
+    }
+  </script>
+</head>
+<body>
+  <div class="slide">
+    <h1>🎛️ Getter, Setter e <code>@property</code> in Python</h1>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+
+    <div class="content-box">
+      <div class="inner-box">
+
+        <h2>🔹 Perché usare getter e setter?</h2>
+        <ul>
+          <li>Per proteggere l’accesso diretto agli attributi interni</li>
+          <li>Per aggiungere logica durante lettura/scrittura (es. validazione)</li>
+          <li>In Python si usa il decoratore <code>@property</code></li>
+        </ul>
+
+        <h2>🔸 Esempio classico con <code>@property</code></h2>
+
+<pre><code class="language-python">class Conto:
+    def __init__(self, saldo):
+        self._saldo = saldo
+
+    @property
+    def saldo(self):
+        return self._saldo
+
+    @saldo.setter
+    def saldo(self, valore):
+        if valore < 0:
+            raise ValueError("Il saldo non può essere negativo")
+        self._saldo = valore
+</code></pre>
+
+<pre><code class="language-python">c = Conto(100)
+print(c.saldo)      # ➜ 100
+c.saldo = 200       # setter chiamato
+c.saldo = -50       # ➜ ValueError
+</code></pre>
+
+        <h2>🔹 Alternative senza property (non raccomandato)</h2>
+
+<pre><code class="language-python">class Persona:
+    def __init__(self):
+        self._nome = "Mario"
+
+    def get_nome(self):
+        return self._nome
+
+    def set_nome(self, valore):
+        self._nome = valore
+</code></pre>
+
+        <p>✔ Con <code>@property</code> si mantiene una sintassi semplice, pur aggiungendo controllo e protezione.</p>
+
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>

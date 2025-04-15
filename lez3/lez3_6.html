@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lezione 3: Iterazione Avanzata su Liste</title>
+  <link rel="stylesheet" href="../style.css" />
+  <script>
+    function nextSlide() {
+      window.location.href = "lez3_7.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez3_5.html";
+    }
+  </script>
+  		<link rel="stylesheet" href="../default.css">
+	<script src="../highlight.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+<body>
+  <div class="slide">
+    <h1>Lezione 3: 🔁 Iterazione Avanzata su Liste</h1>
+<div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+</div>
+
+    <div class="content-box">
+      <div class="inner-box" style="text-align: left;">
+
+        <h2>📌 Iterare su una lista ed eseguire trasformazioni</h2>
+        <pre><code>nomi = ["anna", "luca", "giulia"]
+for nome in nomi:
+    print(nome.capitalize())  # ➜ Anna, Luca, Giulia
+        </code></pre>
+
+        <h2>🔢 Iterare su una lista di numeri e applicare una formula</h2>
+        <pre><code>numeri = [1, 2, 3, 4, 5]
+for n in numeri:
+    quadrato = n ** 2
+    print(f"{n}² = {quadrato}")
+        </code></pre>
+
+        <h2>📍 Iterare su una lista con condizione (filtraggio)</h2>
+        <pre><code>parole = ["ciao", "mela", "cane", "gatto", "cielo"]
+for parola in parole:
+    if parola.startswith("c"):
+        print(parola)  # Solo parole che iniziano per "c"
+        </code></pre>
+
+        <h2>🧮 Iterare su una lista con somma cumulativa</h2>
+        <pre><code>valori = [100, 200, 50]
+totale = 0
+for v in valori:
+    totale += v
+print("Totale:", totale)
+        </code></pre>
+
+        <h2>📚 Iterare su una lista di tuple</h2>
+        <pre><code>studenti = [("Alice", 9), ("Bob", 7), ("Clara", 8)]
+for nome, voto in studenti:
+    print(f"{nome} ha preso {voto}/10")
+        </code></pre>
+
+        <h2>📋 Iterare su una lista al contrario</h2>
+        <pre><code>messaggio = ["Fine", "quasi", "è", "lezione", "La"]
+for parola in reversed(messaggio):
+    print(parola, end=" ")  # ➜ La lezione è quasi Fine
+        </code></pre>
+
+        <h2>⚠️ Modificare la lista durante l’iterazione (con copia)</h2>
+        <pre><code>numeri = [1, -2, 3, -4, 5]
+for n in numeri[:]:  # copia della lista
+    if n < 0:
+        numeri.remove(n)
+print(numeri)  # ➜ [1, 3, 5]
+        </code></pre>
+
+        <p>🧠 Iterare su liste permette di costruire logiche complesse: filtrare, trasformare, contare, accumulare, confrontare… tutto parte da qui.</p>
+
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Funzioni in Python – Panoramica</title>
+  <link rel="stylesheet" href="../style.css" />
+  <script>
+    function nextSlide() {
+      window.location.href = "lez4_2.html";
+    }
+    function prevSlide() {
+      window.location.href = "../lez3/lez3_19.html";
+    }
+  </script>
+  		<link rel="stylesheet" href="../default.css">
+	<script src="../highlight.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+<body>
+  <div class="slide">
+    <h1>🧩 Funzioni in Python – Panoramica</h1>
+<div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+</div>
+
+    <div class="content-box">
+      <div class="inner-box" style="text-align: left;">
+
+        <h2>📌 Cos'è una funzione?</h2>
+        <p>Una <strong>funzione</strong> è un blocco di codice riutilizzabile che esegue un compito specifico quando viene chiamato.</p>
+
+        <h2>🔹 Definizione di una funzione</h2>
+        <pre><code>
+def saluta():
+    print("Ciao mondo!")
+        </code></pre>
+
+        <h2>🔹 Chiamata della funzione</h2>
+        <pre><code>
+saluta()  # ➜ "Ciao mondo!"
+        </code></pre>
+
+        <h2>🔹 Parametri e argomenti</h2>
+        <pre><code>
+def somma(a, b):
+    return a + b
+
+print(somma(3, 5))  # ➜ 8
+        </code></pre>
+
+        <h2>🔹 Valori di ritorno</h2>
+        <p>Una funzione può restituire uno o più valori usando <code>return</code>.</p>
+
+        <h2>🔹 Parametri con valore di default</h2>
+        <pre><code>
+def saluta(nome="Utente"):
+    print(f"Ciao, {nome}!")
+        </code></pre>
+
+        <h2>🔹 Vantaggi dell’uso delle funzioni</h2>
+        <ul>
+          <li>✅ Modularità: codice più organizzato</li>
+          <li>✅ Riutilizzabilità</li>
+          <li>✅ Facilità di test e debug</li>
+        </ul>
+
+        <p>Le funzioni sono la base per la strutturazione del codice, lo sviluppo scalabile e la programmazione avanzata.</p>
+
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>

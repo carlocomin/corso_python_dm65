@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezione 1 - Perché Python?</title>
+    <link rel="stylesheet" href="../style.css">
+    <script>
+        function nextSlide() {
+            window.location.href = "lez1_4.html";
+        }
+        function prevSlide() {
+            window.location.href = "lez1_2.html";
+        }
+    </script>
+		<link rel="stylesheet" href="../default.css">
+	<script src="../highlight.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+    <h2>Menu Lezioni</h2>
+    <ul>
+        <li><a href='lez1_1.html'>Lezione 1: Introduzione</a></li>
+        <li><a href='../lez2/lez2_1.html'>Lezione 2: Strutture di Controllo</a></li>
+        <li><a href='../lez3/lez3_1.html'>Lezione 3: Liste, Tuple, Dizionari, Iteratori</a></li>
+        <li><a href='../lez4/lez4_1.html'>Lezione 4: Funzioni</a></li>
+        <li><a href='../lez5/lez5_1.html'>Lezione 5: OOP</a></li>
+		<li><a href='../lez6/lez6_1.html'>Lezione 6: Progettino Videogioco Testuale</a></li>
+		<li><a href='../lez7/lez7_1.html'>Lezione 7: Interfacciamento LLM API</a></li>
+		<li><a href='../lez8/lez8_1.html'>Lezione 8: Ricorsione e divide et impera</a></li>
+		<li><a href='../lez9/lez9_1.html'>Lezione 9: Strutture dati avanzate</a></li>
+		<li><a href='../lez10/lez10_1.html'>Lezione 10: Grafi e shortest-paths</a></li>
+		<li><a href='../lez11/lez11_1.html'>Lezione 11: Programmazione Competitiva</a></li>
+		<li><a href='../lez12/lez12_1.html'>Lezione 12: Pygame e grafica 2D</a></li>
+		<li><a href='../lez13/lez13_1.html'>Lezione 13: Mini-gioco 2D</a></li>
+		<li><a href='../lez14/lez14_1.html'>Lezione 14: Pathfinding nei videogiochi con A*</a></li>
+		<li><a href='../lez15/lez15_1.html'>Lezione 15: AI nei giochi</a></li>
+		<li><a href='../lez16/lez16_1.html'>Lezione 16: Progetto finale</a></li>
+    </ul>
+</div>
+<!-- END MENU -->
+
+
+
+
+
+
+
+    <div class="slide">
+        <h1>Lezione 1: Perché Python?</h1>
+<div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+</div>
+        
+        <div class="content-box">
+            <div class="inner-box">
+                <h2>🔹 Un Linguaggio Potente e Versatile</h2>
+                <p>Python è uno dei linguaggi di programmazione più popolari e utilizzati al mondo grazie alla sua sintassi chiara, alla vasta comunità e alla ricchezza di librerie disponibili.</p>
+                
+                <h2>🔹 Python per la Programmazione di Sistema</h2>
+                <p>Python è spesso utilizzato per attività di scripting e automazione di sistema. Grazie a librerie come <strong>os</strong>, <strong>sys</strong> e <strong>subprocess</strong>, consente di interagire con il sistema operativo, gestire processi e automatizzare operazioni.</p>
+                
+                <h2>🔹 Python e la Cyber Security</h2>
+                <p>Python è uno strumento essenziale per l'analisi e la sicurezza informatica. Alcune librerie chiave includono:</p>
+                <ul>
+                    <li><strong>Scapy</strong>: Per l'analisi del traffico di rete.</li>
+                    <li><strong>Impacket</strong>: Per l'implementazione di protocolli di rete.</li>
+                    <li><strong>PyCryptodome</strong>: Per la crittografia avanzata.</li>
+                    <li><strong>Pwntools</strong>: Per l'exploitation e il reverse engineering.</li>
+                </ul>
+                
+                <h2>🔹 Python per l'Intelligenza Artificiale e il Machine Learning</h2>
+                <p>Python è il linguaggio principale nel campo dell'AI e del Machine Learning grazie a librerie come:</p>
+                <ul>
+                    <li><strong>TensorFlow</strong> e <strong>PyTorch</strong>: Per lo sviluppo di reti neurali e deep learning.</li>
+                    <li><strong>Scikit-learn</strong>: Per il machine learning tradizionale.</li>
+                    <li><strong>OpenCV</strong>: Per la visione artificiale.</li>
+                    <li><strong>NLTK</strong> e <strong>spaCy</strong>: Per l'elaborazione del linguaggio naturale (NLP).</li>
+                </ul>
+                
+                <h2>🔹 Python per la Data Science</h2>
+                <p>Python è ampiamente utilizzato nell'analisi dei dati grazie a strumenti come:</p>
+                <ul>
+                    <li><strong>Pandas</strong>: Per la manipolazione dei dati.</li>
+                    <li><strong>NumPy</strong>: Per il calcolo scientifico.</li>
+                    <li><strong>Matplotlib</strong> e <strong>Seaborn</strong>: Per la visualizzazione dei dati.</li>
+                    <li><strong>Dask</strong>: Per la gestione di grandi dataset.</li>
+                </ul>
+                
+                <h2>🔹 Python è il Futuro</h2>
+                <p>Grazie alla sua versatilità, Python è usato in moltissimi settori, dal cloud computing all'automazione industriale. La sua comunità è in continua crescita e il suo impatto nel mondo tecnologico è enorme.</p>
+            </div>
+        </div>
+        
+        <div class="nav-buttons">
+            <button onclick="prevSlide()">&#8592; Indietro</button>
+            <button onclick="nextSlide()">Avanti &#8594;</button>
+        </div>
+    </div>
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+}
+</script>
+</body>
+</html>

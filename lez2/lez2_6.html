@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezione 2 - Il Ciclo While in Python</title>
+    <link rel="stylesheet" href="../style.css">
+    <script>
+        function nextSlide() {
+            window.location.href = "lez2_7.html";
+        }
+        function prevSlide() {
+            window.location.href = "lez2_5.html";
+        }
+    </script>
+			<link rel="stylesheet" href="../default.css">
+	<script src="../highlight.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+    <h2>Menu Lezioni</h2>
+    <ul>
+        <li><a href='../lez1/lez1_1.html'>Lezione 1: Introduzione</a></li>
+        <li><a href='lez2_1.html'>Lezione 2: Strutture di Controllo</a></li>
+        <li><a href='../lez3/lez3_1.html'>Lezione 3: Liste, Tuple, Dizionari, Iteratori</a></li>
+        <li><a href='../lez4/lez4_1.html'>Lezione 4: Funzioni</a></li>
+        <li><a href='../lez5/lez5_1.html'>Lezione 5: OOP</a></li>
+		<li><a href='../lez6/lez6_1.html'>Lezione 6: Progettino Videogioco Testuale</a></li>
+		<li><a href='../lez7/lez7_1.html'>Lezione 7: Interfacciamento LLM API</a></li>
+		<li><a href='../lez8/lez8_1.html'>Lezione 8: Ricorsione e divide et impera</a></li>
+		<li><a href='../lez9/lez9_1.html'>Lezione 9: Strutture dati avanzate</a></li>
+		<li><a href='../lez10/lez10_1.html'>Lezione 10: Grafi e shortest-paths</a></li>
+		<li><a href='../lez11/lez11_1.html'>Lezione 11: Programmazione Competitiva</a></li>
+		<li><a href='../lez12/lez12_1.html'>Lezione 12: Pygame e grafica 2D</a></li>
+		<li><a href='../lez13/lez13_1.html'>Lezione 13: Mini-gioco 2D</a></li>
+		<li><a href='../lez14/lez14_1.html'>Lezione 14: Pathfinding nei videogiochi con A*</a></li>
+		<li><a href='../lez15/lez15_1.html'>Lezione 15: AI nei giochi</a></li>
+		<li><a href='../lez16/lez16_1.html'>Lezione 16: Progetto finale</a></li>
+    </ul>
+</div>
+<!-- END MENU -->
+    <div class="slide">
+        <h1>Lezione 2: Il Ciclo <code>while</code> in Python</h1>
+<div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+</div>
+        
+        <div class="content-box">
+            <div class="inner-box">
+                <h2>🔹 Il Concetto di Ciclo <code>while</code></h2>
+                <p>Il ciclo <code>while</code> consente di eseguire ripetutamente un blocco di codice **fintanto che una condizione è vera**.</p>
+                
+                <pre><code>
+while condizione:
+    # Codice eseguito finché la condizione è vera
+                </code></pre>
+                
+                <h2>🔹 Esempi Pratici</h2>
+                
+                <h3>1. Stampa di numeri da 1 a 5</h3>
+                <pre><code>
+x = 1
+while x <= 5:
+    print(x)
+    x += 1
+                </code></pre>
+                
+                <h3>2. Chiedere un input fino a ricevere un valore valido</h3>
+                <pre><code>
+password = "segreta"
+inserito = ""
+while inserito != password:
+    inserito = input("Inserisci la password: ")
+print("Accesso consentito!")
+                </code></pre>
+                
+                <h2>🔹 Uso del Ciclo Infinito con <code>break</code></h2>
+                <p>Si può creare un ciclo infinito e interromperlo con <code>break</code> quando si verifica una condizione.</p>
+                <pre><code>
+while True:
+    numero = int(input("Inserisci un numero positivo: "))
+    if numero > 0:
+        print("Numero valido!")
+        break
+    print("Riprova!")
+                </code></pre>
+                
+                <h2>🔹 Uso di <code>continue</code> per Saltare un'Iterazione</h2>
+                <p>Il comando <code>continue</code> permette di saltare un'iterazione senza uscire dal ciclo.</p>
+                <pre><code>
+x = 0
+while x < 5:
+    x += 1
+    if x == 3:
+        continue  # Salta la stampa del numero 3
+    print(x)
+                </code></pre>
+                
+                <h2>🔹 Simulazione di <code>do-while</code> in Python</h2>
+                <p>Python non ha il costrutto <code>do-while</code> presente in altri linguaggi, ma può essere simulato con un <code>while True</code> e un <code>break</code> esplicito.</p>
+                
+                <pre><code>
+while True:
+    valore = int(input("Inserisci un numero maggiore di zero: "))
+    if valore > 0:
+        break
+print("Hai inserito un valore valido.")
+                </code></pre>
+                
+                <h2>🔹 Best Practices</h2>
+                <ul>
+                    <li>✅ Assicurarsi che la condizione del ciclo diventi falsa per evitare loop infiniti.</li>
+                    <li>✅ Usare <code>break</code> per terminare un ciclo se necessario.</li>
+                    <li>✅ Usare <code>continue</code> per saltare iterazioni specifiche.</li>
+                    <li>❌ Evitare condizioni sempre vere senza <code>break</code>.</li>
+                </ul>
+                
+                <p>Il ciclo <code>while</code> è uno strumento potente per la gestione delle iterazioni condizionali in Python.</p>
+            </div>
+        </div>
+        
+        <div class="nav-buttons">
+            <button onclick="prevSlide()">&#8592; Indietro</button>
+            <button onclick="nextSlide()">Avanti &#8594;</button>
+        </div>
+    </div>
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+}
+</script>
+</body>
+</html>

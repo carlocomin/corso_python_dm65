@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 9 – HashMap e Set</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez9_12.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez9_10.html";
+    }
+  </script>
+</head>
+<body>
+<div class="slide">
+  <h1>🧮 Lezione 9: HashMap (dict) e Set</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+
+<h2>📌 HashMap (dict)</h2>
+
+<p>Una <strong>HashMap</strong> (in Python: <code>dict</code>) associa chiavi a valori.</p>
+
+<pre><code class="language-python">mappa = {"nome": "Mario", "età": 30}
+print(mappa["nome"])  # Mario
+
+# Inserimento / modifica
+mappa["città"] = "Roma"
+mappa["età"] += 1
+
+# Iterazione
+for chiave in mappa:
+    print(chiave, mappa[chiave])
+</code></pre>
+
+<h2>⚙️ Operazioni utili</h2>
+<ul>
+  <li><code>in</code>: verifica esistenza chiave</li>
+  <li><code>get(chiave, valore_default)</code></li>
+  <li><code>items()</code>, <code>keys()</code>, <code>values()</code></li>
+</ul>
+
+<h2>🧩 Set: insiemi non ordinati e unici</h2>
+
+<pre><code class="language-python">s = {1, 2, 3}
+s.add(4)
+s.remove(2)
+print(3 in s)  # True
+</code></pre>
+
+<h2>🔁 Operazioni tra insiemi</h2>
+<ul>
+  <li><code>a | b</code>: unione</li>
+  <li><code>a & b</code>: intersezione</li>
+  <li><code>a - b</code>: differenza</li>
+</ul>
+
+<p>✅ Prossima slide: esercizi pratici su HashMap e Set.</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+</body>
+</html>

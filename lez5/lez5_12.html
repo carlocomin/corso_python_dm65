@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polimorfismo in Python</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez5_13.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez5_11.html";
+    }
+  </script>
+</head>
+<body>
+  <div class="slide">
+    <h1>🧩 Polimorfismo in Python</h1>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+
+    <div class="content-box">
+      <div class="inner-box">
+
+        <h2>🔹 Cos'è il polimorfismo?</h2>
+        <p>
+          Il <strong>polimorfismo</strong> è la capacità di usare oggetti di classi diverse attraverso la stessa interfaccia.
+          Un metodo può comportarsi in modo diverso a seconda dell’oggetto su cui è invocato.
+        </p>
+
+        <h2>🔸 Esempio: stesso metodo, comportamento diverso</h2>
+<pre><code class="language-python">class Animale:
+    def parla(self):
+        print("Verso generico")
+
+class Cane(Animale):
+    def parla(self):
+        print("Bau!")
+
+class Gatto(Animale):
+    def parla(self):
+        print("Miao!")
+
+def fai_parlare(animale):
+    animale.parla()
+
+fai_parlare(Cane())   # ➜ Bau!
+fai_parlare(Gatto())  # ➜ Miao!
+</code></pre>
+
+        <h2>🔸 Polimorfismo e liste</h2>
+<pre><code class="language-python">animali = [Cane(), Gatto(), Animale()]
+for a in animali:
+    a.parla()
+</code></pre>
+
+        <h2>✅ Vantaggi</h2>
+        <ul>
+          <li>Permette codice più generico e riutilizzabile</li>
+          <li>Rende semplice aggiungere nuovi comportamenti</li>
+          <li>Favorisce l’uso di interfacce comuni</li>
+        </ul>
+
+        <p>
+          ✔ In Python il polimorfismo è reso possibile dalla <strong>tipizzazione dinamica</strong>: non è necessario specificare un tipo base comune esplicitamente.
+        </p>
+
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>

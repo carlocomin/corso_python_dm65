@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezione 1 - Variabili, Assegnamenti e Data Types</title>
+    <link rel="stylesheet" href="../style.css">
+    <script>
+        function nextSlide() {
+            window.location.href = "lez1_6.html";
+        }
+        function prevSlide() {
+            window.location.href = "lez1_4.html";
+        }
+    </script>
+		<link rel="stylesheet" href="../default.css">
+	<script src="../highlight.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+    <h2>Menu Lezioni</h2>
+    <ul>
+        <li><a href='lez1_1.html'>Lezione 1: Introduzione</a></li>
+        <li><a href='../lez2/lez2_1.html'>Lezione 2: Strutture di Controllo</a></li>
+        <li><a href='../lez3/lez3_1.html'>Lezione 3: Liste, Tuple, Dizionari, Iteratori</a></li>
+        <li><a href='../lez4/lez4_1.html'>Lezione 4: Funzioni</a></li>
+        <li><a href='../lez5/lez5_1.html'>Lezione 5: OOP</a></li>
+		<li><a href='../lez6/lez6_1.html'>Lezione 6: Progettino Videogioco Testuale</a></li>
+		<li><a href='../lez7/lez7_1.html'>Lezione 7: Interfacciamento LLM API</a></li>
+		<li><a href='../lez8/lez8_1.html'>Lezione 8: Ricorsione e divide et impera</a></li>
+		<li><a href='../lez9/lez9_1.html'>Lezione 9: Strutture dati avanzate</a></li>
+		<li><a href='../lez10/lez10_1.html'>Lezione 10: Grafi e shortest-paths</a></li>
+		<li><a href='../lez11/lez11_1.html'>Lezione 11: Programmazione Competitiva</a></li>
+		<li><a href='../lez12/lez12_1.html'>Lezione 12: Pygame e grafica 2D</a></li>
+		<li><a href='../lez13/lez13_1.html'>Lezione 13: Mini-gioco 2D</a></li>
+		<li><a href='../lez14/lez14_1.html'>Lezione 14: Pathfinding nei videogiochi con A*</a></li>
+		<li><a href='../lez15/lez15_1.html'>Lezione 15: AI nei giochi</a></li>
+		<li><a href='../lez16/lez16_1.html'>Lezione 16: Progetto finale</a></li>
+    </ul>
+</div>
+<!-- END MENU -->
+
+
+
+
+
+
+
+    <div class="slide">
+        <h1>Lezione 1: Variabili, Assegnamenti e Data Types</h1>
+<div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+</div>
+        
+        <div class="content-box">
+            <div class="inner-box">
+                <h2>🔹 Variabili e Assegnamenti</h2>
+                <p>In Python, una variabile è un nome che fa riferimento a un valore memorizzato in memoria. L'assegnamento avviene con il simbolo <code>=</code>:</p>
+                <pre><code>
+x = 10  # Assegna il valore 10 alla variabile x
+y = "Ciao, mondo!"  # Assegna una stringa alla variabile y
+                </code></pre>
+                <p>Python è un linguaggio a tipizzazione dinamica, quindi non è necessario dichiarare il tipo di variabile.</p>
+                
+                <h2>🔹 Operatori Aritmetici</h2>
+                <p>Python supporta diversi operatori aritmetici:</p>
+                <ul>
+                    <li><code>+</code> Addizione (<code>5 + 3</code> → 8)</li>
+                    <li><code>-</code> Sottrazione (<code>10 - 4</code> → 6)</li>
+                    <li><code>*</code> Moltiplicazione (<code>6 * 7</code> → 42)</li>
+                    <li><code>/</code> Divisione (<code>8 / 2</code> → 4.0, sempre float)</li>
+                    <li><code>//</code> Divisione intera (<code>8 // 3</code> → 2)</li>
+                    <li><code>%</code> Modulo (<code>10 % 3</code> → 1, resto della divisione)</li>
+                    <li><code>**</code> Esponenziazione (<code>2 ** 3</code> → 8)</li>
+                </ul>
+                
+                <h2>🔹 Tipi di Dati in Python</h2>
+                <p>Python ha diversi tipi di dati fondamentali:</p>
+                <ul>
+                    <li><strong>int</strong>: Numeri interi (<code>42</code>)</li>
+                    <li><strong>float</strong>: Numeri decimali (<code>3.14</code>)</li>
+                    <li><strong>str</strong>: Stringhe (<code>"Python"</code>)</li>
+                    <li><strong>bool</strong>: Valori booleani (<code>True</code>, <code>False</code>)</li>
+                    <li><strong>list</strong>: Liste ordinate di elementi (<code>[1, 2, 3]</code>)</li>
+                    <li><strong>tuple</strong>: Liste immutabili (<code>(10, 20, 30)</code>)</li>
+                    <li><strong>dict</strong>: Dizionari (collezioni chiave-valore, es. <code>{"nome": "Alice", "età": 25}</code>)</li>
+                    <li><strong>set</strong>: Collezione di elementi unici (<code>{1, 2, 3}</code>)</li>
+                </ul>
+                <p>Python fornisce anche funzioni per convertire tra i vari tipi di dati, come <code>int()</code>, <code>float()</code>, <code>str()</code>, <code>list()</code>.</p>
+            </div>
+        </div>
+        
+        <div class="nav-buttons">
+            <button onclick="prevSlide()">&#8592; Indietro</button>
+            <button onclick="nextSlide()">Avanti &#8594;</button>
+        </div>
+    </div>
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+}
+</script>
+</body>
+</html>

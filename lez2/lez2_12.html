@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezione 2 - Esercizi Avanzati su Blocchi Condizionali e Cicli</title>
+    <link rel="stylesheet" href="../style.css">
+    <script>
+        function nextSlide() {
+            window.location.href = "lez2_13.html";
+        }
+        function prevSlide() {
+            window.location.href = "lez2_11.html";
+        }
+    </script>
+			<link rel="stylesheet" href="../default.css">
+	<script src="../highlight.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+    <h2>Menu Lezioni</h2>
+    <ul>
+        <li><a href='../lez1/lez1_1.html'>Lezione 1: Introduzione</a></li>
+        <li><a href='lez2_1.html'>Lezione 2: Strutture di Controllo</a></li>
+        <li><a href='../lez3/lez3_1.html'>Lezione 3: Liste, Tuple, Dizionari, Iteratori</a></li>
+        <li><a href='../lez4/lez4_1.html'>Lezione 4: Funzioni</a></li>
+        <li><a href='../lez5/lez5_1.html'>Lezione 5: OOP</a></li>
+		<li><a href='../lez6/lez6_1.html'>Lezione 6: Progettino Videogioco Testuale</a></li>
+		<li><a href='../lez7/lez7_1.html'>Lezione 7: Interfacciamento LLM API</a></li>
+		<li><a href='../lez8/lez8_1.html'>Lezione 8: Ricorsione e divide et impera</a></li>
+		<li><a href='../lez9/lez9_1.html'>Lezione 9: Strutture dati avanzate</a></li>
+		<li><a href='../lez10/lez10_1.html'>Lezione 10: Grafi e shortest-paths</a></li>
+		<li><a href='../lez11/lez11_1.html'>Lezione 11: Programmazione Competitiva</a></li>
+		<li><a href='../lez12/lez12_1.html'>Lezione 12: Pygame e grafica 2D</a></li>
+		<li><a href='../lez13/lez13_1.html'>Lezione 13: Mini-gioco 2D</a></li>
+		<li><a href='../lez14/lez14_1.html'>Lezione 14: Pathfinding nei videogiochi con A*</a></li>
+		<li><a href='../lez15/lez15_1.html'>Lezione 15: AI nei giochi</a></li>
+		<li><a href='../lez16/lez16_1.html'>Lezione 16: Progetto finale</a></li>
+    </ul>
+</div>
+<!-- END MENU -->
+    <div class="slide">
+        <h1>Lezione 2: Esercizi Avanzati su Blocchi Condizionali e Cicli</h1>
+<div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+</div>
+        
+        <div class="content-box">
+            <div class="inner-box">
+                <h2>🔹 Esercizi Avanzati</h2>
+                <p>Prova a risolvere i seguenti esercizi avanzati per mettere alla prova la tua conoscenza di Python.</p>
+                
+                <ol>
+                    <li>
+                        <strong>Classificazione di un Triangolo</strong><br>
+                        Chiedi all’utente tre lati di un triangolo e determina se è equilatero, isoscele o scaleno.
+                    </li>
+                    <li>
+                        <strong>Calcolatrice Avanzata</strong><br>
+                        Chiedi due numeri e un operatore (+, -, *, /, **, %). Esegui l'operazione richiesta e gestisci il caso di divisione per zero.
+                    </li>
+                    <li>
+                        <strong>Trova il Massimo Comune Divisore (MCD)</strong><br>
+                        Implementa l'Algoritmo di Euclide per trovare l’MCD di due numeri inseriti dall'utente.
+                    </li>
+                    <li>
+                        <strong>Numero Palindromo</strong><br>
+                        Chiedi un numero all'utente e determina se è palindromo (es. 12321).
+                    </li>
+                    <li>
+                        <strong>Stampa una Piramide di Asterischi</strong><br>
+                        Chiedi un numero n e stampa una piramide con n livelli.
+                    </li>
+                    <li>
+                        <strong>Conto alla Rovescia con Timer</strong><br>
+                        Chiedi all’utente un numero n e mostra un conto alla rovescia fino a zero con un ritardo di 1 secondo tra un numero e l'altro.
+                    </li>
+                    <li>
+                        <strong>Numeri Amici</strong><br>
+                        Un numero a è amico di b se la somma dei suoi divisori è uguale a b e viceversa. Verifica se due numeri sono numeri amici.
+                    </li>
+                    <li>
+                        <strong>Crivello di Eratostene</strong><br>
+                        Genera tutti i numeri primi fino a N usando l'Algoritmo del Crivello di Eratostene.
+                    </li>
+                    <li>
+                        <strong>Somma delle Cifre Pari e Dispari</strong><br>
+                        Chiedi un numero e calcola la somma separata delle cifre pari e dispari.
+                    </li>
+                    <li>
+                        <strong>Verifica di un Anagramma</strong><br>
+                        Chiedi due stringhe e verifica se una è un anagramma dell'altra.
+                    </li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="nav-buttons">
+            <button onclick="prevSlide()">&#8592; Indietro</button>
+            <button onclick="nextSlide()">Avanti &#8594;</button>
+        </div>
+    </div>
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+}
+</script>
+</body>
+</html>

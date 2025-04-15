@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 9 – Soluzioni Esercizi Stack</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez9_5.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez9_3.html";
+    }
+  </script>
+</head>
+<body>
+<div class="slide">
+  <h1>🧠 Lezione 9: Soluzioni Esercizi sugli Stack</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+
+<h2>Soluzioni Commentate</h2>
+
+<pre><code class="language-python"># 1) Classe Stack
+class Stack:
+    def __init__(self):
+        self.dati = []
+
+    def push(self, x):
+        self.dati.append(x)
+
+    def pop(self):
+        return self.dati.pop()
+
+    def peek(self):
+        return self.dati[-1]
+
+    def empty(self):
+        return len(self.dati) == 0
+
+# 2) Parentesi Bilanciate
+def bilanciate(s):
+    stack = []
+    for c in s:
+        if c == '(':
+            stack.append(c)
+        elif c == ')':
+            if not stack:
+                return False
+            stack.pop()
+    return len(stack) == 0
+
+# 3) Inverso di una lista
+def inversa(lista):
+    stack = []
+    for x in lista:
+        stack.append(x)
+    risultato = []
+    while stack:
+        risultato.append(stack.pop())
+    return risultato
+
+# 4) Undo Editor
+def undo_editor(comandi):
+    testo = []
+    undo = []
+    for comando in comandi:
+        if comando == "UNDO":
+            if testo:
+                undo.append(testo.pop())
+        else:
+            testo.append(comando)
+    return testo
+
+# 5) Decimale in Binario
+def decimale_binario(n):
+    stack = []
+    while n > 0:
+        stack.append(n % 2)
+        n //= 2
+    binario = ""
+    while stack:
+        binario += str(stack.pop())
+    return binario
+</code></pre>
+
+<p>✅ Ora possiamo procedere con la teoria sulle Queue (Code).</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+</body>
+</html>

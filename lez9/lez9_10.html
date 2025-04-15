@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 9 – Soluzioni Heap e Priority Queue</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez9_11.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez9_9.html";
+    }
+  </script>
+</head>
+<body>
+<div class="slide">
+  <h1>🧠 Lezione 9: Soluzioni Heap e Priority Queue</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+
+<h2>Soluzioni Commentate</h2>
+
+<pre><code class="language-python"># 1) Ordinamento con Min-Heap
+import heapq
+
+def heap_sort(lista):
+    heapq.heapify(lista)
+    return [heapq.heappop(lista) for _ in range(len(lista))]
+
+# 2) Priority Queue con heap
+def gestisci_task(task_list):
+    heap = []
+    for priorita, nome in task_list:
+        heapq.heappush(heap, (priorita, nome))
+    while heap:
+        print("Eseguo:", heapq.heappop(heap)[1])
+
+# 3) k numeri minori
+def k_minori(lista, k):
+    heapq.heapify(lista)
+    return [heapq.heappop(lista) for _ in range(min(k, len(lista)))]
+
+# 4) Mediana con due heap (min e max heap)
+def mediana_stream(stream):
+    from heapq import heappush, heappop
+    import heapq
+    min_heap = []
+    max_heap = []
+
+    def insert(n):
+        if not max_heap or n <= -max_heap[0]:
+            heappush(max_heap, -n)
+        else:
+            heappush(min_heap, n)
+        # Riequilibrio
+        if len(max_heap) > len(min_heap) + 1:
+            heappush(min_heap, -heappop(max_heap))
+        elif len(min_heap) > len(max_heap):
+            heappush(max_heap, -heappop(min_heap))
+
+    def get_mediana():
+        if len(max_heap) == len(min_heap):
+            return (-max_heap[0] + min_heap[0]) / 2
+        return -max_heap[0]
+
+    for x in stream:
+        insert(x)
+        print("Mediana attuale:", get_mediana())
+
+# 5) Simulazione sistema prenotazioni
+def prenotazioni(clienti):
+    heap = []
+    for nome, priorita in clienti:
+        heapq.heappush(heap, (priorita, nome))
+    while heap:
+        _, cliente = heapq.heappop(heap)
+        print("Servito:", cliente)
+</code></pre>
+
+<p>✅ Ora possiamo passare a HashMap e Set.</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+</body>
+</html>

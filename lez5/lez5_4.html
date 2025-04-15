@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python vs C++ – OOP a confronto</title>
+    <link rel="stylesheet" href="../default.css">
+    <link rel="stylesheet" href="../style.css">
+    <script src="../highlight.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script>
+        function nextSlide() {
+            window.location.href = "lez5_5.html";
+        }
+        function prevSlide() {
+            window.location.href = "lez5_3.html";
+        }
+    </script>
+</head>
+<body>
+    <div class="slide">
+        <h1>⚔️ OOP in Python vs OOP in C++</h1>
+
+        <div class="nav-buttons">
+            <button onclick="prevSlide()">&#8592; Indietro</button>
+            <button onclick="nextSlide()">Avanti &#8594;</button>
+        </div>
+
+        <div class="content-box">
+            <div class="inner-box">
+
+                <h2>🔹 Punti in comune</h2>
+                <ul>
+                    <li>Entrambi supportano pienamente la programmazione orientata agli oggetti</li>
+                    <li>Classi, attributi, metodi, ereditarietà, polimorfismo, incapsulamento</li>
+                    <li>Supportano override dei metodi e costruttori personalizzati</li>
+                </ul>
+
+                <h2>🔸 Differenze principali</h2>
+                <table>
+                    <tr><th>Concetto</th><th>Python</th><th>C++</th></tr>
+                    <tr><td>Tipizzazione</td><td>Dinamica</td><td>Statica</td></tr>
+                    <tr><td>Costruttore</td><td><code>__init__</code></td><td>Stesso nome della classe</td></tr>
+                    <tr><td>Distruttore</td><td><code>__del__</code> (rarely used)</td><td><code>~Classe()</code> (esplicito)</td></tr>
+                    <tr><td>Accesso attributi</td><td>Tutti pubblici per default</td><td>Specifica <code>public</code>, <code>private</code>, <code>protected</code></td></tr>
+                    <tr><td>Operator overloading</td><td>Con metodi speciali (<code>__add__</code>, ecc.)</td><td>Overload diretto con <code>operator+</code>, ecc.</td></tr>
+                    <tr><td>Garbage collection</td><td>Automatica</td><td>Manuale o RAII</td></tr>
+                    <tr><td>Multiple inheritance</td><td>Sì</td><td>Sì, ma complessa (Diamond problem)</td></tr>
+                </table>
+
+                <h2>🔹 Esempio a confronto</h2>
+
+<pre><code class="language-python">class Persona:
+    def __init__(self, nome):
+        self.nome = nome
+
+    def saluta(self):
+        print("Ciao, sono", self.nome)
+</code></pre>
+
+<pre><code class="language-cpp">class Persona {
+    string nome;
+public:
+    Persona(string n) { nome = n; }
+    void saluta() { cout << "Ciao, sono " << nome << endl; }
+};
+</code></pre>
+
+                <p>Python è più conciso e dinamico, C++ offre controllo più dettagliato su memoria e prestazioni.</p>
+
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <button onclick="prevSlide()">&#8592; Indietro</button>
+            <button onclick="nextSlide()">Avanti &#8594;</button>
+        </div>
+    </div>
+</body>
+</html>

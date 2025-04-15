@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Soluzioni – Iterazione su Liste</title>
+  <link rel="stylesheet" href="../style.css" />
+  <script>
+    function nextSlide() {
+      window.location.href = "lez3_10.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez3_8.html";
+    }
+  </script>
+  		<link rel="stylesheet" href="../default.css">
+	<script src="../highlight.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+<body>
+  <div class="slide">
+    <h1>Lezione 3: ✅ Soluzioni – Iterazione su Liste</h1>
+<div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+</div>
+
+    <div class="content-box">
+      <div class="inner-box" style="text-align: left;">
+        <ol>
+          <li>
+            <pre><code>
+numeri = [2, 4, 6, 8, 10]
+for n in numeri:
+    print(n ** 2)
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+parole = ["cane", "gatto", "leone"]
+for parola in parole:
+    print(parola.upper())
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+nomi = ["Anna", "Marco", "Edo", "Oscar"]
+for nome in nomi:
+    if nome[0].lower() in "aeiou":
+        print(nome)
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+numeri = []
+for _ in range(5):
+    n = int(input("Inserisci un numero: "))
+    numeri.append(n)
+for n in numeri:
+    if n > 10:
+        print(n)
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+voti = [26, 28, 30, 24, 29]
+media = sum(voti) / len(voti)
+print("Media:", media)
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+prezzi = [90, 120, 55, 300, 110]
+totale = sum(prezzi)
+conta = 0
+for p in prezzi:
+    if p > 100:
+        conta += 1
+print("Totale:", totale)
+print("Prezzi > 100:", conta)
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+elementi = ["a", "b", "c"]
+for i, val in enumerate(elementi):
+    print(i, val)
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+nomi = ["Luca", "Giulia", "Marco"]
+età = [20, 22, 21]
+for nome, eta in zip(nomi, età):
+    print(f"{nome} ha {eta} anni")
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+frasi = ["uno", "due", "tre"]
+for parola in reversed(frasi):
+    print(parola)
+            </code></pre>
+          </li>
+          <li>
+            <pre><code>
+numeri = [2, 3, 5, 6, 8, 9]
+pari = 0
+dispari = 0
+for n in numeri:
+    if n % 2 == 0:
+        pari += 1
+    else:
+        dispari += 1
+print("Pari:", pari)
+print("Dispari:", dispari)
+            </code></pre>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>

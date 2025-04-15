@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezione 1 - Conversione e Check dei Tipi</title>
+    <link rel="stylesheet" href="../style.css">
+    <script>
+        function nextSlide() {
+            window.location.href = "lez1_9.html";
+        }
+        function prevSlide() {
+            window.location.href = "lez1_7.html";
+        }
+    </script>
+		<link rel="stylesheet" href="../default.css">
+	<script src="../highlight.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+    <h2>Menu Lezioni</h2>
+    <ul>
+        <li><a href='lez1_1.html'>Lezione 1: Introduzione</a></li>
+        <li><a href='../lez2/lez2_1.html'>Lezione 2: Strutture di Controllo</a></li>
+        <li><a href='../lez3/lez3_1.html'>Lezione 3: Liste, Tuple, Dizionari, Iteratori</a></li>
+        <li><a href='../lez4/lez4_1.html'>Lezione 4: Funzioni</a></li>
+        <li><a href='../lez5/lez5_1.html'>Lezione 5: OOP</a></li>
+		<li><a href='../lez6/lez6_1.html'>Lezione 6: Progettino Videogioco Testuale</a></li>
+		<li><a href='../lez7/lez7_1.html'>Lezione 7: Interfacciamento LLM API</a></li>
+		<li><a href='../lez8/lez8_1.html'>Lezione 8: Ricorsione e divide et impera</a></li>
+		<li><a href='../lez9/lez9_1.html'>Lezione 9: Strutture dati avanzate</a></li>
+		<li><a href='../lez10/lez10_1.html'>Lezione 10: Grafi e shortest-paths</a></li>
+		<li><a href='../lez11/lez11_1.html'>Lezione 11: Programmazione Competitiva</a></li>
+		<li><a href='../lez12/lez12_1.html'>Lezione 12: Pygame e grafica 2D</a></li>
+		<li><a href='../lez13/lez13_1.html'>Lezione 13: Mini-gioco 2D</a></li>
+		<li><a href='../lez14/lez14_1.html'>Lezione 14: Pathfinding nei videogiochi con A*</a></li>
+		<li><a href='../lez15/lez15_1.html'>Lezione 15: AI nei giochi</a></li>
+		<li><a href='../lez16/lez16_1.html'>Lezione 16: Progetto finale</a></li>
+    </ul>
+</div>
+<!-- END MENU -->
+
+
+
+
+
+
+
+    <div class="slide">
+        <h1>Lezione 1: Conversione e Check dei Tipi in Python</h1>
+<div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+</div>
+        
+        <div class="content-box">
+            <div class="inner-box">
+                <h2>🔹 Conversione tra Tipi di Dati</h2>
+                <p>Python permette di convertire i tipi di dati in modo esplicito usando funzioni integrate:</p>
+                <pre><code>
+# Conversione di tipi
+num_intero = 10
+num_stringa = str(num_intero)  # Da int a stringa
+num_float = float(num_intero)  # Da int a float
+
+print(num_stringa, type(num_stringa))  # Output: '10' <class 'str'>
+print(num_float, type(num_float))  # Output: 10.0 <class 'float'>
+                </code></pre>
+                <p>Python converte anche implicitamente alcuni tipi quando necessario, ad esempio nelle operazioni matematiche tra interi e float.</p>
+                
+                <h2>🔹 Verifica del Tipo di Dato</h2>
+                <p>Puoi verificare il tipo di una variabile con la funzione <code>type()</code>:</p>
+                <pre><code>
+variabile = "Hello!"
+print(type(variabile))  # Output: <class 'str'>
+                </code></pre>
+                <p>Per controllare se una variabile appartiene a un certo tipo, usa <code>isinstance()</code>:</p>
+                <pre><code>
+print(isinstance(42, int))  # Output: True
+print(isinstance(3.14, float))  # Output: True
+print(isinstance("Python", str))  # Output: True
+                </code></pre>
+                
+                <h2>🔹 Esempi Avanzati di Conversione Dinamica</h2>
+                <pre><code>
+# Conversione condizionale
+valore = "123"
+if isinstance(valore, str):
+    valore = int(valore)  # Converti in intero solo se è una stringa
+
+print(valore, type(valore))  # Output: 123 <class 'int'>
+                </code></pre>
+                <p>Python consente di scrivere codice flessibile grazie alla sua natura a tipizzazione dinamica, ma è importante gestire le conversioni con attenzione.</p>
+            </div>
+        </div>
+        
+        <div class="nav-buttons">
+            <button onclick="prevSlide()">&#8592; Indietro</button>
+            <button onclick="nextSlide()">Avanti &#8594;</button>
+        </div>
+    </div>
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+}
+</script>
+</body>
+</html>

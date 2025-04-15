@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Overloading in Python</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez5_11.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez5_9.html";
+    }
+  </script>
+</head>
+<body>
+  <div class="slide">
+    <h1>🔄 Overloading in Python</h1>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+
+    <div class="content-box">
+      <div class="inner-box">
+
+        <h2>🔹 Python supporta l'overloading?</h2>
+        <p>
+          Non direttamente: Python <strong>non permette più metodi con lo stesso nome</strong> nella stessa classe.<br>
+          Tuttavia, è possibile simulare l’overloading in modo <strong>dinamico</strong> e flessibile.
+        </p>
+
+        <h2>🔸 Overloading manuale con parametri opzionali</h2>
+<pre><code class="language-python">class Calcolatrice:
+    def somma(self, a, b=0, c=0):
+        return a + b + c
+
+c = Calcolatrice()
+print(c.somma(2, 3))    # ➜ 5
+print(c.somma(1, 2, 3)) # ➜ 6
+</code></pre>
+
+        <h2>🔸 Uso di <code>*args</code> per gestire parametri variabili</h2>
+<pre><code class="language-python">class Calcolatrice:
+    def somma(self, *numeri):
+        return sum(numeri)
+</code></pre>
+
+        <h2>🔸 Controllo esplicito dei tipi</h2>
+<pre><code class="language-python">class Stampa:
+    def mostra(self, valore):
+        if isinstance(valore, int):
+            print("Numero:", valore)
+        elif isinstance(valore, str):
+            print("Stringa:", valore)</code></pre>
+
+        <h2>🔸 Overloading sul tipo con <code>@singledispatch</code></h2>
+<pre><code class="language-python">from functools import singledispatch
+
+@singledispatch
+def stampa(x):
+    print("Oggetto:", x)
+
+@stampa.register
+def _(x: int):
+    print("Intero:", x)
+
+@stampa.register
+def _(x: str):
+    print("Stringa:", x)
+
+stampa(5)      # ➜ Intero: 5
+stampa("ciao") # ➜ Stringa: ciao
+</code></pre>
+
+        <h2>✅ Confronto con C++</h2>
+        <table>
+          <tr><th>Linguaggio</th><th>Overloading supportato</th><th>Modalità</th></tr>
+          <tr><td>C++</td><td>✅</td><td>Statico, per firma</td></tr>
+          <tr><td>Python</td><td>✅ (simulato)</td><td>Dinamico, runtime, decorators</td></tr>
+        </table>
+
+        <p>✔ Python preferisce soluzioni flessibili, con controlli dinamici e introspezione a runtime.</p>
+
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>

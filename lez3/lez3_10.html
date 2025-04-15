@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Approfondimento Liste</title>
+  <link rel="stylesheet" href="../style.css" />
+  <script>
+    function nextSlide() {
+      window.location.href = "lez3_11.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez3_9.html";
+    }
+  </script>
+  		<link rel="stylesheet" href="../default.css">
+	<script src="../highlight.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+<body>
+  <div class="slide">
+    <h1>Lezione 3: 🔍 Liste in Python – Slice, Copie, Liste Annidate e Tipi Misti</h1>
+<div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+</div>
+
+    <div class="content-box">
+      <div class="inner-box" style="text-align: left;">
+        
+        <h2>🔹 Slice e Copie</h2>
+        <p>Lo slicing permette di accedere a una porzione della lista:</p>
+        <pre><code>lista = ["uno", "due", "tre", "quattro", "cinque"]
+sublista = lista[1:4]   # ➜ ['due', 'tre', 'quattro']</code></pre>
+
+        <p>È possibile creare una <strong>copia completa</strong> della lista:</p>
+        <pre><code>copia = lista[:]  # Copia indipendente dell'intera lista</code></pre>
+
+        <p>Si possono anche <strong>sostituire più elementi via slice</strong>:</p>
+        <pre><code>lista[:3] = ["a", "b", "c"]
+# ➜ ['a', 'b', 'c', 'quattro', 'cinque']</code></pre>
+
+        <hr/>
+
+        <h2>🔹 Liste Annidate</h2>
+        <p>Le liste possono contenere altre liste (come matrici):</p>
+        <pre><code>matrice = [
+    [1, 2],
+    [3, 4],
+    [5, 6]
+]
+print(matrice[1][0])  # ➜ 3</code></pre>
+
+        <p>Si può accedere a righe e colonne come in una tabella.</p>
+
+        <hr/>
+
+        <h2>🔹 Tipi Misti e Liste Vuote</h2>
+        <p>Le liste in Python possono contenere elementi di <strong>tipi diversi</strong>:</p>
+        <pre><code>mista = [1, "ciao", True, 3.14]
+for x in mista:
+    print(type(x), x)</code></pre>
+
+        <p>Per creare una lista vuota da riempire successivamente:</p>
+        <pre><code>v = []
+v.append("nuovo elemento")</code></pre>
+
+        <p>Una lista vuota ha lunghezza 0 e può essere usata come accumulatore.</p>
+
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>

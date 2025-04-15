@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soluzioni OOP Avanzata</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "../lez6/lez6_1.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez5_14.html";
+    }
+  </script>
+</head>
+<body>
+  <div class="slide">
+    <h1>✅ Soluzioni – Esercizi OOP Avanzata</h1>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+
+    <div class="content-box">
+      <div class="inner-box">
+
+<pre><code class="language-python"># 1. Ereditarietà base
+class Veicolo:
+    def __init__(self, marca, velocità):
+        self.marca = marca
+        self.velocità = velocità
+
+class Auto(Veicolo):
+    def __init__(self, marca, velocità, porte):
+        super().__init__(marca, velocità)
+        self.porte = porte
+
+# 2. Operatori speciali su Libro
+class Libro:
+    def __init__(self, titolo, pagine):
+        self.titolo = titolo
+        self.pagine = pagine
+
+    def __str__(self):
+        return self.titolo
+
+    def __eq__(self, other):
+        return self.titolo == other.titolo
+
+    def __len__(self):
+        return self.pagine
+
+# 3. Polimorfismo
+class Animale:
+    def parla(self): print("Verso generico")
+class Cane(Animale):
+    def parla(self): print("Bau")
+class Gatto(Animale):
+    def parla(self): print("Miao")
+
+# 4. Property e incapsulamento
+class ContoBancario:
+    def __init__(self):
+        self.__saldo = 0
+
+    @property
+    def saldo(self):
+        return self.__saldo
+
+    @saldo.setter
+    def saldo(self, val):
+        if val >= 0:
+            self.__saldo = val
+
+# 5. Overload operatore +
+class Vettore2D:
+    def __init__(self, x, y): self.x = x; self.y = y
+    def __add__(self, other): return Vettore2D(self.x + other.x, self.y + other.y)
+    def __str__(self): return f"({self.x},{self.y})"
+
+# 6. Context manager
+import time
+class Timer:
+    def __enter__(self):
+        self.start = time.time()
+        return self
+    def __exit__(self, *args):
+        print("Durata:", time.time() - self.start)
+
+# 7. Ereditarietà con super()
+class Persona:
+    def __init__(self, nome): self.nome = nome
+    def presenta(self): print("Ciao, sono", self.nome)
+
+class Studente(Persona):
+    def __init__(self, nome, matricola):
+        super().__init__(nome)
+        self.matricola = matricola
+    def presenta(self):
+        super().presenta()
+        print("Matricola:", self.matricola)
+
+# 8. Registro indicizzabile
+class Registro:
+    def __init__(self): self.studenti = []
+    def aggiungi(self, studente): self.studenti.append(studente)
+    def __getitem__(self, idx): return self.studenti[idx]
+
+# 9. Frazione con somma
+from math import gcd
+class Frazione:
+    def __init__(self, num, den):
+        d = gcd(num, den)
+        self.num = num // d
+        self.den = den // d
+
+    def __add__(self, other):
+        n = self.num * other.den + other.num * self.den
+        d = self.den * other.den
+        return Frazione(n, d)
+
+    def __str__(self):
+        return f"{self.num}/{self.den}"
+
+# 10. Magazzino con __contains__
+class Magazzino:
+    def __init__(self): self.prodotti = {}
+    def aggiungi(self, nome, qta): self.prodotti[nome] = qta
+    def __contains__(self, nome): return nome in self.prodotti
+</code></pre>
+
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lezione 3: Iterare su una Lista</title>
+  <link rel="stylesheet" href="../style.css" />
+  <script>
+    function nextSlide() {
+      window.location.href = "lez3_6.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez3_4.html";
+    }
+  </script>
+  		<link rel="stylesheet" href="../default.css">
+	<script src="../highlight.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+<body>
+  <div class="slide">
+    <h1>Lezione 3: 🔁 Iterare su una Lista con il ciclo <code>for</code></h1>
+<div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+</div>
+
+    <div class="content-box">
+      <div class="inner-box" style="text-align: left;">
+
+        <h2>📌 Sintassi</h2>
+        <pre><code>for elemento in lista:
+    # blocco di codice
+    print(elemento)
+        </code></pre>
+
+        <p>
+          Con il ciclo <code>for</code>, puoi scorrere una lista elemento per elemento in modo semplice ed efficace. 
+          Python gestisce internamente l'indice, rendendo il codice più leggibile e meno soggetto a errori.
+        </p>
+
+        <h2>✅ Esempio base</h2>
+        <pre><code>frutti = ["mela", "banana", "ciliegia"]
+for frutto in frutti:
+    print("Mi piace la", frutto)</code></pre>
+
+        <h2>📌 Iterare su liste miste</h2>
+        <pre><code>dati = [1, "ciao", 3.14, True]
+for valore in dati:
+    print(type(valore), "->", valore)</code></pre>
+
+        <h2>🎯 Uso combinato con <code>enumerate()</code></h2>
+        <p>Se vuoi anche l'indice dell'elemento:</p>
+        <pre><code>nomi = ["Alice", "Bob", "Clara"]
+for i, nome in enumerate(nomi):
+    print(f"{i}: {nome}")</code></pre>
+
+        <h2>🚫 Attenzione: modificare una lista durante l'iterazione</h2>
+        <p>Modificare la lista che stai iterando può produrre risultati imprevisti. Se serve, crea prima una copia:</p>
+        <pre><code>for x in lista[:]:  # copia della lista
+    if x < 0:
+        lista.remove(x)</code></pre>
+
+        <p>Iterare su una lista è uno degli strumenti più potenti e usati in Python!</p>
+
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>

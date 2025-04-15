@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Funzioni Lambda</title>
+  <link rel="stylesheet" href="../style.css" />
+  <script>
+    function nextSlide() {
+      window.location.href = "lez4_5.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez4_3.html";
+    }
+  </script>
+  		<link rel="stylesheet" href="../default.css">
+	<script src="../highlight.js"></script>
+	<script>hljs.highlightAll();</script>
+</head>
+<body>
+  <div class="slide">
+    <h1>⚡ Funzioni Lambda in Python</h1>
+<div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+</div>
+
+    <div class="content-box">
+      <div class="inner-box" style="text-align: left;">
+
+        <h2>📌 Cos'è una funzione lambda?</h2>
+        <p>È una funzione <strong>anonima</strong> e <strong>concisa</strong>, definita con la parola chiave <code>lambda</code>.</p>
+        <p>Si usa per definire piccole funzioni in una singola riga, spesso come argomento di altre funzioni.</p>
+
+        <h2>🔹 Sintassi</h2>
+        <pre><code>
+lambda parametri: espressione
+        </code></pre>
+
+        <h2>🔹 Esempi</h2>
+        <pre><code>
+# Funzione classica:
+def quadrato(x):
+    return x * x
+
+# Equivalente lambda:
+quadrato = lambda x: x * x
+print(quadrato(4))  # ➜ 16
+        </code></pre>
+
+        <pre><code>
+somma = lambda a, b: a + b
+print(somma(3, 5))  # ➜ 8
+        </code></pre>
+
+        <h2>🔹 Uso tipico con funzioni come <code>sorted()</code>, <code>map()</code>, <code>filter()</code></h2>
+        <pre><code>
+nomi = ["anna", "Luca", "mario"]
+nomi_ordinati = sorted(nomi, key=lambda x: x.lower())
+print(nomi_ordinati)
+        </code></pre>
+
+        <pre><code>
+numeri = [1, 2, 3, 4]
+doppi = list(map(lambda x: x * 2, numeri))
+print(doppi)  # ➜ [2, 4, 6, 8]
+        </code></pre>
+
+        <pre><code>
+pari = list(filter(lambda x: x % 2 == 0, numeri))
+print(pari)  # ➜ [2, 4]
+        </code></pre>
+
+        <p>✅ Le lambda sono potenti per scrivere codice compatto e leggibile quando la funzione è semplice e usa una sola espressione.</p>
+        <p>❗ Se la funzione è complessa, <strong>preferisci una <code>def</code></strong> normale per chiarezza.</p>
+
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevSlide()">&#8592; Indietro</button>
+      <button onclick="nextSlide()">Avanti &#8594;</button>
+    </div>
+  </div>
+</body>
+</html>
