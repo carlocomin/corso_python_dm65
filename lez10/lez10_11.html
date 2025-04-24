@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 10 – A* Pathfinding: Teoria</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez10_12.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez10_10.html";
+    }
+  </script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+    <h2>Menu Lezioni</h2>
+    <ul>
+        <li><a href='lez10_10.html'>Dijkstra: Codice</a></li>
+        <li><a href='lez10_11.html'>A*: Teoria</a></li>
+    </ul>
+</div>
+<!-- END MENU -->
+
+<div class="slide">
+  <h1>🌟 Lezione 10: A* Pathfinding – Teoria</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+      <h2>🔹 A* (A Star): Introduzione</h2>
+      <ul>
+        <li>Algoritmo di ricerca del cammino minimo con uso di <strong>euristica</strong>.</li>
+        <li>Estende Dijkstra, aggiungendo la stima del costo fino al nodo obiettivo.</li>
+        <li>Molto usato in giochi e AI per <strong>pathfinding efficiente</strong>.</li>
+      </ul>
+
+      <h2>🔹 Funzionamento Base</h2>
+      <ul>
+        <li>F(n) = G(n) + H(n)</li>
+        <li><strong>G(n)</strong>: costo dal nodo di partenza a n (come Dijkstra).</li>
+        <li><strong>H(n)</strong>: stima (euristica) del costo da n alla destinazione.</li>
+      </ul>
+
+      <h2>🔹 Euristiche Comuni</h2>
+      <ul>
+        <li><strong>Manhattan</strong>: |x1 - x2| + |y1 - y2| (griglie ortogonali).</li>
+        <li><strong>Euclidea</strong>: √((x1 - x2)² + (y1 - y2)²) (movimento libero).</li>
+        <li><strong>Zero</strong>: A* diventa Dijkstra (se H(n) = 0).</li>
+      </ul>
+
+      <h2>🔹 Caratteristiche</h2>
+      <ul>
+        <li>Più veloce di Dijkstra se H(n) è ben scelta.</li>
+        <li>Completo e ottimale se H(n) è <strong>ammissibile</strong> (non sovrastima).</li>
+      </ul>
+
+      <p>✅ Prossima slide: codice A* in Python su griglia 2D.</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

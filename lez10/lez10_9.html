@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 10 – Dijkstra: Teoria</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez10_10.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez10_8.html";
+    }
+  </script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+    <h2>Menu Lezioni</h2>
+    <ul>
+        <li><a href='lez10_7.html'>Bellman-Ford</a></li>
+        <li><a href='lez10_9.html'>Dijkstra: Teoria</a></li>
+    </ul>
+</div>
+<!-- END MENU -->
+
+<div class="slide">
+  <h1>📈 Lezione 10: Dijkstra – Teoria</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+      <h2>🔹 Dijkstra: Introduzione</h2>
+      <ul>
+        <li>Algoritmo per trovare i <strong>cammini minimi</strong> da una sorgente verso tutti i nodi.</li>
+        <li>Valido solo per grafi con <strong>pesi non negativi</strong>.</li>
+        <li>Utilizza una <strong>priority queue</strong> (coda con priorità).</li>
+      </ul>
+
+      <h2>🔹 Complessità di Dijkstra</h2>
+      <ul>
+        <li>Tempo: <strong>O((V + E) log V)</strong> con heap binario (Python heapq).</li>
+        <li>Spazio: <strong>O(V)</strong>.</li>
+      </ul>
+
+      <h2>🔹 Funzionamento</h2>
+      <ol>
+        <li>Inizializza distanze a infinito, sorgente a 0.</li>
+        <li>Estrai il nodo con distanza minore dalla coda.</li>
+        <li>Rilassa gli archi del nodo.</li>
+        <li>Ripeti finché la coda non è vuota.</li>
+      </ol>
+
+      <h2>🔹 Confronto con Bellman-Ford</h2>
+      <ul>
+        <li>Bellman-Ford gestisce <strong>pesi negativi</strong>, Dijkstra <strong>no</strong>.</li>
+        <li>Dijkstra è più <strong>efficiente</strong> in assenza di pesi negativi.</li>
+      </ul>
+
+      <p>✅ Prossima slide: Codice completo di Dijkstra in Python.</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

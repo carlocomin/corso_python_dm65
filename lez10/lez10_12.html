@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 10 – A*: Codice</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez10_13.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez10_11.html";
+    }
+  </script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+    <h2>Menu Lezioni</h2>
+    <ul>
+        <li><a href='lez10_11.html'>A*: Teoria</a></li>
+        <li><a href='lez10_12.html'>A*: Codice</a></li>
+    </ul>
+</div>
+<!-- END MENU -->
+
+<div class="slide">
+  <h1>🗺 Lezione 10: A* – Codice Python su Griglia 2D</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+      <h2>🔹 Implementazione A*</h2>
+<pre><code class="language-python">import heapq
+
+def heuristic(a, b):
+    return abs(a[0] - b[0]) + abs(a[1] - b[1])  # Manhattan
+
+def astar(griglia, start, goal):
+    righe, colonne = len(griglia), len(griglia[0])
+    coda = [(0 + heuristic(start, goal), 0, start)]
+    dist = {start: 0}
+    visited = set()
+
+    while coda:
+        _, costo, nodo = heapq.heappop(coda)
+        if nodo in visited:
+            continue
+        visited.add(nodo)
+
+        if nodo == goal:
+            return costo
+
+        for dx, dy in [(-1,0), (1,0), (0,-1), (0,1)]:
+            x, y = nodo[0] + dx, nodo[1] + dy
+            if 0 <= x < righe and 0 <= y < colonne and griglia[x][y] == 0:
+                nuovo = (x, y)
+                nuovo_costo = costo + 1
+                if nuovo not in dist or nuovo_costo < dist[nuovo]:
+                    dist[nuovo] = nuovo_costo
+                    heapq.heappush(coda, (nuovo_costo + heuristic(nuovo, goal), nuovo_costo, nuovo))
+    return -1
+
+# Esempio
+griglia = [
+    [0, 1, 0, 0],
+    [0, 1, 0, 1],
+    [0, 0, 0, 0],
+    [1, 1, 0, 0]
+]
+
+print(astar(griglia, (0, 0), (2, 3)))  # Output: 5
+</code></pre>
+
+      <p>✅ Prossima slide: esercizi pratici su cammini minimi.</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 10 – Bellman-Ford: Codice</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez10_9.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez10_7.html";
+    }
+  </script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+    <h2>Menu Lezioni</h2>
+    <ul>
+        <li><a href='lez10_7.html'>Teoria Bellman-Ford</a></li>
+        <li><a href='lez10_8.html'>Codice Bellman-Ford</a></li>
+    </ul>
+</div>
+<!-- END MENU -->
+
+<div class="slide">
+  <h1>📉 Lezione 10: Bellman-Ford – Codice Python</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+      <h2>🔹 Implementazione di Bellman-Ford</h2>
+
+<pre><code class="language-python">def bellman_ford(grafo, V, sorgente):
+    distanza = [float('inf')] * V
+    distanza[sorgente] = 0
+
+    # Rilassa tutti gli archi V-1 volte
+    for _ in range(V - 1):
+        for (u, v, peso) in grafo:
+            if distanza[u] != float('inf') and distanza[u] + peso < distanza[v]:
+                distanza[v] = distanza[u] + peso
+
+    # Controlla cicli negativi
+    for (u, v, peso) in grafo:
+        if distanza[u] != float('inf') and distanza[u] + peso < distanza[v]:
+            print("Rilevato ciclo negativo!")
+            return None
+
+    return distanza
+
+# Esempio di grafo (lista di archi: u, v, peso)
+grafo = [
+    (0, 1, 4),
+    (0, 2, 5),
+    (1, 2, -3),
+    (2, 3, 4),
+    (3, 1, 6)
+]
+
+V = 4  # Numero di nodi
+sorgente = 0
+
+risultato = bellman_ford(grafo, V, sorgente)
+if risultato:
+    print("Distanze minime dalla sorgente:", risultato)
+</code></pre>
+
+      <p>✅ Prossima slide: Dijkstra – Teoria e Codice.</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

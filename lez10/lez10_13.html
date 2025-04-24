@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 10 – Esercizi Cammini Minimi</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez10_14.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez10_12.html";
+    }
+  </script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+    <h2>Menu Lezioni</h2>
+    <ul>
+        <li><a href='lez10_12.html'>A*: Codice</a></li>
+        <li><a href='lez10_13.html'>Esercizi Cammini Minimi</a></li>
+    </ul>
+</div>
+<!-- END MENU -->
+
+<div class="slide">
+  <h1>🧠 Lezione 10: Esercizi Pratici su Cammini Minimi</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+      <h2>🔹 Esercizi Proposti</h2>
+      <ol>
+        <li>Usando Bellman-Ford, trova il cammino minimo in un grafo con pesi negativi ma senza cicli negativi.</li>
+        <li>Scrivi un programma che costruisce un grafo pesato da input e calcola il cammino minimo con Dijkstra.</li>
+        <li>Implementa un semplice simulatore di mappa 2D dove l'utente può posizionare ostacoli e trovare il percorso più breve con A*.</li>
+        <li>Verifica se esistono cicli negativi in un grafo orientato usando Bellman-Ford.</li>
+        <li>Calcola il cammino minimo tra tutte le coppie di nodi usando più chiamate a Dijkstra (Floyd-Warshall opzionale).</li>
+      </ol>
+
+      <p>✅ Nella prossima lezione svilupperemo un progetto finale con grafi reali.</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
