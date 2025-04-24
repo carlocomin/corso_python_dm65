@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 11 – Soluzioni Intermedie</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez11_5.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez11_3.html";
+    }
+  </script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+    <h2>Menu Lezioni</h2>
+    <ul>
+        <li><a href='lez11_3.html'>Soluzioni Pratiche 1-4</a></li>
+        <li><a href='lez11_4.html'>Soluzioni Intermedie 5-8</a></li>
+    </ul>
+</div>
+<!-- END MENU -->
+
+<div class="slide">
+  <h1>📝 Lezione 11: Soluzioni Intermedie</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+      <h2>🔹 Soluzioni 5-8</h2>
+<pre><code class="language-python"># 5. Minimo Numero di Salti
+def salti_minimi(nums):
+    salti = 0
+    fine = 0
+    massimo = 0
+    for i in range(len(nums) - 1):
+        massimo = max(massimo, i + nums[i])
+        if i == fine:
+            salti += 1
+            fine = massimo
+    return salti
+
+# 6. Sottosequenza Crescente Massima (LIS)
+def LIS(nums):
+    dp = []
+    import bisect
+    for num in nums:
+        i = bisect.bisect_left(dp, num)
+        if i == len(dp):
+            dp.append(num)
+        else:
+            dp[i] = num
+    return len(dp)
+
+# 7. Verifica Grafo Bipartito
+def bipartito(n, edges):
+    grafo = {i: [] for i in range(n)}
+    for u, v in edges:
+        grafo[u].append(v)
+        grafo[v].append(u)
+    colore = {}
+    from collections import deque
+    for nodo in range(n):
+        if nodo not in colore:
+            queue = deque([nodo])
+            colore[nodo] = 0
+            while queue:
+                u = queue.popleft()
+                for v in grafo[u]:
+                    if v not in colore:
+                        colore[v] = 1 - colore[u]
+                        queue.append(v)
+                    elif colore[v] == colore[u]:
+                        return False
+    return True
+
+# 8. Merge Intervalli
+def merge_intervalli(intervalli):
+    intervalli.sort(key=lambda x: x[0])
+    merged = []
+    for interv in intervalli:
+        if not merged or merged[-1][1] < interv[0]:
+            merged.append(interv)
+        else:
+            merged[-1][1] = max(merged[-1][1], interv[1])
+    return merged
+</code></pre>
+
+      <p>✅ Fine Lezione 11. Sei pronto per esercitazioni extra o progetti avanzati?</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

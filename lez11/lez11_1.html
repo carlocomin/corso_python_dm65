@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 11 – Strategie Competitive</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez11_2.html";
+    }
+    function prevSlide() {
+      window.location.href = "../lez10/lez10_15.html";
+    }
+  </script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+    <h2>Menu Lezioni</h2>
+    <ul>
+        <li><a href='lez10_15.html'>Progetto Finale</a></li>
+        <li><a href='lez11_1.html'>Strategie Competitive</a></li>
+    </ul>
+</div>
+<!-- END MENU -->
+
+<div class="slide">
+  <h1>🏆 Lezione 11: Strategie e Algoritmi Chiave</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+      <h2>🔹 Strategie per Gare di Programmazione</h2>
+      <ul>
+        <li>📖 Leggere attentamente i <strong>vincoli</strong> e il formato dell'input/output.</li>
+        <li>🔍 Suddividere il problema in <strong>casi semplici</strong> e identificare i pattern.</li>
+        <li>📈 Valutare la <strong>complessità</strong> attesa: brute-force o soluzione ottimizzata?</li>
+        <li>🧰 Preparare <strong>template</strong> e funzioni di utilità (es. input veloce).</li>
+      </ul>
+
+      <h2>🔹 Algoritmi Chiave da Ripassare</h2>
+      <ul>
+        <li>🔁 Ricorsione & Memoizzazione.</li>
+        <li>🕵️‍♂️ Ricerca Binaria, anche su risposte.</li>
+        <li>📊 Sliding Window, Two Pointers.</li>
+        <li>📚 Stack & Queue per parsing e sequenze.</li>
+        <li>🌐 Grafi: BFS/DFS e componenti connesse.</li>
+      </ul>
+
+      <h2>🔹 Gestione del Tempo</h2>
+      <ul>
+        <li>⏱ Stimare rapidamente la fattibilità.</li>
+        <li>🔧 Se non funziona, riparti da input di esempio.</li>
+        <li>💡 Ricorda: soluzioni semplici prima!</li>
+      </ul>
+
+      <p>✅ Prossima slide: Problemi pratici Facili e Intermedi.</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
