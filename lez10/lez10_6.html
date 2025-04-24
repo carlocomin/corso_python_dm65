@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 10 – Soluzioni BFS & DFS</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez10_7.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez10_5.html";
+    }
+  </script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+    <h2>Menu Lezioni</h2>
+    <ul>
+        <li><a href='lez10_5.html'>Esercizi BFS & DFS</a></li>
+        <li><a href='lez10_6.html'>Soluzioni BFS & DFS</a></li>
+    </ul>
+</div>
+<!-- END MENU -->
+
+<div class="slide">
+  <h1>📝 Lezione 10: Soluzioni BFS & DFS</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+      <h2>🔹 Soluzioni Commentate</h2>
+
+<pre><code class="language-python"># 1. Verifica se il grafo è connesso
+def is_connected(grafo):
+    visitati = set()
+    def dfs(nodo):
+        visitati.add(nodo)
+        for vicino in grafo[nodo]:
+            if vicino not in visitati:
+                dfs(vicino)
+    dfs(next(iter(grafo)))  # Avvia da un nodo qualsiasi
+    return len(visitati) == len(grafo)
+
+# 2. Componenti connesse
+def componenti_connesse(grafo):
+    visitati = set()
+    componenti = []
+    for nodo in grafo:
+        if nodo not in visitati:
+            componente = []
+            def dfs(n):
+                visitati.add(n)
+                componente.append(n)
+                for v in grafo[n]:
+                    if v not in visitati:
+                        dfs(v)
+            dfs(nodo)
+            componenti.append(componente)
+    return componenti
+
+# 3. Cammino più corto in una griglia 2D (BFS)
+from collections import deque
+def bfs_griglia(griglia, start, end):
+    righe, colonne = len(griglia), len(griglia[0])
+    visitato = [[False]*colonne for _ in range(righe)]
+    coda = deque([(start[0], start[1], 0)])  # (x, y, distanza)
+
+    while coda:
+        x, y, dist = coda.popleft()
+        if (x, y) == end:
+            return dist
+        for dx, dy in [(-1,0), (1,0), (0,-1), (0,1)]:
+            nx, ny = x + dx, y + dy
+            if 0 <= nx < righe and 0 <= ny < colonne:
+                if griglia[nx][ny] == 0 and not visitato[nx][ny]:
+                    visitato[nx][ny] = True
+                    coda.append((nx, ny, dist + 1))
+    return -1  # Nessun cammino trovato
+
+# 4. Ciclo in grafo orientato
+def ha_ciclo(grafo):
+    visitato = set()
+    in_stack = set()
+    def dfs(nodo):
+        visitato.add(nodo)
+        in_stack.add(nodo)
+        for vicino in grafo[nodo]:
+            if vicino not in visitato:
+                if dfs(vicino):
+                    return True
+            elif vicino in in_stack:
+                return True
+        in_stack.remove(nodo)
+        return False
+    for nodo in grafo:
+        if nodo not in visitato:
+            if dfs(nodo):
+                return True
+    return False
+
+# 5. Nodo più lontano da 0
+def nodo_piu_lontano(grafo):
+    from collections import deque
+    visitati = set()
+    coda = deque([(0, 0)])  # (nodo, livello)
+    max_livello = -1
+    ultimo_nodo = 0
+    while coda:
+        nodo, livello = coda.popleft()
+        visitati.add(nodo)
+        if livello > max_livello:
+            max_livello = livello
+            ultimo_nodo = nodo
+        for vicino in grafo[nodo]:
+            if vicino not in visitati:
+                coda.append((vicino, livello + 1))
+    return ultimo_nodo, max_livello
+</code></pre>
+
+      <p>✅ Prossima slide: introduzione ai grafi pesati e Bellman-Ford.</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

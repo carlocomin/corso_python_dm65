@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 10 – Grafi Pesati & Bellman-Ford</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez10_7.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez10_6.html";
+    }
+  </script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+    <h2>Menu Lezioni</h2>
+    <ul>
+        <li><a href='lez10_6.html'>Soluzioni BFS & DFS</a></li>
+        <li><a href='lez10_7.html'>Grafi Pesati & Bellman-Ford</a></li>
+    </ul>
+</div>
+<!-- END MENU -->
+
+<div class="slide">
+  <h1>⚖️ Lezione 10: Grafi Pesati & Bellman-Ford (Teoria)</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+      <h2>🔹 Grafi Pesati</h2>
+      <ul>
+        <li>Ogni arco ha un <strong>peso</strong> (o costo).</li>
+        <li>I pesi possono essere positivi, negativi o nulli.</li>
+        <li>Problema classico: trovare il <strong>cammino minimo</strong> tra due nodi.</li>
+      </ul>
+
+      <h2>🔹 Bellman-Ford: Introduzione</h2>
+      <ul>
+        <li>Risolve il problema del cammino minimo <strong>anche con pesi negativi</strong>.</li>
+        <li>Funziona su grafi orientati e non orientati.</li>
+        <li>Può rilevare <strong>cicli negativi</strong>.</li>
+      </ul>
+
+      <h2>🔹 Complessità Bellman-Ford</h2>
+      <ul>
+        <li>Tempo: <strong>O(V × E)</strong>, V = nodi, E = archi.</li>
+        <li>Spazio: <strong>O(V)</strong> per distanze.</li>
+      </ul>
+
+      <h2>🔹 Concetto di Rilassamento</h2>
+      <p>Rilassare un arco significa aggiornare la distanza verso un nodo se si trova un cammino più corto:</p>
+<pre><code>distanza[v] > distanza[u] + peso(u, v)</code></pre>
+      <p>Se vero, allora aggiorniamo:</p>
+<pre><code>distanza[v] = distanza[u] + peso(u, v)</code></pre>
+
+      <h2>🔹 Idea Base Bellman-Ford</h2>
+      <ol>
+        <li>Inizializza tutte le distanze a infinito, eccetto la sorgente (0).</li>
+        <li>Per <strong>V - 1 iterazioni</strong> rilassa ogni arco.</li>
+        <li>Controlla per cicli negativi: se un arco può ancora essere rilassato → ciclo negativo.</li>
+      </ol>
+
+      <p>✅ Prossima slide: implementazione di Bellman-Ford in Python.</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

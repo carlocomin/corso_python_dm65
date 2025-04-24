@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 10 – Esercizi BFS & DFS</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez10_6.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez10_4.html";
+    }
+  </script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+    <h2>Menu Lezioni</h2>
+    <ul>
+        <li><a href='lez10_1.html'>Introduzione ai Grafi</a></li>
+        <li><a href='lez10_4.html'>DFS</a></li>
+        <li><a href='lez10_5.html'>Esercizi BFS & DFS</a></li>
+    </ul>
+</div>
+<!-- END MENU -->
+
+<div class="slide">
+  <h1>💻 Lezione 10: Esercizi Pratici BFS & DFS</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+      <h2>🔹 Esercizi Proposti</h2>
+      <ol>
+        <li>Scrivi una funzione che verifica se un grafo non orientato è connesso (BFS o DFS).</li>
+        <li>Trova tutte le componenti connesse di un grafo non orientato.</li>
+        <li>Data una griglia 2D (matrice), usa BFS per trovare il cammino più corto tra due punti (solo su 0 liberi, 1 ostacoli).</li>
+        <li>Scrivi una funzione che determina se un grafo orientato contiene un ciclo (DFS + marcatura).</li>
+        <li>Trova il nodo più lontano dal nodo 0 in un grafo non pesato (BFS con livelli).</li>
+      </ol>
+
+      <p>✅ Nella prossima slide introdurremo i grafi pesati e l'algoritmo di Bellman-Ford.</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

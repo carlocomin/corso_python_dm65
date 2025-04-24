@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 10 – BFS (Breadth-First Search)</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez10_4.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez10_2.html";
+    }
+  </script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+    <h2>Menu Lezioni</h2>
+    <ul>
+        <li><a href='lez10_1.html'>Introduzione ai Grafi</a></li>
+        <li><a href='lez10_2.html'>Rappresentazione</a></li>
+        <li><a href='lez10_3.html'>BFS</a></li>
+    </ul>
+</div>
+<!-- END MENU -->
+
+<div class="slide">
+  <h1>📥 Lezione 10: Breadth-First Search (BFS)</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+      <h2>🔹 Cos'è la BFS?</h2>
+      <p>La <strong>BFS</strong> esplora il grafo "in ampiezza", visitando prima i nodi più vicini al nodo di partenza.</p>
+
+      <h2>🔹 Proprietà della BFS</h2>
+      <ul>
+        <li>Utilizza una <strong>coda</strong> per gestire i nodi da visitare.</li>
+        <li>Trova il percorso più breve in grafi non pesati.</li>
+        <li>Complesso temporale: O(V + E), dove V sono i nodi, E gli archi.</li>
+      </ul>
+
+      <h2>🔹 Implementazione Python</h2>
+
+<pre><code class="language-python">from collections import deque
+
+def bfs(grafo, partenza):
+    visitati = set()
+    coda = deque([partenza])
+
+    while coda:
+        nodo = coda.popleft()
+        if nodo not in visitati:
+            print(nodo, end=" ")
+            visitati.add(nodo)
+            for vicino in grafo[nodo]:
+                if vicino not in visitati:
+                    coda.append(vicino)
+
+# Esempio di grafo
+grafo = {
+    0: [1, 2],
+    1: [0, 3],
+    2: [0, 4],
+    3: [1],
+    4: [2]
+}
+
+bfs(grafo, 0)  # Output: 0 1 2 3 4
+</code></pre>
+
+      <p>✅ Prossima slide: visita in profondità (DFS).</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
