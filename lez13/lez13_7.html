@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 13 – Pong Parte 2</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez13_8.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez13_6.html";
+    }
+  </script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+    <h2>Menu Lezioni</h2>
+    <ul>
+        <li><a href='lez13_6.html'>Pong Parte 1</a></li>
+        <li><a href='lez13_7.html'>Pong Parte 2</a></li>
+    </ul>
+</div>
+<!-- END MENU -->
+
+<div class="slide">
+  <h1>🏓 Lezione 13: Pong — Parte 2</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+      <h2>🔹 Obiettivo:</h2>
+      <ul>
+        <li>Gestire collisioni tra paddle e palla.</li>
+        <li>Introdurre il paddle della CPU.</li>
+        <li>Visualizzare il punteggio dei giocatori.</li>
+      </ul>
+
+<pre><code class="language-python"># Continuazione da Pong Parte 1...
+
+# Paddle CPU
+cpu = pygame.Rect(LARGHEZZA - 40, ALTEZZA//2 - 60, 10, 120)
+vel_cpu = 5
+
+# Punteggi
+punti_giocatore, punti_cpu = 0, 0
+font = pygame.font.SysFont(None, 48)
+
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+
+    # Movimento paddle giocatore
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_UP] and paddle.top > 0:
+        paddle.y -= vel_paddle
+    if keys[pygame.K_DOWN] and paddle.bottom < ALTEZZA:
+        paddle.y += vel_paddle
+
+    # Movimento CPU semplice
+    if cpu.centery < ball.centery and cpu.bottom < ALTEZZA:
+        cpu.y += vel_cpu
+    if cpu.centery > ball.centery and cpu.top > 0:
+        cpu.y -= vel_cpu
+
+    # Movimento palla
+    ball.x += vel_x
+    ball.y += vel_y
+
+    # Collisioni bordi
+    if ball.top <= 0 or ball.bottom >= ALTEZZA:
+        vel_y *= -1
+
+    # Collisione paddle
+    if ball.colliderect(paddle) or ball.colliderect(cpu):
+        vel_x *= -1
+
+    # Punto segnato
+    if ball.left <= 0:
+        punti_cpu += 1
+        ball.center = (LARGHEZZA//2, ALTEZZA//2)
+        vel_x = -vel_x
+    if ball.right >= LARGHEZZA:
+        punti_giocatore += 1
+        ball.center = (LARGHEZZA//2, ALTEZZA//2)
+        vel_x = -vel_x
+
+    # Disegna
+    screen.fill(NERO)
+    pygame.draw.rect(screen, BIANCO, paddle)
+    pygame.draw.rect(screen, BIANCO, cpu)
+    pygame.draw.ellipse(screen, BIANCO, ball)
+    pygame.draw.aaline(screen, BIANCO, (LARGHEZZA//2, 0), (LARGHEZZA//2, ALTEZZA))
+
+    testo = font.render(f"{punti_giocatore} - {punti_cpu}", True, BIANCO)
+    screen.blit(testo, (LARGHEZZA//2 - 40, 20))
+
+    pygame.display.update()
+    clock.tick(60)</code></pre>
+
+      <p>✅ Prossima slide: codice completo e rifiniture finali!</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

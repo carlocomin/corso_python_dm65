@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 13 – Snake Parte 2</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez13_4.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez13_2.html";
+    }
+  </script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+    <h2>Menu Lezioni</h2>
+    <ul>
+        <li><a href='lez13_2.html'>Snake Parte 1</a></li>
+        <li><a href='lez13_3.html'>Snake Parte 2</a></li>
+    </ul>
+</div>
+<!-- END MENU -->
+
+<div class="slide">
+  <h1>🐍 Lezione 13: Snake — Parte 2</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+      <h2>🔹 Aggiungiamo:</h2>
+      <ul>
+        <li>Lista per gestire i segmenti del corpo.</li>
+        <li>Cibo generato casualmente.</li>
+        <li>Logica di crescita: ogni volta che mangia, aggiunge un segmento.</li>
+        <li>Collisioni:
+          <ul>
+            <li>Con i bordi dello schermo = Game Over.</li>
+            <li>Con il proprio corpo = Game Over.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h2>🔹 Codice Esteso</h2>
+<pre><code class="language-python">import pygame, sys, random
+
+LARGHEZZA, ALTEZZA = 600, 400
+DIMENSIONE_BLOCCO = 20
+FPS = 10
+
+VERDE = (0, 255, 0)
+ROSSO = (255, 0, 0)
+NERO = (0, 0, 0)
+
+pygame.init()
+screen = pygame.display.set_mode((LARGHEZZA, ALTEZZA))
+pygame.display.set_caption("Snake")
+clock = pygame.time.Clock()
+
+# Serpente iniziale
+snake = [(LARGHEZZA//2, ALTEZZA//2)]
+dx, dy = DIMENSIONE_BLOCCO, 0
+
+# Cibo iniziale
+cibo = (random.randrange(0, LARGHEZZA, DIMENSIONE_BLOCCO),
+        random.randrange(0, ALTEZZA, DIMENSIONE_BLOCCO))
+
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_UP and dy == 0:
+                dx, dy = 0, -DIMENSIONE_BLOCCO
+            elif event.key == pygame.K_DOWN and dy == 0:
+                dx, dy = 0, DIMENSIONE_BLOCCO
+            elif event.key == pygame.K_LEFT and dx == 0:
+                dx, dy = -DIMENSIONE_BLOCCO, 0
+            elif event.key == pygame.K_RIGHT and dx == 0:
+                dx, dy = DIMENSIONE_BLOCCO, 0
+
+    # Nuova posizione testa
+    x, y = snake[0]
+    nuova_testa = (x + dx, y + dy)
+
+    # Controllo collisioni
+    if (nuova_testa in snake or
+        nuova_testa[0] < 0 or nuova_testa[0] >= LARGHEZZA or
+        nuova_testa[1] < 0 or nuova_testa[1] >= ALTEZZA):
+        pygame.quit()
+        sys.exit()
+
+    snake.insert(0, nuova_testa)
+
+    # Mangia cibo?
+    if nuova_testa == cibo:
+        cibo = (random.randrange(0, LARGHEZZA, DIMENSIONE_BLOCCO),
+                random.randrange(0, ALTEZZA, DIMENSIONE_BLOCCO))
+    else:
+        snake.pop()
+
+    # Disegno
+    screen.fill(NERO)
+    for blocco in snake:
+        pygame.draw.rect(screen, VERDE, (*blocco, DIMENSIONE_BLOCCO, DIMENSIONE_BLOCCO))
+    pygame.draw.rect(screen, ROSSO, (*cibo, DIMENSIONE_BLOCCO, DIMENSIONE_BLOCCO))
+    pygame.display.update()
+    clock.tick(FPS)</code></pre>
+
+      <p>✅ Prossima slide: codice completo e ottimizzato!</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

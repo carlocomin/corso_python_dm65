@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 13 – Introduzione a Snake</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez13_2.html";
+    }
+    function prevSlide() {
+      window.location.href = "../lez12/lez12_9.html";
+    }
+  </script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+    <h2>Menu Lezioni</h2>
+    <ul>
+        <li><a href='lez13_1.html'>Introduzione a Snake</a></li>
+        <li><a href='lez13_2.html'>Snake Parte 1</a></li>
+    </ul>
+</div>
+<!-- END MENU -->
+
+<div class="slide">
+  <h1>🐍 Lezione 13: Introduzione al Progetto Snake</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+      <h2>🔹 Cos'è Snake?</h2>
+      <ul>
+        <li>Gioco classico dove il giocatore controlla un serpente che cresce mangiando cibo.</li>
+        <li>Obiettivo: far crescere il più possibile il serpente senza farlo scontrare con sé stesso o con i bordi.</li>
+        <li>Ogni volta che il serpente mangia, aumenta la difficoltà.</li>
+      </ul>
+
+      <h2>🔹 Elementi Fondamentali del Gioco</h2>
+      <ul>
+        <li><strong>Movimento Continuo:</strong> il serpente si muove costantemente in una direzione.</li>
+        <li><strong>Cambio Direzione:</strong> l'utente può cambiare la direzione premendo frecce direzionali.</li>
+        <li><strong>Cibo Casuale:</strong> il cibo appare in posizioni casuali sulla griglia.</li>
+        <li><strong>Collisioni:</strong> il gioco termina se il serpente collide con il bordo o con sé stesso.</li>
+      </ul>
+
+      <h2>🔹 Come lo realizzeremo?</h2>
+      <ul>
+        <li>Griglia 2D con segmenti rettangolari.</li>
+        <li>Lista per gestire la posizione della testa e dei segmenti.</li>
+        <li>Logica di crescita e controllo collisioni.</li>
+        <li>Punteggio in base al numero di cibi mangiati.</li>
+      </ul>
+
+      <p>✅ Prossima slide: creiamo la base del gioco con movimento della testa!</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

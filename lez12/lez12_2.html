@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 12 – Creazione Finestra Pygame</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez12_3.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez12_1.html";
+    }
+  </script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+    <h2>Menu Lezioni</h2>
+    <ul>
+        <li><a href='lez12_1.html'>Introduzione a Pygame</a></li>
+        <li><a href='lez12_2.html'>Creazione Finestra</a></li>
+    </ul>
+</div>
+<!-- END MENU -->
+
+<div class="slide">
+  <h1>🖼️ Lezione 12: Creazione della Finestra Pygame</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+      <h2>🔹 Creare una Finestra con Pygame</h2>
+      <ul>
+        <li><strong>pygame.display.set_mode((larghezza, altezza))</strong><br> Crea una finestra della dimensione specificata.</li>
+        <li><strong>pygame.display.set_caption("Titolo")</strong><br> Imposta il titolo della finestra.</li>
+        <li><strong>screen.fill((R,G,B))</strong><br> Colora lo sfondo con un colore RGB.</li>
+      </ul>
+
+      <h2>🔹 Esempio Completo</h2>
+<pre><code class="language-python">import pygame
+
+pygame.init()
+screen = pygame.display.set_mode((640, 480))  # Finestra 640x480
+pygame.display.set_caption("Finestra di Gioco")
+
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    screen.fill((200, 255, 200))  # Verde pastello chiaro
+    pygame.display.flip()  # Aggiorna lo schermo
+
+pygame.quit()</code></pre>
+
+      <h2>🔹 Colori in Pygame</h2>
+      <ul>
+        <li>I colori sono definiti con tuple <code>(R, G, B)</code>.</li>
+        <li>Ogni valore va da <code>0</code> a <code>255</code>.</li>
+        <li>Esempio: <code>(0, 0, 0)</code> = nero, <code>(255, 255, 255)</code> = bianco.</li>
+      </ul>
+
+      <p>✅ Nella prossima slide parleremo del Game Loop e della gestione degli FPS.</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

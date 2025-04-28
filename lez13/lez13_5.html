@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 13 – Introduzione a Pong</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez13_6.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez13_4.html";
+    }
+  </script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+    <h2>Menu Lezioni</h2>
+    <ul>
+        <li><a href='lez13_4.html'>Snake Completo</a></li>
+        <li><a href='lez13_5.html'>Introduzione a Pong</a></li>
+    </ul>
+</div>
+<!-- END MENU -->
+
+<div class="slide">
+  <h1>🏓 Lezione 13: Introduzione al Progetto Pong</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+      <h2>🔹 Cos'è Pong?</h2>
+      <ul>
+        <li>Uno dei primi videogiochi arcade mai creati.</li>
+        <li>Simulazione di una partita di ping-pong 2D.</li>
+        <li>Obiettivo: colpire la palla con la propria racchetta e segnare punti contro l’avversario.</li>
+      </ul>
+
+      <h2>🔹 Elementi del Gioco:</h2>
+      <ul>
+        <li><strong>Paddle (Racchetta):</strong> controllato dal giocatore o dalla CPU.</li>
+        <li><strong>Palla:</strong> si muove e rimbalza contro muri e paddle.</li>
+        <li><strong>Campo di gioco:</strong> area rettangolare con bordi superiori e inferiori.</li>
+        <li><strong>Punteggio:</strong> ogni volta che l’avversario non riesce a colpire la palla.</li>
+      </ul>
+
+      <h2>🔹 Come lo realizzeremo:</h2>
+      <ul>
+        <li>Gestione movimento paddle con tastiera.</li>
+        <li>Movimento palla con velocità e angoli di rimbalzo.</li>
+        <li>Collisioni con bordi e paddle.</li>
+        <li>Visualizzazione del punteggio.</li>
+        <li>Opzionale: modalità 1 giocatore contro CPU.</li>
+      </ul>
+
+      <p>✅ Prossima slide: iniziamo con paddle e palla in movimento.</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

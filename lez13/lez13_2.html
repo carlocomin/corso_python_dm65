@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 13 – Snake Parte 1</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez13_3.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez13_1.html";
+    }
+  </script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+    <h2>Menu Lezioni</h2>
+    <ul>
+        <li><a href='lez13_1.html'>Introduzione a Snake</a></li>
+        <li><a href='lez13_2.html'>Snake Parte 1</a></li>
+    </ul>
+</div>
+<!-- END MENU -->
+
+<div class="slide">
+  <h1>🐍 Lezione 13: Snake — Parte 1</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+      <h2>🔹 Obiettivo di questa fase:</h2>
+      <ul>
+        <li>Creare la finestra di gioco a griglia.</li>
+        <li>Gestire il movimento continuo della testa del serpente.</li>
+        <li>Permettere il cambio di direzione con la tastiera.</li>
+      </ul>
+
+      <h2>🔹 Codice Base</h2>
+<pre><code class="language-python">import pygame
+import sys
+
+# Configurazione griglia
+LARGHEZZA, ALTEZZA = 600, 400
+DIMENSIONE_BLOCCO = 20
+FPS = 10
+
+# Colori
+VERDE = (0, 255, 0)
+NERO = (0, 0, 0)
+
+pygame.init()
+screen = pygame.display.set_mode((LARGHEZZA, ALTEZZA))
+pygame.display.set_caption("Snake")
+clock = pygame.time.Clock()
+
+# Posizione iniziale della testa
+x, y = LARGHEZZA // 2, ALTEZZA // 2
+dx, dy = DIMENSIONE_BLOCCO, 0  # Direzione iniziale: destra
+
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_UP:
+                dx, dy = 0, -DIMENSIONE_BLOCCO
+            elif event.key == pygame.K_DOWN:
+                dx, dy = 0, DIMENSIONE_BLOCCO
+            elif event.key == pygame.K_LEFT:
+                dx, dy = -DIMENSIONE_BLOCCO, 0
+            elif event.key == pygame.K_RIGHT:
+                dx, dy = DIMENSIONE_BLOCCO, 0
+
+    # Movimento
+    x += dx
+    y += dy
+
+    screen.fill(NERO)
+    pygame.draw.rect(screen, VERDE, (x, y, DIMENSIONE_BLOCCO, DIMENSIONE_BLOCCO))
+    pygame.display.update()
+    clock.tick(FPS)</code></pre>
+
+      <h2>🔹 Prossimi Passi:</h2>
+      <ul>
+        <li>Aggiungere il corpo del serpente.</li>
+        <li>Implementare la logica di crescita.</li>
+        <li>Generare e gestire il cibo casuale.</li>
+      </ul>
+
+      <p>✅ Prossima slide: crescita e collisioni.</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

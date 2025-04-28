@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 12 – Disegno e Colori</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez12_6.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez12_4.html";
+    }
+  </script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+    <h2>Menu Lezioni</h2>
+    <ul>
+        <li><a href='lez12_4.html'>Eventi e Input</a></li>
+        <li><a href='lez12_5.html'>Disegno Oggetti e Colori</a></li>
+    </ul>
+</div>
+<!-- END MENU -->
+
+<div class="slide">
+  <h1>🎨 Lezione 12: Disegno Oggetti e Colori</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+      <h2>🔹 Disegnare Oggetti 2D</h2>
+      <ul>
+        <li><code>pygame.draw.rect(surface, colore, (x, y, w, h))</code> – Disegna un rettangolo.</li>
+        <li><code>pygame.draw.circle(surface, colore, centro, raggio)</code> – Disegna un cerchio.</li>
+        <li><code>pygame.draw.line(surface, colore, start, end, spessore)</code> – Linea.</li>
+        <li>Le coordinate sono relative alla finestra.</li>
+      </ul>
+
+<pre><code class="language-python"># Rettangolo verde
+pygame.draw.rect(screen, (0, 255, 0), (100, 100, 50, 50))
+
+# Cerchio blu
+pygame.draw.circle(screen, (0, 0, 255), (300, 200), 40)
+
+# Linea rossa
+pygame.draw.line(screen, (255, 0, 0), (0, 0), (200, 150), 3)</code></pre>
+
+      <h2>🔹 Colori RGB</h2>
+      <ul>
+        <li>Colore definito da <code>(R, G, B)</code> – valori da <code>0</code> a <code>255</code>.</li>
+        <li>Esempi:
+          <ul>
+            <li><code>(255, 0, 0)</code> – Rosso.</li>
+            <li><code>(0, 255, 0)</code> – Verde.</li>
+            <li><code>(0, 0, 255)</code> – Blu.</li>
+            <li><code>(173, 216, 230)</code> – Azzurro pastello.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h2>🔹 Testo su Schermo</h2>
+<pre><code class="language-python">font = pygame.font.SysFont(None, 36)
+text = font.render("Ciao, Pygame!", True, (0, 0, 0))
+screen.blit(text, (250, 20))</code></pre>
+
+      <p>✅ Prossima slide: Introduzione agli Sprite e immagini.</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

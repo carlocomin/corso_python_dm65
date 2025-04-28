@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 12 – Collisioni Sprite</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez12_8.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez12_6.html";
+    }
+  </script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+    <h2>Menu Lezioni</h2>
+    <ul>
+        <li><a href='lez12_6.html'>Sprite e Immagini</a></li>
+        <li><a href='lez12_7.html'>Collisioni</a></li>
+    </ul>
+</div>
+<!-- END MENU -->
+
+<div class="slide">
+  <h1>🧩 Lezione 12: Collisioni tra Oggetti e Sprite</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+      <h2>🔹 Come rilevare una collisione?</h2>
+      <ul>
+        <li>Usiamo il metodo <code>colliderect()</code> tra due rettangoli (<code>Rect</code>).</li>
+        <li>Ogni sprite può avere una bounding box rettangolare.</li>
+        <li>Molto utile per interazioni e logiche di gioco.</li>
+      </ul>
+
+      <h2>🔹 Esempio Pratico</h2>
+<pre><code class="language-python">import pygame
+
+pygame.init()
+screen = pygame.display.set_mode((640, 480))
+clock = pygame.time.Clock()
+
+robot = pygame.image.load("robot_sprite.png")
+robot = pygame.transform.scale(robot, (80, 80))
+robot_x, robot_y = 50, 50
+vel = 5
+
+ostacolo = pygame.Rect(300, 200, 100, 100)
+
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    tasti = pygame.key.get_pressed()
+    if tasti[pygame.K_RIGHT]: robot_x += vel
+    if tasti[pygame.K_LEFT]:  robot_x -= vel
+    if tasti[pygame.K_DOWN]:  robot_y += vel
+    if tasti[pygame.K_UP]:    robot_y -= vel
+
+    screen.fill((240, 248, 255))
+    screen.blit(robot, (robot_x, robot_y))
+    pygame.draw.rect(screen, (255, 100, 100), ostacolo)
+
+    # Collisione
+    robot_rect = pygame.Rect(robot_x, robot_y, 80, 80)
+    if robot_rect.colliderect(ostacolo):
+        print("Collisione!")
+
+    pygame.display.update()
+    clock.tick(60)
+
+pygame.quit()</code></pre>
+
+      <p>✅ Nella prossima slide svilupperemo un Mini-Progetto completo con sprite e collisioni.</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

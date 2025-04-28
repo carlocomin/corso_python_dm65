@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 12 – Eventi e Input</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez12_5.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez12_3.html";
+    }
+  </script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+    <h2>Menu Lezioni</h2>
+    <ul>
+        <li><a href='lez12_3.html'>Game Loop e FPS</a></li>
+        <li><a href='lez12_4.html'>Eventi e Input</a></li>
+    </ul>
+</div>
+<!-- END MENU -->
+
+<div class="slide">
+  <h1>⌨️ Lezione 12: Eventi e Input Tastiera/Mouse</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+      <h2>🔹 Gestione degli Eventi</h2>
+      <ul>
+        <li>Gli eventi rappresentano input o azioni del sistema (es. chiusura finestra).</li>
+        <li>Eventi principali:
+          <ul>
+            <li><code>pygame.QUIT</code> – Chiusura finestra.</li>
+            <li><code>pygame.KEYDOWN</code> – Tasto premuto.</li>
+            <li><code>pygame.KEYUP</code> – Tasto rilasciato.</li>
+            <li><code>pygame.MOUSEBUTTONDOWN</code> – Click mouse.</li>
+          </ul>
+        </li>
+        <li>Gli eventi sono catturati con <code>pygame.event.get()</code>.</li>
+      </ul>
+
+<pre><code class="language-python">for event in pygame.event.get():
+    if event.type == pygame.QUIT:
+        running = False
+    if event.type == pygame.KEYDOWN:
+        if event.key == pygame.K_LEFT:
+            print("Freccia sinistra premuta")</code></pre>
+
+      <h2>🔹 Input Continuo (movimento)</h2>
+<pre><code class="language-python">tasti = pygame.key.get_pressed()
+if tasti[pygame.K_RIGHT]:
+    x += 5
+if tasti[pygame.K_LEFT]:
+    x -= 5</code></pre>
+
+      <h2>🔹 Input Mouse</h2>
+<pre><code class="language-python">if event.type == pygame.MOUSEBUTTONDOWN:
+    print("Click mouse in posizione", pygame.mouse.get_pos())</code></pre>
+
+      <p>✅ Prossima slide: Disegno di oggetti e gestione dei colori RGB.</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 12 – Introduzione agli Sprite</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez12_7.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez12_5.html";
+    }
+  </script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+    <h2>Menu Lezioni</h2>
+    <ul>
+        <li><a href='lez12_5.html'>Disegno Oggetti</a></li>
+        <li><a href='lez12_6.html'>Sprite e Immagini</a></li>
+    </ul>
+</div>
+<!-- END MENU -->
+
+<div class="slide">
+  <h1>👾 Lezione 12: Introduzione agli Sprite</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+      <h2>🔹 Cosa sono gli Sprite?</h2>
+      <ul>
+        <li>Un <strong>sprite</strong> è un'immagine che può essere disegnata e animata su schermo.</li>
+        <li>In Pygame, possiamo caricare immagini PNG, JPG come sprite.</li>
+        <li>Gli sprite possono essere spostati, ridimensionati, ruotati.</li>
+      </ul>
+
+      <h2>🔹 Caricare e Visualizzare un'immagine</h2>
+<pre><code class="language-python">sprite = pygame.image.load("robot_sprite.png")
+screen.blit(sprite, (x, y))</code></pre>
+
+      <h2>🔹 Ridimensionare uno Sprite</h2>
+<pre><code class="language-python">sprite = pygame.transform.scale(sprite, (80, 80))</code></pre>
+
+      <h2>🔹 Esempio Completo</h2>
+<pre><code class="language-python">import pygame
+
+pygame.init()
+screen = pygame.display.set_mode((640, 480))
+pygame.display.set_caption("Sprite Demo")
+
+sprite = pygame.image.load("robot_sprite.png")
+sprite = pygame.transform.scale(sprite, (80, 80))
+x, y = 200, 200
+clock = pygame.time.Clock()
+
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    screen.fill((240, 248, 255))  # Colore sfondo
+    screen.blit(sprite, (x, y))   # Disegna sprite
+    pygame.display.update()
+    clock.tick(60)
+
+pygame.quit()</code></pre>
+
+      <p>✅ Prossima slide: Collisioni semplici tra oggetti e sprite.</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
