@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 14 – Teoria dell’A*</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez14_5.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez14_3.html";
+    }
+  </script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+  <h2>Menu Lezioni</h2>
+  <ul>
+    <li><a href='lez14_3.html'>Confronto Algoritmi</a></li>
+    <li><a href='lez14_4.html'>Teoria A*</a></li>
+    <li><a href='lez14_5.html'>Setup Implementazione</a></li>
+  </ul>
+</div>
+<!-- END MENU -->
+
+<div class="slide">
+  <h1>📐 Lezione 14: Teoria dell’A*</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+      <h2>🔹 Funzione di costo</h2>
+      <p>L’A* seleziona i nodi da esplorare in base alla funzione:</p>
+      <pre><code>f(n) = g(n) + h(n)</code></pre>
+      <ul>
+        <li><strong>g(n)</strong>: costo effettivo dal nodo iniziale a n</li>
+        <li><strong>h(n)</strong>: stima euristica del costo da n al goal</li>
+        <li><strong>f(n)</strong>: stima complessiva del costo da start a goal passando per n</li>
+      </ul>
+
+      <h2>🔹 Scelta dell'euristica</h2>
+      <ul>
+        <li>La più usata nei giochi a griglia è la <strong>distanza di Manhattan</strong>:
+        <pre><code>h(n) = |x1 - x2| + |y1 - y2|</code></pre></li>
+        <li>Altre: distanza Euclidea, Chebyshev, personalizzate per terreni o ostacoli.</li>
+      </ul>
+
+      <h2>🔹 Strutture Dati Usate</h2>
+      <ul>
+        <li><strong>Open Set</strong>: nodi ancora da esplorare (tipicamente coda di priorità).</li>
+        <li><strong>Closed Set</strong>: nodi già visitati.</li>
+        <li>Ogni nodo tiene traccia di:
+          <ul>
+            <li>valori g, h, f</li>
+            <li>padre (per ricostruire il percorso)</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h2>🔹 Esecuzione dell'algoritmo</h2>
+      <ol>
+        <li>Inserisci il nodo iniziale nell’open set.</li>
+        <li>Finché l’open set non è vuoto:
+          <ul>
+            <li>Estrai il nodo con f(n) più basso.</li>
+            <li>Se è il goal → fine!</li>
+            <li>Altrimenti, esplora i vicini, aggiorna f/g/h, aggiungili all’open set.</li>
+          </ul>
+        </li>
+      </ol>
+
+      <p>✅ Prossima slide: iniziamo il setup della classe Nodo e strutture dati per A*.</p>
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById('menu');
+  menu.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

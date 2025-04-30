@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 14 – A* vs BFS vs Dijkstra</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez14_4.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez14_2.html";
+    }
+  </script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+  <h2>Menu Lezioni</h2>
+  <ul>
+    <li><a href='lez14_2.html'>Griglia e Mappa</a></li>
+    <li><a href='lez14_3.html'>Confronto Algoritmi</a></li>
+    <li><a href='lez14_4.html'>Teoria A*</a></li>
+  </ul>
+</div>
+<!-- END MENU -->
+
+<div class="slide">
+  <h1>🔍 Lezione 14: A\* vs BFS vs Dijkstra</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+      <h2>🔹 BFS (Breadth-First Search)</h2>
+      <ul>
+        <li>Esplora tutti i nodi alla stessa distanza prima di passare a quelli più lontani.</li>
+        <li>Funziona solo su grafi <strong>non pesati</strong>.</li>
+        <li>Trova il percorso più corto in termini di passi, ma è lento.</li>
+      </ul>
+
+      <h2>🔹 Dijkstra</h2>
+      <ul>
+        <li>Trova il percorso più breve in un grafo con <strong>pesi positivi</strong>.</li>
+        <li>Esplora tutti i nodi possibili partendo dal più vicino.</li>
+        <li>Non tiene conto della destinazione finché non la raggiunge.</li>
+      </ul>
+
+      <h2>🔹 A* (A Star)</h2>
+      <ul>
+        <li>Simile a Dijkstra, ma usa anche un’<strong>euristica</strong> per <em>“guidare”</em> la ricerca verso la destinazione.</li>
+        <li>f(n) = g(n) + h(n):
+          <ul>
+            <li>g(n): costo dal punto iniziale al nodo n</li>
+            <li>h(n): stima del costo da n al goal (es. distanza di Manhattan)</li>
+          </ul>
+        </li>
+        <li>È il più efficiente in scenari reali dove serve un buon bilanciamento tra velocità e qualità del percorso.</li>
+      </ul>
+
+      <h2>✅ Conclusione</h2>
+      <ul>
+        <li><strong>BFS:</strong> semplice ma lento e limitato.</li>
+        <li><strong>Dijkstra:</strong> corretto ma esplora troppo.</li>
+        <li><strong>A\*:</strong> preciso, veloce, ottimo per i giochi!</li>
+      </ul>
+
+      <p>➡️ Prossima slide: <strong>Teoria dettagliata dell'A*</strong> (funzioni, struttura, logica).</p>
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById('menu');
+  menu.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

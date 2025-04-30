@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 15 – AI nei Giochi</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez15_2.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez14_9.html";
+    }
+  </script>
+</head>
+<body>
+<button class="menu-toggle" onclick="toggleMenu()">&#9776; Menu</button>
+<div class="sidebar" id="menu">
+  <h2>Lezione 15</h2>
+  <ul>
+    <li><a href="lez15_1.html">Introduzione all’AI</a></li>
+    <li><a href="lez15_2.html">Reti Neurali</a></li>
+    <li><a href="lez15_3.html">PyTorch</a></li>
+    <li><a href="lez15_4.html">Allenamento</a></li>
+    <li><a href="lez15_5.html">Mini-Progetto</a></li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>🎮 Lezione 15: Introduzione all’AI nei Giochi</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+      <h2>🔹 Cos'è l'Intelligenza Artificiale nei Giochi?</h2>
+      <ul>
+        <li>L’AI nei videogiochi è usata per <strong>simulare comportamenti intelligenti</strong> da parte dei personaggi non giocanti (NPC).</li>
+        <li>Lo scopo è rendere l’esperienza di gioco più <strong>realistica, dinamica e coinvolgente</strong>.</li>
+      </ul>
+
+      <h2>🔹 Esempi di AI nei giochi</h2>
+      <ul>
+        <li><strong>Nemici che inseguono o fuggono</strong> dal giocatore (es. Fantasmi in Pac-Man).</li>
+        <li><strong>Strategie adattive</strong> negli RTS o FPS (es. StarCraft, Counter-Strike).</li>
+        <li><strong>Dialoghi e scelte multiple</strong> nei giochi narrativi (es. Bandersnatch, Detroit).</li>
+      </ul>
+
+      <h2>🔹 Tecniche tradizionali</h2>
+      <ul>
+        <li><strong>Finite State Machine</strong>: comportamenti in stati (patrol, attack, flee...)</li>
+        <li><strong>Minimax + AlphaBeta</strong>: decisioni nei giochi a turni (es. scacchi, tris).</li>
+        <li><strong>Behavior Trees</strong>: AI gerarchica per giochi complessi.</li>
+      </ul>
+
+      <h2>🔹 AI basata su Apprendimento</h2>
+      <ul>
+        <li>Le AI moderne usano algoritmi di <strong>machine learning</strong> per imparare da dati o esperienze.</li>
+        <li>In particolare, le <strong>reti neurali</strong> sono molto usate per decisioni complesse o dinamiche.</li>
+        <li>Nei giochi possono apprendere a muoversi, colpire, evitare, prevedere o vincere.</li>
+      </ul>
+
+      <p>✅ Nella prossima slide vedremo come funzionano le <strong>Reti Neurali Artificiali</strong>.</p>
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById("menu");
+  menu.classList.toggle("open");
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 14 – Ostacoli e Fallimenti</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez14_9.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez14_7.html";
+    }
+  </script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+  <h2>Menu Lezioni</h2>
+  <ul>
+    <li><a href='lez14_7.html'>Animazione A*</a></li>
+    <li><a href='lez14_8.html'>Gestione Ostacoli</a></li>
+    <li><a href='lez14_9.html'>Mini-Progetto</a></li>
+  </ul>
+</div>
+<!-- END MENU -->
+
+<div class="slide">
+  <h1>🚧 Lezione 14: Ostacoli Dinamici e Fallimenti</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+      <h2>🔹 Fallimenti comuni nel Pathfinding</h2>
+      <ul>
+        <li><strong>Start o goal bloccati</strong> → nessun percorso possibile.</li>
+        <li><strong>Mappa completamente chiusa</strong>.</li>
+        <li><strong>Nodi ripetuti</strong> senza miglioramento → ciclo infinito (evitato con closed set).</li>
+      </ul>
+
+      <h2>🔹 Gestione dinamica degli ostacoli</h2>
+      <ul>
+        <li>È possibile permettere all'utente di <strong>cliccare per creare o rimuovere ostacoli</strong>.</li>
+        <li>Ogni modifica invalida il percorso corrente.</li>
+        <li>L’algoritmo A* va <strong>ricalcolato da zero</strong> dopo ogni modifica.</li>
+      </ul>
+
+<pre><code class="language-python"># Ricalcolo del percorso
+if ostacolo_aggiunto_o_rimosso:
+    resetta_griglia()
+    ricomincia_A_star(start, goal)</code></pre>
+
+      <h2>🔹 Feedback visivo</h2>
+      <ul>
+        <li>Messaggio: <strong>"Percorso non trovato"</strong> se A* termina senza successo.</li>
+        <li>Colori e animazioni aiutano a diagnosticare il problema.</li>
+      </ul>
+
+      <p>✅ Prossima slide: Mini-Progetto completo – Robot che trova la strada evitando ostacoli!</p>
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById('menu');
+  menu.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

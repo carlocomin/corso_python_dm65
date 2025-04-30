@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 15 – Reti Neurali</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez15_3.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez15_1.html";
+    }
+  </script>
+</head>
+<body>
+<button class="menu-toggle" onclick="toggleMenu()">&#9776; Menu</button>
+<div class="sidebar" id="menu">
+  <h2>Lezione 15</h2>
+  <ul>
+    <li><a href="lez15_1.html">Introduzione all’AI</a></li>
+    <li><a href="lez15_2.html">Reti Neurali</a></li>
+    <li><a href="lez15_3.html">PyTorch</a></li>
+    <li><a href="lez15_4.html">Allenamento</a></li>
+    <li><a href="lez15_5.html">Mini-Progetto</a></li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>🧠 Lezione 15: Reti Neurali Artificiali</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+      <h2>🔹 Cos'è una Rete Neurale?</h2>
+      <ul>
+        <li>È un modello computazionale ispirato al cervello umano.</li>
+        <li>Composto da <strong>neuroni artificiali</strong> organizzati in strati (layer).</li>
+        <li>Riceve input, li elabora e genera output attraverso trasformazioni matematiche.</li>
+      </ul>
+
+      <h2>🔹 Architettura</h2>
+      <ul>
+        <li><strong>Input layer</strong>: riceve i dati grezzi.</li>
+        <li><strong>Hidden layers</strong>: strati intermedi che apprendono rappresentazioni.</li>
+        <li><strong>Output layer</strong>: produce il risultato finale.</li>
+      </ul>
+
+      <h2>🔹 Neurone</h2>
+      <ul>
+        <li>Calcola una somma pesata degli input più un bias.</li>
+        <li>Applica una <strong>funzione di attivazione</strong> (es. sigmoid, ReLU).</li>
+        <li>Formula: <code>y = activation(∑(wᵢ·xᵢ) + b)</code></li>
+      </ul>
+
+      <h2>🔹 Esempio di Attivazione (ReLU)</h2>
+<pre><code class="language-python">def relu(x):
+    return max(0, x)</code></pre>
+
+      <h2>🔹 Apprendimento</h2>
+      <ul>
+        <li>La rete apprende modificando i <strong>pesi</strong> e i <strong>bias</strong> per minimizzare l’errore (loss).</li>
+        <li>Questo processo si chiama <strong>addestramento</strong> (training) e avviene tramite:
+          <ul>
+            <li>Propagazione diretta (forward)</li>
+            <li>Calcolo della perdita</li>
+            <li><strong>Backpropagation</strong> per aggiornare i pesi</li>
+          </ul>
+        </li>
+      </ul>
+
+      <p>✅ Nella prossima slide vedremo come definire reti neurali in Python usando <strong>PyTorch</strong>.</p>
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById("menu");
+  menu.classList.toggle("open");
+}
+</script>
+</body>
+</html>

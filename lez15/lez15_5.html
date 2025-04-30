@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 15 – Mini-Progetto AI</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez15_6.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez15_4.html";
+    }
+  </script>
+</head>
+<body>
+<button class="menu-toggle" onclick="toggleMenu()">&#9776; Menu</button>
+<div class="sidebar" id="menu">
+  <h2>Lezione 15</h2>
+  <ul>
+    <li><a href="lez15_1.html">Introduzione all’AI</a></li>
+    <li><a href="lez15_2.html">Reti Neurali</a></li>
+    <li><a href="lez15_3.html">PyTorch</a></li>
+    <li><a href="lez15_4.html">Allenamento</a></li>
+    <li><a href="lez15_5.html">Mini-Progetto</a></li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h1>🎮 Lezione 15: Mini-Progetto – Bot AI che evita ostacoli</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+
+      <h2>🔹 Obiettivo</h2>
+      <ul>
+        <li>Allenare un bot che <strong>impara a evitare ostacoli</strong> in un mondo 2D.</li>
+        <li>Il bot riceve input (posizione ostacolo, velocità) e decide se <strong>saltare o non saltare</strong>.</li>
+        <li>Il comportamento è appreso tramite una rete neurale allenata su esempi.</li>
+      </ul>
+
+      <h2>🔹 Architettura del gioco</h2>
+      <ul>
+        <li><strong>Ambiente</strong>: una finestra Pygame con ostacoli che si avvicinano.</li>
+        <li><strong>Agente</strong>: il nostro bot (un rettangolo) che decide quando saltare.</li>
+        <li><strong>Rete neurale</strong>: allenata con input/output su simulazioni di successo.</li>
+      </ul>
+
+      <h2>🔹 Input e Output della Rete</h2>
+      <ul>
+        <li>Input: distanza ostacolo, altezza ostacolo, velocità orizzontale.</li>
+        <li>Output: <code>0</code> = niente, <code>1</code> = salta.</li>
+      </ul>
+
+      <h2>🔹 Estensioni possibili</h2>
+      <ul>
+        <li>Generare ostacoli casuali e allenare con più esempi.</li>
+        <li>Passare da supervised learning a reinforcement learning (DQN).</li>
+        <li>Visualizzare l'errore in tempo reale con grafici (matplotlib).</li>
+      </ul>
+
+      <p>✅ Nella prossima slide troverai il <strong>codice completo del progetto AI</strong> con PyTorch + Pygame.</p>
+
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById("menu");
+  menu.classList.toggle("open");
+}
+</script>
+</body>
+</html>

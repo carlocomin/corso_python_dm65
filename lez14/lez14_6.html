@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 14 – Visualizzazione Griglia</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez14_7.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez14_5.html";
+    }
+  </script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+  <h2>Menu Lezioni</h2>
+  <ul>
+    <li><a href='lez14_5.html'>Setup Base</a></li>
+    <li><a href='lez14_6.html'>Visualizzazione Parte 1</a></li>
+    <li><a href='lez14_7.html'>Visualizzazione Parte 2</a></li>
+  </ul>
+</div>
+<!-- END MENU -->
+
+<div class="slide">
+  <h1>🎨 Lezione 14: Visualizzazione Parte 1 – Griglia iniziale</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+      <h2>🔹 Colori delle celle</h2>
+      <ul>
+        <li>Bianco = spazio libero</li>
+        <li>Nero = ostacolo</li>
+        <li>Verde = partenza</li>
+        <li>Rosso = obiettivo</li>
+      </ul>
+
+      <h2>🔹 Rendering con Pygame</h2>
+<pre><code class="language-python">LARGHEZZA, ALTEZZA = 600, 400
+DIM_CELLA = 20
+
+screen = pygame.display.set_mode((LARGHEZZA, ALTEZZA))
+pygame.display.set_caption("Pathfinding A*")
+clock = pygame.time.Clock()
+
+def disegna_griglia(griglia, start, goal):
+    for riga in griglia:
+        for nodo in riga:
+            x = nodo.x * DIM_CELLA
+            y = nodo.y * DIM_CELLA
+            colore = (255, 255, 255)
+            if nodo.ostacolo:
+                colore = (0, 0, 0)
+            elif nodo == start:
+                colore = (0, 255, 0)
+            elif nodo == goal:
+                colore = (255, 0, 0)
+            pygame.draw.rect(screen, colore, (x, y, DIM_CELLA, DIM_CELLA))
+            pygame.draw.rect(screen, (200, 200, 200), (x, y, DIM_CELLA, DIM_CELLA), 1)</code></pre>
+
+      <p>Questa funzione può essere chiamata all’interno del game loop per disegnare l’intera mappa aggiornata.</p>
+
+      <p>✅ Prossima slide: animazione dell’esplorazione durante l’esecuzione di A*.</p>
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById('menu');
+  menu.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

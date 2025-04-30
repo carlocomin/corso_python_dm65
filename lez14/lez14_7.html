@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 14 – A* Visualizzazione 1</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez14_8.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez14_6.html";
+    }
+  </script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+  <h2>Menu Lezioni</h2>
+  <ul>
+    <li><a href='lez14_5.html'>Setup A*</a></li>
+    <li><a href='lez14_6.html'>Visualizzazione Griglia</a></li>
+    <li><a href='lez14_7.html'>Visualizzazione Animata</a></li>
+  </ul>
+</div>
+<!-- END MENU -->
+
+<div class="slide">
+  <h1>🖼️ Lezione 14: A* – Visualizzazione Griglia</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+      <h2>🔹 Setup grafico iniziale in Pygame</h2>
+
+<pre><code class="language-python">import pygame
+LARGHEZZA, ALTEZZA = 600, 400
+righe, colonne = 20, 30
+TILE = LARGHEZZA // colonne
+
+# Colori
+BIANCO = (255,255,255)
+NERO = (0,0,0)
+VERDE = (0,255,0)
+ROSSO = (255,0,0)
+GRIGIO = (50,50,50)
+
+pygame.init()
+schermo = pygame.display.set_mode((LARGHEZZA, ALTEZZA))
+pygame.display.set_caption("A* - Setup Griglia")</code></pre>
+
+      <h2>🔹 Funzione di disegno</h2>
+
+<pre><code class="language-python">def disegna_griglia(schermo, griglia, start, goal):
+    for riga in griglia:
+        for nodo in riga:
+            x, y = nodo.x * TILE, nodo.y * TILE
+            colore = BIANCO
+            if nodo.ostacolo:
+                colore = NERO
+            elif nodo == start:
+                colore = VERDE
+            elif nodo == goal:
+                colore = ROSSO
+            pygame.draw.rect(schermo, colore, (x, y, TILE-1, TILE-1))
+
+# Esempio di uso
+disegna_griglia(schermo, griglia, start, goal)</code></pre>
+
+      <p>✅ Prossima slide: visualizzazione dinamica del percorso, nodi visitati e animazione dell'algoritmo.</p>
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById('menu');
+  menu.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

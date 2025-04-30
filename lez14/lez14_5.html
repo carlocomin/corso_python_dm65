@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 14 – A* Setup Base</title>
+  <link rel="stylesheet" href="../default.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../highlight.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script>
+    function nextSlide() {
+      window.location.href = "lez14_6.html";
+    }
+    function prevSlide() {
+      window.location.href = "lez14_4.html";
+    }
+  </script>
+</head>
+<body>
+<!-- BEGIN MENU -->
+<button class='menu-toggle' onclick='toggleMenu()'>&#9776; Menu</button>
+<div class='sidebar' id='menu'>
+  <h2>Menu Lezioni</h2>
+  <ul>
+    <li><a href='lez14_4.html'>Teoria A*</a></li>
+    <li><a href='lez14_5.html'>Setup Base</a></li>
+    <li><a href='lez14_6.html'>Visualizzazione Parte 1</a></li>
+  </ul>
+</div>
+<!-- END MENU -->
+
+<div class="slide">
+  <h1>🔧 Lezione 14: A* – Setup Base</h1>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+
+  <div class="content-box">
+    <div class="inner-box">
+      <h2>🔹 Classe Nodo</h2>
+      <p>Ogni cella della griglia è rappresentata da un oggetto Nodo.</p>
+
+<pre><code class="language-python">class Nodo:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        self.g = float('inf')
+        self.h = 0
+        self.f = float('inf')
+        self.padre = None
+        self.ostacolo = False
+        self.visitato = False
+
+    def __lt__(self, altro):
+        return self.f &lt; altro.f</code></pre>
+
+      <h2>🔹 Griglia</h2>
+      <p>Inizializziamo una griglia di nodi NxM:</p>
+
+<pre><code class="language-python">righe, colonne = 20, 30
+griglia = [[Nodo(x, y) for x in range(colonne)] for y in range(righe)]</code></pre>
+
+      <h2>🔹 Funzioni ausiliarie</h2>
+
+<pre><code class="language-python">def heuristica(a, b):
+    return abs(a.x - b.x) + abs(a.y - b.y)  # Manhattan
+
+def vicini(griglia, nodo):
+    dirs = [(0,1),(1,0),(0,-1),(-1,0)]
+    risultato = []
+    for dx, dy in dirs:
+        nx, ny = nodo.x + dx, nodo.y + dy
+        if 0 &lt;= nx &lt; colonne and 0 &lt;= ny &lt; righe:
+            vicino = griglia[ny][nx]
+            if not vicino.ostacolo:
+                risultato.append(vicino)
+    return risultato</code></pre>
+
+      <p>✅ Prossima slide: disegno della griglia e stato iniziale (visualizzazione Parte 1).</p>
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">&#8592; Indietro</button>
+    <button onclick="nextSlide()">Avanti &#8594;</button>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById('menu');
+  menu.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
